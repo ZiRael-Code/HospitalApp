@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 
-class SearchForPatient extends StatefulWidget {
-  const SearchForPatient({super.key});
+class SearchForPatients extends StatefulWidget {
 
   @override
-  State<SearchForPatient> createState() => _SearchForPatientState();
+  State<SearchForPatients> createState() => _SearchForPatientState();
 }
 
-class _SearchForPatientState extends State<SearchForPatient> {
+class _SearchForPatientState extends State<SearchForPatients> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();

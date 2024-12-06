@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'add_existing_specialist.dart';
+import 'add_existing_patient.dart';
 import 'invite_through_link.dart';
 
 
-
-class AddNewSpecialist extends StatefulWidget {
-  AddNewSpecialist({super.key});
+class AddAPatient extends StatefulWidget {
+  AddAPatient({super.key});
 
   @override
-  State<AddNewSpecialist> createState() => _AddNewSpecialistState();
+  State<AddAPatient> createState() => _AddAPatientState();
 }
 
-class _AddNewSpecialistState extends State<AddNewSpecialist>
+class _AddAPatientState extends State<AddAPatient>
     with TickerProviderStateMixin {
   late TabController _tabController;
 
@@ -43,7 +42,7 @@ class _AddNewSpecialistState extends State<AddNewSpecialist>
       } else {
         filteredContacts = contacts
             .where((contact) =>
-            contact.toLowerCase().contains(query.toLowerCase()))
+                contact.toLowerCase().contains(query.toLowerCase()))
             .toList();
       }
     });
@@ -95,7 +94,7 @@ class _AddNewSpecialistState extends State<AddNewSpecialist>
                   SizedBox(width: 70),
                   Center(
                     child: Text(
-                      "Add a specialist",
+                      "Add a patient",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
@@ -128,7 +127,7 @@ class _AddNewSpecialistState extends State<AddNewSpecialist>
                         labelColor: Colors.black,
                         unselectedLabelColor: Color(0xff4F4F4F),
                         tabs: [
-                          Tab(text: "Add existing specialist"),
+                          Tab(text: "Add existing patient"),
                           Tab(text: "Invite through link"),
                         ],
                       ),
@@ -163,7 +162,7 @@ class _AddNewSpecialistState extends State<AddNewSpecialist>
                         controller: _tabController,
                         children: [
                           Center(
-                              child: AddExistingSpecialist(
+                              child: AddExistingPatient(
                                   filteredContacts: filteredContacts)),
                           Center(child: InviteThroughLink()),
                         ],

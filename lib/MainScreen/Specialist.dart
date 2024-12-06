@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hospital_appp/Patient/add_new_patient.dart';
+import 'package:hospital_appp/Patient/messages.dart';
+import 'package:hospital_appp/Specialist/WorkHistory.dart';
+import 'package:hospital_appp/Specialist/add_new_specialist.dart';
 import 'package:hospital_appp/Specialist/admin_panel.dart';
 import 'package:hospital_appp/Specialist/message_specialist.dart';
 import 'package:hospital_appp/Specialist/view_work_history.dart';
@@ -22,7 +24,7 @@ class _SpecialistState extends State<Specialist> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title:   Text("Patients", style: TextStyle(fontSize: getFontSize(27, context), fontWeight: FontWeight.w500),),
+        title:   Text("Specialist", style: TextStyle(fontSize: getFontSize(27, context), fontWeight: FontWeight.w500),),
       ),
       body: Padding(padding: EdgeInsets.all(12),
         child: Column(
@@ -30,30 +32,58 @@ class _SpecialistState extends State<Specialist> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (builder)=>
+                        AddNewSpecialist()
+                    ));
+                  },
+                  child:
                 actions(
                   context,
                   Icons.add,
-                  "Add new specialist",
-                  MaterialPageRoute(builder: (builder)=>AddNewPatient()),
+                  "Add new specialist"
 
                 ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (builder)=>
+                        AdminPanel()
+                    ));
+                  },
+                  child:
                 actions(
                     context,
                     Icons.receipt_long_rounded,
-                    "Admin panel",
-                    MaterialPageRoute(builder: (builder)=>AdminPanel())
+                    "Admin panel"
                 ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (builder)=>
+                        Messages()
+                    ));
+                  },
+                  child:
                 actions(
                     context,
                     Icons.message,
-                    "Message specialists",
-                    MaterialPageRoute(builder: (builder)=>MessageSpecialist())
+                    "Message specialists"
                 ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (builder)=>
+                        WorkHistory()
+                    ));
+                  },
+                  child:
                 actions(
                     context,
                     Icons.history,
-                    "View work histories",
-                    MaterialPageRoute(builder: (builder)=>ViewWorkHistory())
+                    "View work histories"
+                ),
                 ),
               ],
             ),
@@ -161,14 +191,9 @@ class _SpecialistState extends State<Specialist> {
 actions(
     BuildContext context,
     IconData icon,
-    String text,
-    MaterialPageRoute action,
+    String text
     ) {
-  return GestureDetector(
-    onTap: () {
-      Navigator.of(context).push(action);
-    },
-    child: Container(
+  return  Container(
       height: 120,
       child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Centers the items
@@ -200,7 +225,6 @@ actions(
         // Add consistent spacing below the text
         SizedBox(height: 16),
       ],
-    ),
     ),
   );
 }

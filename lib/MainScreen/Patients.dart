@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hospital_appp/Patient/AllPatientReading.dart';
+import 'package:hospital_appp/Patient/messages.dart';
 
-import '../Patient/add_new_patient.dart';
-import '../Patient/message_patient.dart';
-import '../Patient/patient_reading.dart';
+import '../Patient/PatientReading.dart';
+import '../Patient/SearchPatient.dart';
+import '../Patient/add_a_patient.dart';
 import '../Patient/search_for_patient.dart';
 import 'Dashboard.dart';
 
@@ -36,30 +38,54 @@ class _PatientsState extends State<Patients> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              actions(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (builder)=>
+                      AddAPatient()));
+                },
+                child:
+                actions(
                 context,
                 Icons.add,
                  "Add new patient",
-                 MaterialPageRoute(builder: (builder)=>AddNewPatient()),
 
               ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (builder)=>
+                      Messages()));
+                },
+                child:
               actions(
                   context,
                  Icons.message,
-                 "Message specialists",
-                 MaterialPageRoute(builder: (builder)=>MessagePatient())
+                 "Message specialists"
               ),
+              ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (builder)=>
+                    AllPatientReading()));
+              },
+              child:
               actions(
                   context,
                  Icons.edit_note,
-                 "patient reading",
-                 MaterialPageRoute(builder: (builder)=>PatientReading())
+                 "patient reading"
               ),
-              actions(
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (builder)=>
+                      SearchPatient()));
+                },
+                child:
+                actions(
                   context,
                  Icons.search,
                  "Search for patient",
-                 MaterialPageRoute(builder: (builder)=>SearchForPatient())
+              ),
               ),
             ],
           ),
@@ -219,13 +245,8 @@ actions(
     BuildContext context,
     IconData icon,
     String text,
-    MaterialPageRoute action
     ) {
-  return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(action);
-      },
-      child: Column(
+  return  Column(
         children: [
           Container(
             padding:  EdgeInsets.all(getFontSize(12, context)),
@@ -241,7 +262,6 @@ actions(
             child:  Text(text, textAlign: TextAlign.center, style: TextStyle(fontSize: getFontSize(13, context),  fontWeight: FontWeight.w400),),
           )
         ],
-      )
   );
 }
 

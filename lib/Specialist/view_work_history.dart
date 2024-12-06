@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 
-class ViewWorkHistory extends StatefulWidget {
-  const ViewWorkHistory({super.key});
+class ViewWorkHistorys extends StatefulWidget {
+  const ViewWorkHistorys({super.key});
 
   @override
-  State<ViewWorkHistory> createState() => _ViewWorkHistoryState();
+  State<ViewWorkHistorys> createState() => _ViewWorkHistorysState();
 }
 
-class _ViewWorkHistoryState extends State<ViewWorkHistory> {
+class _ViewWorkHistorysState extends State<ViewWorkHistorys> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();

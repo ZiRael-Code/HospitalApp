@@ -1,11 +1,11 @@
-import 'package:hospital_appp/Account/Referral/send_invites_success_page.dart';
-
-import '../../MainScreen/Dashboard.dart';
 
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../Account/Referral/send_invites_success_page.dart';
+import '../MainScreen/Dashboard.dart';
 
 
 void main(){
@@ -78,9 +78,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                   'To download the MyVitalz app, click on this link to download from playstore or app store:',
                   style: TextStyle(fontSize: getFontSize(14, context)),
                 ),
-                Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                Row(children: [
                   Text('Link: ', style: TextStyle(color: Colors.black, fontSize: getFontSize(14, context))),
 
                   GestureDetector(
