@@ -100,7 +100,7 @@ class SpecialistInformation extends StatelessWidget {
                     ),
                     inputField(
                         label: 'Genotype',
-                        text: 'As',
+                        text: 'AS',
                         leftIcon: false,
                         hint: "",
                         width: getHalfWidthScreenSize(150.0, 17, context),
@@ -116,7 +116,7 @@ class SpecialistInformation extends StatelessWidget {
                     maxLength: 1
                 ),
                 inputField(
-                  label: 'Additional Information',
+                  label: 'Medical history',
                   hint: 'No medical history available yet' ,
                   text: "",
                   maxLength: 3,
@@ -126,7 +126,7 @@ class SpecialistInformation extends StatelessWidget {
 
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>PrescribeDrugsViewAll()));
+                    Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,

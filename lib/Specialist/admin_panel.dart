@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/Specialist/custom_login.dart';
+import 'package:hospital_appp/Specialist/device_sales1.dart';
 
 class AdminPanel extends StatefulWidget {
   const AdminPanel({super.key});
@@ -61,16 +62,16 @@ class _AdminPanelState extends State<AdminPanel> {
                 bottom: 'Setup custom login for staff'
             ),
           ),
-          // GestureDetector(
-          //   onTap: () {
-          //     // Navigate to the next screen
-          //     Navigator.push(context, MaterialPageRoute(builder: (context) => SelectPharmacy()));
-          //   },
-          //   child:  panelMethod(text: "Prescribe from existing pharmacy",
-          //       imagePath:"assets/images/cal.svg",
-          //       bottom: 'Monitor device sales from affiliated partners'
-          //   ),
-          // ),
+          GestureDetector(
+            onTap: () {
+              // Navigate to the next screen
+              Navigator.push(context, MaterialPageRoute(builder: (context) => DeviceSales1()));
+            },
+            child:  panelMethod(text: "Device sales",
+                imagePath:"assets/images/cal.svg",
+                bottom: 'Monitor device sales from affiliated partners'
+            ),
+          ),
           // GestureDetector(
           //   onTap: () {
           //     // Navigate to the next screen

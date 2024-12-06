@@ -198,7 +198,7 @@ class _AllSpecialistState extends State<AllSpecialist> {
 
 request_tile({
   required String name,
-  required profile_path, // Pass the profile path
+  required profile_path,
   required String type
 }){
   return GestureDetector(
