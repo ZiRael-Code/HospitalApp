@@ -3,22 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../MainScreen/Dashboard.dart';
-import 'checkout.dart';
+import '../Specialist/checkout.dart';
 
 void main(){
-  runApp(BuyDevice());
+  runApp(PurchaseDevice());
 }
 
-class BuyDevice extends StatefulWidget {
-  BuyDevice({super.key});
+class PurchaseDevice extends StatefulWidget {
+  PurchaseDevice({super.key});
   @override
   _RequestNewDeviceScreen createState() => _RequestNewDeviceScreen();
 }
 
-class _RequestNewDeviceScreen extends  State<BuyDevice> {
+class _RequestNewDeviceScreen extends  State<PurchaseDevice> {
   String? _selectedValue;
   List<int> _cartIncrease = [];
 
+  TextEditingController controller = TextEditingController();
+
+  final List<Map<String, dynamic>> names = [];
+  String query = "";
   @override
   void initState() {
     super.initState();
@@ -48,13 +52,23 @@ class _RequestNewDeviceScreen extends  State<BuyDevice> {
                     height: getFontSize(15, context),),
                 ),
               ),
-
-              Text(
-                'Buy device',
-                style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),
-              ),
-
               Spacer(),
+              Text(
+                'Purchase device',
+                style: TextStyle(fontSize: getFontSize(20, context), fontWeight: FontWeight.bold),
+              ),
+              Spacer(),
+
+              Container(
+                  width: getFontSize(35, context),
+                  height: getFontSize(35, context),
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Color(0xFFE5E5E5),
+                  ),
+                  child: Center(child:Icon(Icons.shopping_cart, color: Colors.grey.shade600,))
+              )
 
             ],
           ),
@@ -69,12 +83,40 @@ class _RequestNewDeviceScreen extends  State<BuyDevice> {
                   child:
                   Column(
                     children: [
-                      SizedBox(height: getFontSize(25, context),),
                       Container(
-                        width: getFontSize(284, context),
-                        child: Text(textAlign: TextAlign.center,'Select which device(s) you want to order',style: TextStyle(fontSize: getFontSize(14, context),),),
+                        padding: EdgeInsets.only(right: 10),
+                        width: MediaQuery.of(context).size.width ,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: TextField(
+                          onChanged: (value) {
+                            setState(() {
+                              query = value;
+                            });
+                          },
+                          controller: controller,
+                          decoration: InputDecoration(
+                            hintText: 'Search',
+                            hintStyle: TextStyle(color: Colors.grey[300]),
+                            prefixIcon: Icon(Icons.search, color: Colors.grey[500]),
+                            suffixIcon: query.isNotEmpty
+                                ? IconButton(
+                              icon: Icon(Icons.clear, color: Colors.black54),
+                              onPressed: () {
+                                setState(() {
+                                  query = ""; // Clear the search query
+                                  controller.text = "";
+                                });
+                              },
+                            )
+                                : null,
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.symmetric(vertical: 15),
+                          ),
+                        ),
                       ),
-
                       SizedBox(height: getFontSize(45, context),),
 
                       device(
@@ -95,30 +137,42 @@ class _RequestNewDeviceScreen extends  State<BuyDevice> {
                           message: "Blood pressure, heart rate, body temperature, oxygen saturation, blood glucose, lipids "
                           ,index: 2
                       ),
+                      device(
+                          name: "Wellue BP2 connect device ",
+                          price: "N25,000",
+                          message: "Blood pressure, heart rate, body temperature, oxygen saturation, blood glucose, lipids "
+                          ,index: 1
+                      ),
+                      device(
+                          name: "Wellue BP2 connect device ",
+                          price: "N25,000",
+                          message: "Blood pressure, heart rate, body temperature, oxygen saturation, blood glucose, lipids "
+                          ,index: 2
+                      ),
 
                       SizedBox(height: getFontSize(25, context),),
-              Align(
-                alignment: Alignment.bottomCenter,
-              child:
-                ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Checkout()));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue,
-                          fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9),
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child:
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Checkout()));
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(9),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                            child: Text(
+                              'Continue',
+                              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
+                            ),
                           ),
                         ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
-                          child: Text(
-                            'Continue',
-                            style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
-                          ),
-                        ),
-                      ),
                       ),
                       SizedBox(height: getFontSize(10, context),),
                     ],
@@ -201,7 +255,7 @@ class _RequestNewDeviceScreen extends  State<BuyDevice> {
                                         color: Color(0xffE2EDFF)
                                     ),
                                     child: Center(child: Text('－', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12,color: Colors.blue)),
-                                  ),
+                                    ),
                                   ),
                                   onTap: () {
                                     setState(() {

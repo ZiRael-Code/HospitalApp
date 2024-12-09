@@ -7,6 +7,7 @@ import 'package:hospital_appp/Pharmacy/add_a_pharmacy.dart';
 import 'package:hospital_appp/Pharmacy/order_for_device.dart';
 import 'package:hospital_appp/Pharmacy/order_prescription.dart';
 import 'package:hospital_appp/Pharmacy/search_for_available_drugs.dart';
+import 'package:hospital_appp/Pharmacy/view_pharmacy.dart';
 
 import 'Dashboard.dart';
 
@@ -150,7 +151,10 @@ class _PharmacyState extends State<Pharmacy> {
               ),
               SizedBox(height: 12),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  // TODO: Navigate to Pharmacy dashboard
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ViewPharmacy()));
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue ,
                   // fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
