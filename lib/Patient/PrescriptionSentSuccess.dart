@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hospital_appp/MainScreen/MainNavigator.dart';
 
 class Prescriptionsentsuccess extends StatelessWidget {
   Prescriptionsentsuccess({super.key});
@@ -17,7 +18,10 @@ class Prescriptionsentsuccess extends StatelessWidget {
         Spacer(),
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>Prescriptionsentsuccess()));
+            Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (builder) => MainNavigator()), // Navigate to Login screen
+                  (Route<dynamic> route) => false, // Remove all previous routes
+            );
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hospital_appp/Specialist/buy_device.dart';
 import 'package:hospital_appp/Specialist/custom_login.dart';
 import 'package:hospital_appp/Specialist/device_sales1.dart';
 
@@ -72,17 +73,17 @@ class _AdminPanelState extends State<AdminPanel> {
                 bottom: 'Monitor device sales from affiliated partners'
             ),
           ),
-          // GestureDetector(
-          //   onTap: () {
-          //     // Navigate to the next screen
-          //     Navigator.push(context, MaterialPageRoute(builder: (context) => PrescribeDrugsAddDrugs()));
-          //   },
-          //   child:
-          //   panelMethod(text: "Buy device",
-          //       imagePath: "assets/images/bag.svg",
-          //       bottom: 'Order devices in bulk to sell to customers'
-          //   ),
-          // ),
+          GestureDetector(
+            onTap: () {
+              // Navigate to the next screen
+              Navigator.push(context, MaterialPageRoute(builder: (context) => BuyDevice()));
+            },
+            child:
+            panelMethod(text: "Buy device",
+                imagePath: "assets/images/bag.svg",
+                bottom: 'Order devices in bulk to sell to customers'
+            ),
+          ),
         ],
       ),
     );

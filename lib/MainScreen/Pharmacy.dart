@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,6 +18,7 @@ class Pharmacy extends StatefulWidget {
 }
 
 class _PharmacyState extends State<Pharmacy> {
+  late List<dynamic> section_list = [view_pharmacy(), pharmacy_setup()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,72 +31,7 @@ class _PharmacyState extends State<Pharmacy> {
         child: Column(
           children: [
 
-            Container(
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                border: Border.all(width: 0.7, color: Colors.blue),
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 167,
-                        child: Text("New life hospital internal pharmacy",
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
-                      ),
-                      SizedBox(height: 12),
-                      SizedBox(
-                        width: 206,
-                        child:
-                      Text(style: TextStyle(fontSize: 11),"Manage your hospital’s pharmacy from the app, take records and attend to patients needs"),
-                      ),
-                        SizedBox(height: 12),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue ,
-                  // fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(9),
-                  ),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
-                  child: Row(children: [
-                    Text(
-                      "View pharmacy",
-                      style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
-                    ),
-                    SizedBox(width: 10,),
-                    Icon(Icons.arrow_forward_ios, color: Colors.white, size: 14,)
-                  ],)
-                ),
-              )
-                    ],
-                  ),
-                  Spacer(),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18),
-                      color: Color(0xff2E2E4226).withOpacity(0.40)
-                    ),
-                    child: Row(
-                      children: [
-                        Text("12 ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
-                        Text("data")
-                      ],
-                    ),
-                  )
-
-
-                ],
-              ),
-            ),
+            section_list[Random.secure().nextInt(2)],
             SizedBox(height: 34,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -115,7 +53,7 @@ class _PharmacyState extends State<Pharmacy> {
                     context,
                    Icons.search,
                     "Search for available drug",
-                    MaterialPageRoute(builder: (builder)=>SearchForAvailableDrugs())
+                    MaterialPageRoute(builder: (builder)=>SearchForAvailableDrug())
                 ),
                 actions(
                     context,
@@ -186,6 +124,116 @@ class _PharmacyState extends State<Pharmacy> {
     );
   }
 
+  view_pharmacy(){
+    return Container(
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        border: Border.all(width: 0.7, color: Colors.blue),
+        borderRadius: BorderRadius.circular(14),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 167,
+                child: Text("New life hospital internal pharmacy",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
+              ),
+              SizedBox(height: 12),
+              SizedBox(
+                width: 206,
+                child:
+                Text(style: TextStyle(fontSize: 11),"Manage your hospital’s pharmacy from the app, take records and attend to patients needs"),
+              ),
+              SizedBox(height: 12),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue ,
+                  // fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(9),
+                  ),
+                ),
+                child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
+                    child: Row(children: [
+                      Text(
+                        "View pharmacy",
+                        style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
+                      ),
+                      SizedBox(width: 10,),
+                      Icon(Icons.arrow_forward_ios, color: Colors.white, size: 14,)
+                    ],)
+                ),
+              )
+            ],
+          ),
+          Spacer(),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(18),
+                color: Color(0xff2E2E4226).withOpacity(0.40)
+            ),
+            child: Row(
+              children: [
+                Text("12 ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
+                Text("data")
+              ],
+            ),
+          )
+
+
+        ],
+      ),
+    );
+  }
+
+  pharmacy_setup(){
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SvgPicture.asset("assets/images/med_bottle.svg"),
+        SizedBox(height: 15,),
+        Text("Pharmacy setup", style: TextStyle(fontSize: getFontSize(20, context), fontWeight: FontWeight.w500)),
+        SizedBox(height: 10,),
+     Container(
+       width: 264,
+       child:
+        Text(textAlign: TextAlign.center,"Setup the internal pharmacy of your hospital right here on myvitalz, so you can keep track of records, drugs, devices, etc."),
+    ),
+        SizedBox(height: 10,),
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blue ,
+            // fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(9),
+            ),
+          ),
+          child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                Text(
+                  "Setup pharmacy",
+                  style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
+                ),
+                SizedBox(width: 10,),
+                Icon(Icons.arrow_forward_ios, color: Colors.white, size: 14,)
+              ],)
+          ),
+        )
+      ],
+    );
+  }
 
   pharmacy_tile({
     required String name,
