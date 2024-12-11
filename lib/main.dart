@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hospital_appp/Account/PaymentHistory.dart';
+import 'package:hospital_appp/Specialist/ChangeLocation.dart';
+import 'package:hospital_appp/Specialist/SelectPickupLocation.dart';
+import 'package:hospital_appp/Specialist/SelectYourLocation.dart';
+import 'package:hospital_appp/Specialist/card_details.dart';
+import 'package:hospital_appp/Specialist/checkout.dart';
+import 'package:hospital_appp/Specialist/deviced_ordered.dart';
+import 'package:hospital_appp/Specialist/payments.dart';
+import 'package:hospital_appp/Specialist/success_delivery.dart';
 import 'package:hospital_appp/add%20patients/add_patients.dart';
 import 'package:hospital_appp/add%20patients/add_patients_main.dart';
 import 'package:hospital_appp/add%20patients/confirm_file_upload.dart';
@@ -20,6 +29,7 @@ import 'package:hospital_appp/add_specialists/success_page_specialists.dart';
 import 'package:hospital_appp/decive%20distribution/destribution_onboarding1.dart';
 import 'package:hospital_appp/decive%20distribution/destributor_id.dart';
 import 'package:hospital_appp/decive%20distribution/request_devices.dart';
+import 'package:hospital_appp/home%20delivery/set_your_location.dart';
 import 'package:hospital_appp/onboarding/onboarding1.dart';
 import 'package:hospital_appp/onboarding/splash_screen.dart';
 
@@ -57,7 +67,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const RequestDevices(),
+      home: SuccessDelivery(),
     );
   }
 }

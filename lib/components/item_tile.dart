@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ItemTile extends StatelessWidget {
+class ItemTile extends StatefulWidget {
   const ItemTile({super.key});
 
+  @override
+  State<ItemTile> createState() => _ItemTileState();
+}
+
+class _ItemTileState extends State<ItemTile> {
   @override
   Widget build(BuildContext context) {
     return Padding(

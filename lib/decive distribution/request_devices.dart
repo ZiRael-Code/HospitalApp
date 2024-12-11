@@ -3,9 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hospital_appp/components/item_tile.dart';
 import 'package:hospital_appp/components/my_blue_button.dart';
 
-class RequestDevices extends StatelessWidget {
+class RequestDevices extends StatefulWidget {
   const RequestDevices({super.key});
 
+  @override
+  State<RequestDevices> createState() => _RequestDevicesState();
+}
+
+class _RequestDevicesState extends State<RequestDevices> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

@@ -61,8 +61,25 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   uses-material-design: true
+
   assets:
     - assets/images/
+    - assets/images/doc.png
+    - assets/images/name.png
+    - assets/images/doc1.png
+    - assets/images/pharm1.jpeg
+    - assets/images/pharm2.jpeg
+    - assets/images/host1.jpeg
+    - assets/images/family.png
+    - assets/images/host2.png
+    - assets/images/host3.png
+    - assets/images/presphone.png
+    - assets/images/notification.svg
+    - assets/images/rema.png
+    - assets/images/cuate.png
+    - assets/images/icons/dashboard/electric.png
+    - assets/images/icons/dashboard/device.png
+    - assets/images/vit.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
