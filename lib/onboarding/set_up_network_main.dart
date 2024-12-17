@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/add_patients.dart';
 import 'package:hospital_appp/add%20patients/add_patients_main.dart';
+import 'package:hospital_appp/add%20pharmacy/add_pharmacy.dart';
+import 'package:hospital_appp/add_specialists/add_specialists.dart';
 
 class SetupNetworkMain extends StatelessWidget {
   const SetupNetworkMain({super.key});
@@ -23,27 +25,24 @@ class SetupNetworkMain extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              width: 257,
-              height: 47,
-              child: Text(
-                textAlign: TextAlign.center,
-                "Setup your network and add patients, specialists and hospitals.",
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Container(
+                width: 257,
+                height: 47,
+                child: Text(
+                  textAlign: TextAlign.center,
+                  "Setup your network and add patients, specialists and hospitals.",
+                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                ),
               ),
             ),
-            const SizedBox(
-              height: 40,
-            ),
-            SvgPicture.asset("assets/images/network.svg"),
-            const SizedBox(
-              height: 80,
+            Padding(
+              padding: const EdgeInsets.only(top: 40),
+              child: SvgPicture.asset("assets/images/network.svg"),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
+              padding: const EdgeInsets.only(left: 5, right: 5, top: 80),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -67,85 +66,96 @@ class SetupNetworkMain extends StatelessWidget {
                                     "assets/images/person.svg")),
                           ),
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Text(
-                          "Add patients",
-                          style: TextStyle(fontSize: 12),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: const Text(
+                            "Add patients",
+                            style: TextStyle(fontSize: 12),
+                          ),
                         )
                       ],
                     ),
                   ),
 
                   // physicans
-                  Container(
-                    width: 90,
-                    height: 118,
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 78,
-                          height: 78,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.blue[50]),
-                          child: Center(
-                              child:
-                                  SvgPicture.asset("assets/images/doctor.svg")),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Text(
-                          "Add specialists",
-                          style: TextStyle(fontSize: 12),
-                        )
-                      ],
+                  GestureDetector(
+                    onTap: () => Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AddSpecialists())),
+                    child: Container(
+                      width: 90,
+                      height: 118,
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 78,
+                            height: 78,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: Colors.blue[50]),
+                            child: Center(
+                                child: SvgPicture.asset(
+                                    "assets/images/doctor.svg")),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const Text(
+                            "Add specialists",
+                            style: TextStyle(fontSize: 12),
+                          )
+                        ],
+                      ),
                     ),
                   ),
 
                   // pharmacy
-                  Container(
-                    width: 90,
-                    height: 118,
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 78,
-                          height: 78,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.blue[50]),
-                          child: Center(
-                              child: SvgPicture.asset("assets/images/rx.svg")),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          "Add pharmacy",
-                          style: TextStyle(fontSize: 12),
-                        )
-                      ],
+                  GestureDetector(
+                    onTap: () => Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => AddPharmacy())),
+                    child: Container(
+                      width: 90,
+                      height: 118,
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 78,
+                            height: 78,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: Colors.blue[50]),
+                            child: Center(
+                                child:
+                                    SvgPicture.asset("assets/images/rx.svg")),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Add pharmacy",
+                            style: TextStyle(fontSize: 12),
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
               ),
             ),
-            SizedBox(
-              height: 40,
-            ),
-            Container(
-              width: 335,
-              height: 54,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  color: Colors.white,
-                  border: Border.all(color: Colors.blue)),
-              child: Center(
-                  child: Text(
-                "I'll do this later",
-                style: TextStyle(color: Colors.blue),
-              )),
+            Padding(
+              padding: const EdgeInsets.only(top: 40),
+              child: Container(
+                width: 335,
+                height: 54,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue)),
+                child: Center(
+                    child: Text(
+                  "I'll do this later",
+                  style: TextStyle(color: Colors.blue),
+                )),
+              ),
             )
           ],
         ),
