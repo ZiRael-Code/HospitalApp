@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hospital_appp/Account/Referral/my_blue_button.dart';
+import 'package:hospital_appp/Specialist/card_details.dart';
 
 class Payments extends StatefulWidget {
   const Payments({super.key});
@@ -102,13 +103,19 @@ class _PaymentsState extends State<Payments> {
                 SizedBox(height: 10),
 
                 // Credit/Debit Card Tile
-                buildPaymentOption(
-                  title: "Credit / Debit card",
-                  iconPath: "assets/images/creditcardicon.svg",
-                  isExpanded: false, // No expand functionality for now
-                  onExpandToggle: null, // Expand button disabled
-                  expandedContent: SizedBox.shrink(), // No expanded content
-                  showArrowIcon: true, // Add down arrow icon only
+                GestureDetector(
+                  onTap: () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CardDetails())),
+                  child: buildPaymentOption(
+                    title: "Credit / Debit card",
+                    iconPath: "assets/images/creditcardicon.svg",
+                    isExpanded: false, // No expand functionality for now
+                    onExpandToggle: null, // Expand button disabled
+                    expandedContent: SizedBox.shrink(), // No expanded content
+                    showArrowIcon: true, // Add down arrow icon only
+                  ),
                 ),
                 SizedBox(height: 10),
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hospital_appp/components/my_blue_button.dart';
-
+import 'package:hospital_appp/onboarding/enable_fingerprint.dart';
+import '../components/my_blue_button.dart';
 import '../components/my_textfield.dart';
 
 class SetPassword extends StatefulWidget {
@@ -31,7 +31,7 @@ class _SetPasswordState extends State<SetPassword> {
               height: 40,
             ),
             const Text(
-              "Set Password",
+              "Set new password",
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
@@ -94,7 +94,12 @@ class _SetPasswordState extends State<SetPassword> {
               ),
             ),
             const Spacer(),
-            const MyBlueButton(text: "Continue"),
+            GestureDetector(
+                onTap: () => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => EnableFingerprint())),
+                child: const MyBlueButton(text: "Continue")),
             const SizedBox(
               height: 40,
             )
