@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hospital_appp/add%20pharmacy/success_pharmacy.dart';
 
 class ConfirmFileUploadPharmacy extends StatefulWidget {
   const ConfirmFileUploadPharmacy({super.key});
@@ -145,18 +146,22 @@ class _ConfirmFileUploadPharmacyState extends State<ConfirmFileUploadPharmacy> {
                 ),
               ),
               const Spacer(),
-              Container(
-                width: 335,
-                height: 54,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.blue,
-                    border: Border.all(color: Colors.blue.shade50)),
-                child: const Center(
-                  child: Text(
-                    "Continue",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w500),
+              GestureDetector(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SuccessPharmacy())),
+                child: Container(
+                  width: 335,
+                  height: 54,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.blue,
+                      border: Border.all(color: Colors.blue.shade50)),
+                  child: const Center(
+                    child: Text(
+                      "Continue",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w500),
+                    ),
                   ),
                 ),
               ),

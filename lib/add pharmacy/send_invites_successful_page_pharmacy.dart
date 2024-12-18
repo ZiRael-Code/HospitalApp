@@ -64,7 +64,7 @@ class SendInvitesSuccessfulPagePharmacy extends StatelessWidget {
               ),
               const Spacer(),
               GestureDetector(
-                  onTap: () => Navigator.pushReplacement(
+                  onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const SetupNetworkPharmacy1())),

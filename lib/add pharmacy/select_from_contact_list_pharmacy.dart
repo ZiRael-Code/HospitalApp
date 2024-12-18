@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hospital_appp/add%20patients/send_invites.dart';
-
+import 'package:hospital_appp/add%20pharmacy/send_invites_pharmacy.dart';
 import '../components/contacts_checked_tile.dart';
 
 class SelectFromContactListPharmacy extends StatefulWidget {
@@ -269,7 +268,7 @@ class _SelectFromContactListPharmacyState
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SendInvites(
+                                builder: (context) => SendInvitesPharmacy(
                                     selectedContacts:
                                         selectedContacts.toList()))),
                         child: Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hospital_appp/add%20pharmacy/select_from_contact_list_pharmacy.dart';
 
 class InviteThroughLink extends StatefulWidget {
   const InviteThroughLink({super.key});
@@ -90,14 +91,20 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
               height: 40,
             ),
             Center(
-              child: Container(
-                width: 220,
-                height: 44,
-                decoration: BoxDecoration(
-                  color: Colors.blue[100],
-                  borderRadius: BorderRadius.circular(16),
+              child: GestureDetector(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => SelectFromContactListPharmacy())),
+                child: Container(
+                  width: 220,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    color: Colors.blue[100],
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: const Center(child: Text("Select from contact list")),
                 ),
-                child: const Center(child: Text("Select from contact list")),
               ),
             )
           ],

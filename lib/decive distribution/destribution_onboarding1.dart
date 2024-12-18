@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hospital_appp/MainScreen/MainNavigator.dart';
 import 'package:hospital_appp/components/my_blue_button.dart';
+import 'package:hospital_appp/decive%20distribution/destributor_id.dart';
 
 class DestributionOnboarding1 extends StatelessWidget {
   const DestributionOnboarding1({super.key});
@@ -70,24 +72,33 @@ class DestributionOnboarding1 extends StatelessWidget {
               SizedBox(
                 height: 40,
               ),
-              MyBlueButton(text: "Yes, become a distributor"),
-              SizedBox(
+              GestureDetector(
+                  onTap: () => Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => DestributorId())),
+                  child: const MyBlueButton(text: "Yes, become a distributor")),
+              const SizedBox(
                 height: 20,
               ),
-              Container(
-                width: 380,
-                height: 54,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.blue),
-                    borderRadius: BorderRadius.circular(12)),
-                child: Center(
-                    child: Text(
-                  "Not now",
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.blue,
-                      fontWeight: FontWeight.w500),
-                )),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MainNavigator(index: 0))),
+                child: Container(
+                  width: 380,
+                  height: 54,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.blue),
+                      borderRadius: BorderRadius.circular(12)),
+                  child: Center(
+                      child: Text(
+                    "Not now",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.blue,
+                        fontWeight: FontWeight.w500),
+                  )),
+                ),
               )
             ],
           ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hospital_appp/MainScreen/MainNavigator.dart';
+import 'package:hospital_appp/add%20pharmacy/add_pharmacy.dart';
+import 'package:hospital_appp/add_specialists/add_specialists.dart';
 
 class SetupNetwork extends StatelessWidget {
   const SetupNetwork({super.key});
@@ -16,7 +19,7 @@ class SetupNetwork extends StatelessWidget {
               padding: EdgeInsets.only(top: 120),
               child: Center(
                 child: Text(
-                  "Setup Network",
+                  "Setup Network1",
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
                 ),
               ),
@@ -84,53 +87,64 @@ class SetupNetwork extends StatelessWidget {
                   ),
 
                   // physicans
-                  Container(
-                    width: 90,
-                    height: 118,
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 78,
-                          height: 78,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.blue[50]),
-                          child: Center(
-                              child:
-                                  SvgPicture.asset("assets/images/doctor.svg")),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Text(
-                          "Add specialists",
-                          style: TextStyle(fontSize: 12),
-                        )
-                      ],
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AddSpecialists())),
+                    child: Container(
+                      width: 90,
+                      height: 118,
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 78,
+                            height: 78,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: Colors.blue[50]),
+                            child: Center(
+                                child: SvgPicture.asset(
+                                    "assets/images/doctor.svg")),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const Text(
+                            "Add specialists",
+                            style: TextStyle(fontSize: 12),
+                          )
+                        ],
+                      ),
                     ),
                   ),
 
                   // pharmacy
-                  Container(
-                    width: 90,
-                    height: 118,
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 78,
-                          height: 78,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.blue[50]),
-                          child: Center(
-                              child: SvgPicture.asset("assets/images/rx.svg")),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          "Add pharmacy",
-                          style: TextStyle(fontSize: 12),
-                        )
-                      ],
+                  GestureDetector(
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => AddPharmacy())),
+                    child: Container(
+                      width: 90,
+                      height: 118,
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 78,
+                            height: 78,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle, color: Colors.blue[50]),
+                            child: Center(
+                                child:
+                                    SvgPicture.asset("assets/images/rx.svg")),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Add pharmacy",
+                            style: TextStyle(fontSize: 12),
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
@@ -139,18 +153,24 @@ class SetupNetwork extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Container(
-              width: 335,
-              height: 54,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  color: Colors.white,
-                  border: Border.all(color: Colors.blue)),
-              child: Center(
-                  child: Text(
-                "I'll do this later",
-                style: TextStyle(color: Colors.blue),
-              )),
+            GestureDetector(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => MainNavigator(index: 0))),
+              child: Container(
+                width: 335,
+                height: 54,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue)),
+                child: Center(
+                    child: Text(
+                  "I'll do this later",
+                  style: TextStyle(color: Colors.blue),
+                )),
+              ),
             )
           ],
         ),

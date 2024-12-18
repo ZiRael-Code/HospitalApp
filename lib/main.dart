@@ -15,7 +15,6 @@ import 'package:hospital_appp/add%20patients/patients_information.dart';
 import 'package:hospital_appp/add%20patients/select_from_contact_list.dart';
 import 'package:hospital_appp/add%20patients/set_network.dart';
 import 'package:hospital_appp/add%20patients/success.dart';
-
 import 'package:hospital_appp/add%20pharmacy/confirm_file_upload_pharmacy.dart';
 import 'package:hospital_appp/add%20pharmacy/invite_through_link_pharmacy.dart';
 import 'package:hospital_appp/add%20pharmacy/select_from_contact_list_pharmacy.dart';
@@ -31,8 +30,8 @@ import 'package:hospital_appp/decive%20distribution/destributor_id.dart';
 import 'package:hospital_appp/decive%20distribution/request_devices.dart';
 import 'package:hospital_appp/home%20delivery/set_your_location.dart';
 import 'package:hospital_appp/onboarding/onboarding1.dart';
+import 'package:hospital_appp/onboarding/set_up_network_main.dart';
 import 'package:hospital_appp/onboarding/splash_screen.dart';
-
 import 'add pharmacy/add_pharmacy.dart';
 
 void main() {
@@ -67,7 +66,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Loader(),
+      home: SetupNetworkMain(),
     );
   }
 }

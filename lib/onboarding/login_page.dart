@@ -109,11 +109,12 @@ class _LoginPageState extends State<LoginPage> {
                       Padding(
                         padding: const EdgeInsets.only(top: 30),
                         child: GestureDetector(
-                            onTap: () => Navigator.pushReplacement(
+                            onTap: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        const MainNavigator())),
+                                    builder: (context) => MainNavigator(
+                                          index: 0,
+                                        ))),
                             child: const MyBlueButton(text: "Login")),
                       ),
                       const SizedBox(

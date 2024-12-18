@@ -61,151 +61,157 @@ class _PatientListScreenState extends State<PatientListScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
-              const SizedBox(height: 40),
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Container(
-                      width: 45,
-                      height: 45,
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/images/back.svg',
-                        width: 8.0,
-                        height: 15,
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Container(
+                        width: 45,
+                        height: 45,
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: const Color(0xFFE5E5E5),
+                        ),
+                        child: SvgPicture.asset(
+                          'assets/images/back.svg',
+                          width: 8.0,
+                          height: 15,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 70),
-                  const Text(
-                    "Patient List",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 70),
+                      child: const Text(
+                        "Patient List",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              const SizedBox(height: 40),
 
               // ListView.builder to show patients
-              Expanded(
-                child: _patients.isEmpty
-                    ? const Center(
-                        child: Text(
-                          "No patients added yet. Add patients to see them here.",
-                        ),
-                      )
-                    : ListView.builder(
-                        itemCount: _patients.length,
-                        itemBuilder: (context, index) {
-                          final patient = _patients[index];
-                          return Column(
-                            children: [
-                              Row(
-                                children: [
-                                  const CircleAvatar(
-                                    radius: 25,
-                                    backgroundImage: AssetImage(
-                                        'assets/images/girl.png'), // Add a default profile image here
-                                  ),
-                                  const SizedBox(width: 15),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: Expanded(
+                  child: _patients.isEmpty
+                      ? const Center(
+                          child: Text(
+                            "No patients added yet. Add patients to see them here.",
+                          ),
+                        )
+                      : ListView.builder(
+                          itemCount: _patients.length,
+                          itemBuilder: (context, index) {
+                            final patient = _patients[index];
+                            return Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    const CircleAvatar(
+                                      radius: 25,
+                                      backgroundImage: AssetImage(
+                                          'assets/images/girl.png'), // Add a default profile image here
+                                    ),
+                                    const SizedBox(width: 15),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            patient.name,
+                                            style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                          Text(
+                                            "${patient.phoneNumber} . ${patient.location}",
+                                            style: const TextStyle(
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Row(
                                       children: [
-                                        Text(
-                                          patient.name,
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
+                                        // Edit Icon Button
+                                        Container(
+                                          width: 33.79,
+                                          height: 33.79,
+                                          decoration: BoxDecoration(
+                                              color: Colors.blue[200],
+                                              shape: BoxShape.circle),
+                                          child: Center(
+                                            child: IconButton(
+                                              icon: const Icon(Icons.edit,
+                                                  color: Colors.blue),
+                                              onPressed: () async {
+                                                final updatedPatient =
+                                                    await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        PatientsInformation(
+                                                      patient:
+                                                          patient, // Pass current patient
+                                                    ),
+                                                  ),
+                                                );
+                                                if (updatedPatient != null &&
+                                                    updatedPatient is Patient) {
+                                                  _editPatient(
+                                                      updatedPatient, index);
+                                                }
+                                              },
+                                            ),
                                           ),
                                         ),
-                                        Text(
-                                          "${patient.phoneNumber} . ${patient.location}",
-                                          style: const TextStyle(
-                                            color: Colors.grey,
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
+                                        // Delete Icon Button
+                                        Container(
+                                          width: 33.79,
+                                          height: 33.79,
+                                          decoration: BoxDecoration(
+                                              color: Colors.red[200],
+                                              shape: BoxShape.circle),
+                                          child: Center(
+                                            child: IconButton(
+                                              icon: const Icon(Icons.delete,
+                                                  color: Colors.red),
+                                              onPressed: () {
+                                                _deletePatient(index);
+                                              },
+                                            ),
                                           ),
                                         ),
                                       ],
                                     ),
-                                  ),
-                                  Row(
-                                    children: [
-                                      // Edit Icon Button
-                                      Container(
-                                        width: 33.79,
-                                        height: 33.79,
-                                        decoration: BoxDecoration(
-                                            color: Colors.blue[200],
-                                            shape: BoxShape.circle),
-                                        child: Center(
-                                          child: IconButton(
-                                            icon: const Icon(Icons.edit,
-                                                color: Colors.blue),
-                                            onPressed: () async {
-                                              final updatedPatient =
-                                                  await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      PatientsInformation(
-                                                    patient:
-                                                        patient, // Pass current patient
-                                                  ),
-                                                ),
-                                              );
-                                              if (updatedPatient != null &&
-                                                  updatedPatient is Patient) {
-                                                _editPatient(
-                                                    updatedPatient, index);
-                                              }
-                                            },
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
-                                      // Delete Icon Button
-                                      Container(
-                                        width: 33.79,
-                                        height: 33.79,
-                                        decoration: BoxDecoration(
-                                            color: Colors.red[200],
-                                            shape: BoxShape.circle),
-                                        child: Center(
-                                          child: IconButton(
-                                            icon: const Icon(Icons.delete,
-                                                color: Colors.red),
-                                            onPressed: () {
-                                              _deletePatient(index);
-                                            },
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                width: 350,
-                                child: Divider(
-                                  color: Colors.grey[200],
-                                  thickness: 1,
-                                  height: 20,
+                                  ],
                                 ),
-                              ),
-                            ],
-                          );
-                        },
-                      ),
+                                SizedBox(
+                                  width: 350,
+                                  child: Divider(
+                                    color: Colors.grey[200],
+                                    thickness: 1,
+                                    height: 20,
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                ),
               ),
 
               // Add Patient Button

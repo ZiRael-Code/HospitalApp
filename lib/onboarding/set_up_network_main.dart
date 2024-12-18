@@ -4,6 +4,7 @@ import 'package:hospital_appp/add%20patients/add_patients.dart';
 import 'package:hospital_appp/add%20patients/add_patients_main.dart';
 import 'package:hospital_appp/add%20pharmacy/add_pharmacy.dart';
 import 'package:hospital_appp/add_specialists/add_specialists.dart';
+import 'package:hospital_appp/main_navigator.dart';
 
 class SetupNetworkMain extends StatelessWidget {
   const SetupNetworkMain({super.key});
@@ -52,7 +53,7 @@ class SetupNetworkMain extends StatelessWidget {
                     child: Column(
                       children: [
                         GestureDetector(
-                          onTap: () => Navigator.pushReplacement(
+                          onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => AddPatients())),
@@ -79,7 +80,7 @@ class SetupNetworkMain extends StatelessWidget {
 
                   // physicans
                   GestureDetector(
-                    onTap: () => Navigator.pushReplacement(
+                    onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => AddSpecialists())),
@@ -111,7 +112,7 @@ class SetupNetworkMain extends StatelessWidget {
 
                   // pharmacy
                   GestureDetector(
-                    onTap: () => Navigator.pushReplacement(context,
+                    onTap: () => Navigator.push(context,
                         MaterialPageRoute(builder: (context) => AddPharmacy())),
                     child: Container(
                       width: 90,
@@ -143,18 +144,24 @@ class SetupNetworkMain extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 40),
-              child: Container(
-                width: 335,
-                height: 54,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
-                    color: Colors.white,
-                    border: Border.all(color: Colors.blue)),
-                child: Center(
-                    child: Text(
-                  "I'll do this later",
-                  style: TextStyle(color: Colors.blue),
-                )),
+              child: GestureDetector(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MainNavigator(index: 0))),
+                child: Container(
+                  width: 335,
+                  height: 54,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6),
+                      color: Colors.white,
+                      border: Border.all(color: Colors.blue)),
+                  child: Center(
+                      child: Text(
+                    "I'll do this later",
+                    style: TextStyle(color: Colors.blue),
+                  )),
+                ),
               ),
             )
           ],

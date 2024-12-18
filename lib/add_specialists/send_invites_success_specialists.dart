@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hospital_appp/add_specialists/setup_network_specialists.dart';
 import 'package:hospital_appp/components/my_blue_button.dart';
 
 class SendInvitesSuccessSpecialists extends StatelessWidget {
@@ -62,7 +63,12 @@ class SendInvitesSuccessSpecialists extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              const MyBlueButton(text: "Done"),
+              GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SetupNetworkPharmacy())),
+                  child: const MyBlueButton(text: "Done")),
               const SizedBox(
                 height: 30,
               )

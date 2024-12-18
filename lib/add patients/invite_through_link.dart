@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hospital_appp/add%20patients/select_from_contact_list.dart';
+import 'package:hospital_appp/add%20pharmacy/select_from_contact_list_pharmacy.dart';
 
 class InviteThroughLink extends StatefulWidget {
   const InviteThroughLink({super.key});
@@ -37,67 +39,74 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 30,
+            Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Row(
+                    children: [
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text("Link: "),
+                      Text(
+                        "7f4j6n8qN6EDCP-9wd/8ag7...",
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Container(
+                      width: 79,
+                      height: 28,
+                      decoration: BoxDecoration(
+                        color: Colors.blue[100],
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        children: [
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          SizedBox(
+                            width: 14,
+                            height: 14,
+                            child: Image.asset(
+                              "assets/images/Union.png",
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text("Copy")
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Row(
-                  children: [
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Text("Link: "),
-                    Text(
-                      "7f4j6n8qN6EDCP-9wd/8ag7...",
-                      style: TextStyle(color: Colors.blue),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10),
+            GestureDetector(
+              onTap: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SelectFromContactList())),
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 40),
                   child: Container(
-                    width: 79,
-                    height: 28,
+                    width: 220,
+                    height: 44,
                     decoration: BoxDecoration(
                       color: Colors.blue[100],
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(16),
                     ),
-                    child: Row(
-                      children: [
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        SizedBox(
-                          width: 14,
-                          height: 14,
-                          child: Image.asset(
-                            "assets/images/Union.png",
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                        const Text("Copy")
-                      ],
-                    ),
+                    child:
+                        const Center(child: Text("Select from contact list")),
                   ),
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            Center(
-              child: Container(
-                width: 220,
-                height: 44,
-                decoration: BoxDecoration(
-                  color: Colors.blue[100],
-                  borderRadius: BorderRadius.circular(16),
                 ),
-                child: const Center(child: Text("Select from contact list")),
               ),
             )
           ],

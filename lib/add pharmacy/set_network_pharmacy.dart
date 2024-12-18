@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hospital_appp/Account/Referral/my_blue_button.dart';
+import 'package:hospital_appp/decive%20distribution/destribution_onboarding1.dart';
 
 class SetupNetworkPharmacy1 extends StatelessWidget {
   const SetupNetworkPharmacy1({super.key});
@@ -16,7 +18,7 @@ class SetupNetworkPharmacy1 extends StatelessWidget {
               padding: EdgeInsets.only(top: 120),
               child: Center(
                 child: Text(
-                  "Network setup successful.",
+                  "Setup network",
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
                 ),
               ),
@@ -29,7 +31,7 @@ class SetupNetworkPharmacy1 extends StatelessWidget {
               height: 58,
               child: const Text(
                 textAlign: TextAlign.center,
-                "You’ve successfully setup your network, you will be able to see them all when you login to the app.",
+                "Setup your network and add patients, specialists and hospitals.",
                 style: TextStyle(fontSize: 14, color: Colors.grey),
               ),
             ),
@@ -167,20 +169,12 @@ class SetupNetworkPharmacy1 extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            Container(
-              width: 335,
-              height: 54,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  color: Colors.white,
-                  border: Border.all(color: Colors.blue)),
-              child: const Center(
-                child: Text(
-                  "I'll do this later",
-                  style: TextStyle(color: Colors.blue),
-                ),
-              ),
-            )
+            GestureDetector(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DestributionOnboarding1())),
+                child: MyBlueButton(text: "Continue with setup"))
           ],
         ),
       )),

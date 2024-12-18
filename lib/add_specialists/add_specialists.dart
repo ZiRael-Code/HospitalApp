@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/invite_through_link.dart';
 import 'package:hospital_appp/add%20patients/upload_file.dart';
+import 'package:hospital_appp/add_specialists/invite_through_link_specialists.dart';
+import 'package:hospital_appp/add_specialists/upload_file_specailists.dart';
 
 class AddSpecialists extends StatefulWidget {
   const AddSpecialists({super.key});
@@ -107,8 +109,8 @@ class _AddSpecialistsState extends State<AddSpecialists>
                       child: TabBarView(
                         controller: _tabController,
                         children: [
-                          Center(child: UploadFile()),
-                          const Center(child: InviteThroughLink()),
+                          Center(child: UploadFileSpecailists()),
+                          const Center(child: InviteThroughLinkSpecialists()),
                         ],
                       ),
                     ),

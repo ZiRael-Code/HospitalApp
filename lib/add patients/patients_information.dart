@@ -62,148 +62,170 @@ class _PatientsInformationState extends State<PatientsInformation> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 40),
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Container(
-                      width: 35,
-                      height: 35,
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/images/back.svg',
-                        width: 8.0,
-                        height: 15,
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Container(
+                        width: 35,
+                        height: 35,
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: const Color(0xFFE5E5E5),
+                        ),
+                        child: SvgPicture.asset(
+                          'assets/images/back.svg',
+                          width: 8.0,
+                          height: 15,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 60),
-                  const Text(
-                    "Patients information",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                    const SizedBox(width: 60),
+                    const Text(
+                      "Patients information",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              const SizedBox(height: 40),
 
               // Patient full name
-              const Text(
-                "Patient full name",
-                style: TextStyle(fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: const Text(
+                  "Patient full name",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
-              const SizedBox(height: 10),
-              PatientsTextfield(
-                height: 50,
-                width: 335,
-                hinttext: "e.g Janet Okoli",
-                controller: _nameController,
+
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: PatientsTextfield(
+                  height: 50,
+                  width: 335,
+                  hinttext: "e.g Janet Okoli",
+                  controller: _nameController,
+                ),
               ),
-              const SizedBox(height: 20),
 
               // Patient phone number
-              const Text(
-                "Patient phone number",
-                style: TextStyle(fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: const Text(
+                  "Patient phone number",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
-              const SizedBox(height: 10),
-              PatientsTextfield(
-                height: 50,
-                width: 335,
-                hinttext: "e.g 08011112233",
-                controller: _phoneNumberController,
+
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: PatientsTextfield(
+                  height: 50,
+                  width: 335,
+                  hinttext: "e.g 08011112233",
+                  controller: _phoneNumberController,
+                ),
               ),
-              const SizedBox(height: 20),
 
               // Gender and Age
-              const Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Gender",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: const Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Gender",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 10),
+                        PatientsTextfield(
+                          height: 50,
+                          width: 157,
+                          hinttext: "e.g Female",
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 30),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Age",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 10),
+                          PatientsTextfield(
+                            height: 50,
+                            width: 157,
+                            hinttext: "e.g 34",
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 10),
-                      PatientsTextfield(
-                        height: 50,
-                        width: 157,
-                        hinttext: "e.g Female",
-                      ),
-                    ],
-                  ),
-                  SizedBox(width: 30),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Age",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: 10),
-                      PatientsTextfield(
-                        height: 50,
-                        width: 157,
-                        hinttext: "e.g 34",
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
-              const SizedBox(height: 20),
 
               // Blood group and Genotype
-              const Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Blood group",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: const Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Blood group",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 10),
+                        PatientsTextfield(
+                          height: 50,
+                          width: 157,
+                          hinttext: "O+",
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 30),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Genotype",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 10),
+                          PatientsTextfield(
+                            height: 50,
+                            width: 157,
+                            hinttext: "AS",
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 10),
-                      PatientsTextfield(
-                        height: 50,
-                        width: 157,
-                        hinttext: "O+",
-                      ),
-                    ],
-                  ),
-                  SizedBox(width: 30),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Genotype",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: 10),
-                      PatientsTextfield(
-                        height: 50,
-                        width: 157,
-                        hinttext: "AS",
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
-              const SizedBox(height: 20),
 
               // Location
-              const Text(
-                "Location",
-                style: TextStyle(fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: const Text(
+                  "Location",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
               const SizedBox(height: 10),
               PatientsTextfield(
@@ -257,11 +279,12 @@ class _PatientsInformationState extends State<PatientsInformation> {
                     );
                   }
                 },
-                child: MyBlueButton(
-                    text: widget.patient == null ? "Add Patient" : "Save"),
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 30),
+                  child: MyBlueButton(
+                      text: widget.patient == null ? "Add Patient" : "Save"),
+                ),
               ),
-
-              const SizedBox(height: 30),
             ],
           ),
         ),
