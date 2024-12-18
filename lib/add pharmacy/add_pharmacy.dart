@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/invite_through_link.dart';
 import 'package:hospital_appp/add%20patients/upload_file.dart';
+import 'package:hospital_appp/add%20patients/upload_file_pharmacy.dart';
 
 class AddPharmacy extends StatefulWidget {
   const AddPharmacy({super.key});
@@ -107,7 +108,7 @@ class _AddPharmacyState extends State<AddPharmacy>
                       child: TabBarView(
                         controller: _tabController,
                         children: [
-                          Center(child: UploadFile()),
+                          Center(child: UploadFilePharmacy()),
                           const Center(child: InviteThroughLink()),
                         ],
                       ),

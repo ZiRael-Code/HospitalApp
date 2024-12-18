@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hospital_appp/add_specialists/setup_network_specialists.dart';
 
 class SuccessPageSpecialists extends StatelessWidget {
   const SuccessPageSpecialists({super.key});
@@ -59,23 +60,29 @@ class SuccessPageSpecialists extends StatelessWidget {
               ),
             ),
             Spacer(),
-            Container(
-              width: 335,
-              height: 54,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.blue,
-                  border: Border.all(color: Colors.blue.shade50)),
-              child: Center(
-                child: Text(
-                  "Continue",
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w500),
+            GestureDetector(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SetupNetworkPharmacy())),
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 40),
+                child: Container(
+                  width: 335,
+                  height: 54,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.blue,
+                      border: Border.all(color: Colors.blue.shade50)),
+                  child: Center(
+                    child: Text(
+                      "Continue",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w500),
+                    ),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 40,
             ),
           ],
         ),

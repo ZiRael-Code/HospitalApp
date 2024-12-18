@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hospital_appp/add%20patients/set_network.dart';
 import 'package:hospital_appp/components/my_blue_button.dart';
 
 class SendInvitesSuccessPage extends StatelessWidget {
@@ -13,42 +14,41 @@ class SendInvitesSuccessPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
-              const SizedBox(height: 40),
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Container(
-                      width: 35,
-                      height: 35,
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/images/back.svg',
-                        width: 8.0,
-                        height: 15,
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Container(
+                        width: 35,
+                        height: 35,
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: const Color(0xFFE5E5E5),
+                        ),
+                        child: SvgPicture.asset(
+                          'assets/images/back.svg',
+                          width: 8.0,
+                          height: 15,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Center(
-                child: Text(
-                  "Success!",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 28,
-                  ),
+                  ],
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              const Center(
+                child: Padding(
+                  padding: EdgeInsets.only(top: 20, bottom: 20),
+                  child: Text(
+                    "Success!",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 width: 256,
@@ -62,10 +62,13 @@ class SendInvitesSuccessPage extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              const MyBlueButton(text: "Done"),
-              const SizedBox(
-                height: 30,
-              )
+              GestureDetector(
+                  onTap: () => Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => SetupNetwork())),
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 30),
+                    child: const MyBlueButton(text: "Done"),
+                  )),
             ],
           ),
         ),

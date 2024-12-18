@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/send_invites.dart';
+import 'package:hospital_appp/add_specialists/send_invites_specialists.dart';
 
 import '../components/contacts_checked_tile.dart';
 

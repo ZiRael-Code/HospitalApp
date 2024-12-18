@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/send_invites_successful_page.dart';
+import 'package:hospital_appp/add%20pharmacy/send_invites_successful_page_pharmacy.dart';
 import 'package:hospital_appp/components/my_blue_button.dart';
 
 class SendInvitesPharmacy extends StatefulWidget {
@@ -275,7 +276,7 @@ class _SendInvitesPharmacyState extends State<SendInvitesPharmacy> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              const SendInvitesSuccessPage())),
+                              const SendInvitesSuccessfulPagePharmacy())),
                   child: const MyBlueButton(text: "Send invites"))
             ],
           ),

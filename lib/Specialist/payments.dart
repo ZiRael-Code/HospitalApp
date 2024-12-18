@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hospital_appp/Account/Referral/my_blue_button.dart';
 import 'package:hospital_appp/Specialist/card_details.dart';
+import 'package:hospital_appp/Specialist/deviced_ordered.dart';
+import 'package:hospital_appp/decive%20distribution/DeviceOrder.dart';
 
 class Payments extends StatefulWidget {
   const Payments({super.key});
@@ -24,192 +26,192 @@ class _PaymentsState extends State<Payments> {
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(height: 40),
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () => Navigator.pop(context),
-                      child: Container(
-                        width: 45,
-                        height: 45,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: const Color(0xFFE5E5E5),
-                        ),
-                        child: SvgPicture.asset(
-                          'assets/images/back.svg',
-                          width: 12.0,
-                          height: 12.0,
-                          fit: BoxFit.contain,
-                        ),
+          child: Column(
+            children: [
+              SizedBox(height: 40),
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      width: 45,
+                      height: 45,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: const Color(0xFFE5E5E5),
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/images/back.svg',
+                        width: 12.0,
+                        height: 12.0,
+                        fit: BoxFit.contain,
                       ),
                     ),
-                    SizedBox(width: 90),
-                    Text(
-                      "Payments",
-                      style:
-                          TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(width: 90),
+                  Text(
+                    "Payments",
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+              SizedBox(height: 40),
+
+              // Cash on Delivery Tile
+              buildPaymentOption(
+                title: "Cash on delivery",
+                iconPath: "assets/images/cart.svg",
+                isExpanded: isCashOnDeliveryExpanded,
+                onExpandToggle: () {
+                  setState(() {
+                    isCashOnDeliveryExpanded = !isCashOnDeliveryExpanded;
+                  });
+                },
+                expandedContent: Column(
+                  children: [
+                    SizedBox(
+                        width: 280,
+                        child: Divider(
+                          color: Colors.grey.shade200,
+                        )),
+                    Theme(
+                      data: ThemeData(
+                        checkboxTheme: CheckboxThemeData(
+                          shape: CircleBorder(), // Makes the checkbox circular
+                        ),
+                      ),
+                      child: CheckboxListTile(
+                        value: isCashOnDeliverySelected,
+                        onChanged: (value) {
+                          setState(() {
+                            isCashOnDeliverySelected = value ?? false;
+                          });
+                        },
+                        title: Text(
+                          "Select this payment method",
+                          style: TextStyle(fontSize: 14),
+                        ),
+                        controlAffinity: ListTileControlAffinity.leading,
+                        activeColor: Colors.blue,
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(height: 40),
+              ),
+              SizedBox(height: 10),
 
-                // Cash on Delivery Tile
-                buildPaymentOption(
-                  title: "Cash on delivery",
-                  iconPath: "assets/images/cart.svg",
-                  isExpanded: isCashOnDeliveryExpanded,
-                  onExpandToggle: () {
-                    setState(() {
-                      isCashOnDeliveryExpanded = !isCashOnDeliveryExpanded;
-                    });
-                  },
-                  expandedContent: Column(
-                    children: [
-                      SizedBox(
-                          width: 280,
-                          child: Divider(
-                            color: Colors.grey.shade200,
-                          )),
-                      Theme(
-                        data: ThemeData(
-                          checkboxTheme: CheckboxThemeData(
-                            shape:
-                                CircleBorder(), // Makes the checkbox circular
-                          ),
-                        ),
-                        child: CheckboxListTile(
-                          value: isCashOnDeliverySelected,
-                          onChanged: (value) {
-                            setState(() {
-                              isCashOnDeliverySelected = value ?? false;
-                            });
-                          },
-                          title: Text(
-                            "Select this payment method",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                          controlAffinity: ListTileControlAffinity.leading,
-                          activeColor: Colors.blue,
-                        ),
-                      ),
-                    ],
-                  ),
+              // Credit/Debit Card Tile
+              GestureDetector(
+                onTap: () => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CardDetails())),
+                child: buildPaymentOption(
+                  title: "Credit / Debit card",
+                  iconPath: "assets/images/creditcardicon.svg",
+                  isExpanded: false, // No expand functionality for now
+                  onExpandToggle: null, // Expand button disabled
+                  expandedContent: SizedBox.shrink(), // No expanded content
+                  showArrowIcon: true, // Add down arrow icon only
                 ),
-                SizedBox(height: 10),
+              ),
+              SizedBox(height: 10),
 
-                // Credit/Debit Card Tile
-                GestureDetector(
-                  onTap: () => Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CardDetails())),
-                  child: buildPaymentOption(
-                    title: "Credit / Debit card",
-                    iconPath: "assets/images/creditcardicon.svg",
-                    isExpanded: false, // No expand functionality for now
-                    onExpandToggle: null, // Expand button disabled
-                    expandedContent: SizedBox.shrink(), // No expanded content
-                    showArrowIcon: true, // Add down arrow icon only
-                  ),
-                ),
-                SizedBox(height: 10),
-
-                // Bank Transfer Tile
-                buildPaymentOption(
-                  title: "Bank transfer",
-                  iconPath: "assets/images/bank.svg",
-                  isExpanded: isBankTransferExpanded,
-                  onExpandToggle: () {
-                    setState(() {
-                      isBankTransferExpanded = !isBankTransferExpanded;
-                    });
-                  },
-                  expandedContent: Column(
-                    children: [
-                      SizedBox(
-                          width: 280,
-                          child: Divider(
-                            color: Colors.grey.shade200,
-                          )),
-                      SizedBox(
-                        height: 10,
+              // Bank Transfer Tile
+              buildPaymentOption(
+                title: "Bank transfer",
+                iconPath: "assets/images/bank.svg",
+                isExpanded: isBankTransferExpanded,
+                onExpandToggle: () {
+                  setState(() {
+                    isBankTransferExpanded = !isBankTransferExpanded;
+                  });
+                },
+                expandedContent: Column(
+                  children: [
+                    SizedBox(
+                        width: 280,
+                        child: Divider(
+                          color: Colors.grey.shade200,
+                        )),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      "First Bank Of Nigeria PLC",
+                      style: TextStyle(
+                        fontSize: 14,
                       ),
-                      const Text(
-                        "First Bank Of Nigeria PLC",
-                        style: TextStyle(
-                          fontSize: 14,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        width: 252,
-                        height: 50,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                bottom: 8,
-                                right: 8,
-                              ),
-                              child: Text(
-                                "0123456789",
-                                style: TextStyle(
-                                    color: Colors.blue,
-                                    fontSize: 28,
-                                    fontWeight: FontWeight.bold),
-                              ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      width: 252,
+                      height: 50,
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 8,
+                              right: 8,
                             ),
-                            Container(
-                              width: 80,
-                              height: 32,
-                              decoration: BoxDecoration(
-                                  color: Colors.blue.shade50,
-                                  borderRadius: BorderRadius.circular(10)),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                      "assets/images/copyicon.svg"),
-                                  SizedBox(
-                                    width: 6,
-                                  ),
-                                  const Text(
-                                    "Copy",
-                                    style: TextStyle(fontSize: 12),
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
+                            child: Text(
+                              "0123456789",
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Container(
+                            width: 80,
+                            height: 32,
+                            decoration: BoxDecoration(
+                                color: Colors.blue.shade50,
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset("assets/images/copyicon.svg"),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                const Text(
+                                  "Copy",
+                                  style: TextStyle(fontSize: 12),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "APPLINIC BANK ACCOUNT",
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      )
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "APPLINIC BANK ACCOUNT",
+                      style: TextStyle(color: Colors.grey, fontSize: 12),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    )
+                  ],
                 ),
-                Spacer(),
-                Align(
-                    alignment: Alignment.bottomCenter,
-                    child: MyBlueButton(text: "Continue")),
-                const SizedBox(height: 40),
-              ],
-            ),
+              ),
+              Spacer(),
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child: GestureDetector(
+                      onTap: () => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DevicedOrdered())),
+                      child: MyBlueButton(text: "Continue"))),
+              const SizedBox(height: 40),
+            ],
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hospital_appp/add%20patients/confirm_file_upload.dart';
 
 class UploadFile extends StatefulWidget {
   const UploadFile({super.key});
@@ -55,21 +56,26 @@ class _UploadFileState extends State<UploadFile> {
               ),
             ),
           ),
-          SizedBox(
-            height: 100,
-          ),
-          Container(
-            width: 335,
-            height: 54,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6),
-                color: Colors.blue.shade50,
-                border: Border.all(color: Colors.blue.shade50)),
-            child: Center(
-              child: Text(
-                "Add manually",
-                style:
-                    TextStyle(color: Colors.blue, fontWeight: FontWeight.w500),
+          Spacer(),
+          GestureDetector(
+            onTap: () => Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => ConfirmFileUpload())),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 30),
+              child: Container(
+                width: 335,
+                height: 54,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    color: Colors.blue.shade50,
+                    border: Border.all(color: Colors.blue.shade50)),
+                child: Center(
+                  child: Text(
+                    "Add manually",
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.w500),
+                  ),
+                ),
               ),
             ),
           )

@@ -21,103 +21,103 @@ class _RegisterPageState extends State<RegisterPage> {
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               children: [
-                const SizedBox(
-                  height: 40,
-                ),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Register",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 28,
+                Padding(
+                  padding: const EdgeInsets.only(top: 40),
+                  child: const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Register",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 28,
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "First Name",
-                    style: TextStyle(
-                      fontSize: 14,
+                Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "First Name",
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: const MyTextfield(
+                    hinttext: "First Name",
+                    obscuretext: false,
+                  ),
                 ),
-                const MyTextfield(
-                  hinttext: "First Name",
-                  obscuretext: false,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Last Name",
-                    style: TextStyle(
-                      fontSize: 14,
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Last Name",
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: const MyTextfield(
+                    hinttext: "Last Name",
+                    obscuretext: false,
+                  ),
                 ),
-                const MyTextfield(
-                  hinttext: "Last Name",
-                  obscuretext: false,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Phone Number",
-                    style: TextStyle(
-                      fontSize: 14,
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Phone Number",
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: const MyTextfield(
+                    hinttext: "Phone Number",
+                    obscuretext: false,
+                  ),
                 ),
-                const MyTextfield(
-                  hinttext: "Phone Number",
-                  obscuretext: false,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Email",
-                    style: TextStyle(
-                      fontSize: 14,
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Email",
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: const MyTextfield(
+                    hinttext: "Email Address",
+                    obscuretext: false,
+                  ),
                 ),
-                const MyTextfield(
-                  hinttext: "Email Address",
-                  obscuretext: false,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                GestureDetector(
-                  onTap: () => Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => SetPassword())),
-                  child: const MyBlueButton(
-                    text: "Register",
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: GestureDetector(
+                    onTap: () => Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => SetPassword())),
+                    child: const MyBlueButton(
+                      text: "Register",
+                    ),
                   ),
                 ),
                 const SizedBox(

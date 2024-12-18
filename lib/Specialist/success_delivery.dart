@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hospital_appp/Account/Referral/my_blue_button.dart';
+import 'package:hospital_appp/onboarding/login_page.dart';
 
 class SuccessDelivery extends StatelessWidget {
   const SuccessDelivery({super.key});
@@ -41,7 +42,10 @@ class SuccessDelivery extends StatelessWidget {
                 ),
                 SvgPicture.asset("assets/images/successimg.svg"),
                 const Spacer(),
-                MyBlueButton(text: "Continue to login"),
+                GestureDetector(
+                    onTap: () => Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LoginPage())),
+                    child: MyBlueButton(text: "Continue to login")),
                 const SizedBox(
                   height: 40,
                 )

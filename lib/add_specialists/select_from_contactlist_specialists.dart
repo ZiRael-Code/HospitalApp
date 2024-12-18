@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/send_invites.dart';
+import 'package:hospital_appp/add_specialists/send_invites_specialists.dart';
 
 import '../components/contacts_checked_tile.dart';
 
@@ -9,10 +10,12 @@ class SelectFromContactListSpecialists extends StatefulWidget {
   const SelectFromContactListSpecialists({super.key});
 
   @override
-  State<SelectFromContactListSpecialists> createState() => _SelectFromContactListSpecialistsState();
+  State<SelectFromContactListSpecialists> createState() =>
+      _SelectFromContactListSpecialistsState();
 }
 
-class _SelectFromContactListSpecialistsState extends State<SelectFromContactListSpecialists>
+class _SelectFromContactListSpecialistsState
+    extends State<SelectFromContactListSpecialists>
     with TickerProviderStateMixin {
   late TabController _tabController;
   final String referralCode = '7f44aiwuehjands3gui';
@@ -268,7 +271,7 @@ class _SelectFromContactListSpecialistsState extends State<SelectFromContactList
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SendInvites(
+                                builder: (context) => SendInvitesSpecialists(
                                     selectedContacts:
                                         selectedContacts.toList()))),
                         child: Container(

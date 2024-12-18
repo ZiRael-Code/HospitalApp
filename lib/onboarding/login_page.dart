@@ -22,110 +22,112 @@ class _LoginPageState extends State<LoginPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 60,
-                ),
-                Center(
-                  child: Image.asset(
-                    "assets/images/illustration.png",
-                    scale: 4,
+                Padding(
+                  padding: const EdgeInsets.only(top: 60),
+                  child: Center(
+                    child: Image.asset(
+                      "assets/images/illustration.png",
+                      scale: 4,
+                    ),
                   ),
                 ),
-                const SizedBox(
-                  height: 25,
-                ),
-                Column(
-                  children: [
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Welcome",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28,
+                Padding(
+                  padding: const EdgeInsets.only(top: 25),
+                  child: Column(
+                    children: [
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Welcome",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 28,
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Username",
-                        style: TextStyle(
-                          fontSize: 14,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: const Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Username",
+                            style: TextStyle(
+                              fontSize: 14,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const MyTextfield(
-                      hinttext: "Username",
-                      obscuretext: false,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Password",
-                        style: TextStyle(
-                          fontSize: 14,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: const MyTextfield(
+                          hinttext: "Username",
+                          obscuretext: false,
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    MyTextfield(
-                      hinttext: "Password",
-                      obscuretext: _obscureText,
-                      suffixicon: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            _obscureText = !_obscureText;
-                          });
-                        },
-                        icon: Icon(_obscureText
-                            ? Icons.visibility
-                            : Icons.visibility_off),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: const Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Password",
+                            style: TextStyle(
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    const Align(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        "Forgot passowrd",
-                        style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: MyTextfield(
+                          hinttext: "Password",
+                          obscuretext: _obscureText,
+                          suffixicon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _obscureText = !_obscureText;
+                              });
+                            },
+                            icon: Icon(_obscureText
+                                ? Icons.visibility
+                                : Icons.visibility_off),
+                          ),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    GestureDetector(
-                        onTap: () => Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const MainNavigator())),
-                        child: const MyBlueButton(text: "Login")),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Center(
-                      child: Text("Or login with"),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: const Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            "Forgot passowrd",
+                            style: TextStyle(
+                                color: Colors.blue,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30),
+                        child: GestureDetector(
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MainNavigator(
+                                          index: 0,
+                                        ))),
+                            child: const MyBlueButton(text: "Login")),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: const Center(
+                          child: Text("Or login with"),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Center(
                   child: Container(
@@ -146,27 +148,27 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text("Don't have an account yet?"),
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    GestureDetector(
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const RegisterPage())),
-                      child: const Text(
-                        "Register here",
-                        style: TextStyle(color: Colors.blue),
+                Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Don't have an account yet?"),
+                      const SizedBox(
+                        width: 4,
                       ),
-                    )
-                  ],
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const RegisterPage())),
+                        child: const Text(
+                          "Register here",
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),

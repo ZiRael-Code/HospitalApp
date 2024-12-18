@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hospital_appp/add%20patients/set_network.dart';
 
 class Success extends StatelessWidget {
   const Success({super.key});
@@ -59,18 +60,22 @@ class Success extends StatelessWidget {
               ),
             ),
             Spacer(),
-            Container(
-              width: 335,
-              height: 54,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.blue,
-                  border: Border.all(color: Colors.blue.shade50)),
-              child: Center(
-                child: Text(
-                  "Continue",
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w500),
+            GestureDetector(
+              onTap: () => Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => SetupNetwork())),
+              child: Container(
+                width: 335,
+                height: 54,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.blue,
+                    border: Border.all(color: Colors.blue.shade50)),
+                child: Center(
+                  child: Text(
+                    "Continue",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w500),
+                  ),
                 ),
               ),
             ),
