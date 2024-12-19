@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_appp/Patient/select_from_contact_list.dart';
 
@@ -17,29 +18,29 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
         child: Column(
           children: [
             SizedBox(
-              width: 305,
+              width: getFontSize(305, context),
               child: Column(
                 children: [
                   Text(
                     "Send an invite link to a patient, so when the person registers on the app using your link, you will be able to access their details.",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: getFontSize(30, context),
                   ),
                   Text(
                     "To download the MyVitalz app, click on this link to download from playstore or app store.",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 30,
+              height: getFontSize(30, context),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,7 +49,7 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      width: 30,
+                      width: getFontSize(30, context),
                     ),
                     Text("Link: "),
                     Text(
@@ -58,10 +59,10 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: getFontSize(10, context)),
                   child: Container(
-                    width: 79,
-                    height: 28,
+                    width: getFontSize(79, context),
+                    height: getFontSize(28, context),
                     decoration: BoxDecoration(
                       color: Colors.blue[100],
                       borderRadius: BorderRadius.circular(8),
@@ -69,17 +70,17 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                     child: Row(
                       children: [
                         SizedBox(
-                          width: 10,
+                          width: getFontSize(10, context),
                         ),
                         SizedBox(
-                          width: 14,
-                          height: 14,
+                          width: getFontSize(14, context),
+                          height: getFontSize(14, context),
                           child: Image.asset(
                             "assets/images/Union.png",
                           ),
                         ),
                         SizedBox(
-                          width: 8,
+                          width: getFontSize(8, context),
                         ),
                         Text("Copy")
                       ],
@@ -89,15 +90,15 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
               ],
             ),
             SizedBox(
-              height: 40,
+              height: getFontSize(40, context),
             ),
             InkWell(
               onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SelectFromContactList())),
               child:
             Center(
               child: Container(
-                width: 220,
-                height: 44,
+                width: getFontSize(220, context),
+                height: getFontSize(44, context),
                 decoration: BoxDecoration(
                   color: Colors.blue[100],
                   borderRadius: BorderRadius.circular(16),

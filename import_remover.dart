@@ -2,7 +2,7 @@ import 'dart:io';
 
 void main() {
   // Directory containing Dart files
-  final directory = Directory('lib');
+  final directory = Directory('lib/Account/Referral');
 
   if (!directory.existsSync()) {
     print('The directory "lib" does not exist.');
@@ -22,11 +22,11 @@ void main() {
         //   '',
         // );
         final updatedContent = content.replaceAll(
-          "import '../MainSelectionScreen/Dashboard.dart';\n",
+          "import '../MainScreen/Dashboard.dart';",
           '',
         );
         final updatedContent1 = content.replaceAll(
-          "import '../../MainSelectionScreen/Dashboard.dart';\n",
+          "import '../MainScreen/Dashboard.dart';",
           '',
         );
 

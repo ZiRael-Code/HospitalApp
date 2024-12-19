@@ -100,7 +100,7 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
                   hintStyle: TextStyle(color: Colors.grey),
                   prefixIcon: Icon(Icons.search, color: Colors.grey),
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(vertical: 15),
+                  contentPadding: EdgeInsets.symmetric(vertical: getFontSize(15, context)),
                 ),
               ),
             ),
@@ -114,7 +114,7 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
                   itemBuilder: (context, index) {
                     if (index == filteredAddresses.length) {
                       return Padding(
-                        padding: EdgeInsets.symmetric(vertical: 20),
+                        padding: EdgeInsets.symmetric(vertical: getFontSize(20, context)),
                         child: Row(
                           children: [
                             Column(

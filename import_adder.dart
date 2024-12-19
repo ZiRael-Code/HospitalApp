@@ -2,10 +2,10 @@ import 'dart:io';
 
 void main() {
   // Specify the folder to process
-  final directory = Directory('lib/Account/Referral');
+  final directory = Directory('lib/Specialist');
 
   // The import statement to add
-  const importStatement = "import '../../MainScreen/Dashboard.dart';";
+  const importStatement = "import '../MainScreen/Dashboard.dart';";
 
   if (directory.existsSync()) {
     directory.listSync(recursive: true).forEach((fileEntity) {

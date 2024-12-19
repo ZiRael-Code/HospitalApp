@@ -1,10 +1,11 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/MainScreen/MainNavigator.dart';
 
 class OrderPrescriptionSummary extends StatefulWidget {
-  const OrderPrescriptionSummary({super.key});
+  OrderPrescriptionSummary({super.key});
 
   @override
   State<OrderPrescriptionSummary> createState() =>
@@ -19,8 +20,8 @@ class _OrderPrescriptionSummaryState extends State<OrderPrescriptionSummary> {
         title: Row(
           children: [
             Container(
-              width: 35,
-              height: 35,
+              width: getFontSize(35, context),
+              height: getFontSize(35, context),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
@@ -28,17 +29,17 @@ class _OrderPrescriptionSummaryState extends State<OrderPrescriptionSummary> {
               ),
               child: SvgPicture.asset(
                 'assets/images/back.svg',
-                width: 8.0,
-                height: 15,
+                width: getFontSize(8.0, context),
+                height: getFontSize(15, context),
               ),
             ),
             Spacer(),
             Container(
               alignment: Alignment.center,
-              child: const Center(
+              child: Center(
                 child: Text(
                   'Order prescription',
-                  style: TextStyle(fontSize: 20, fontStyle: FontStyle.normal),
+                  style: TextStyle(fontSize: getFontSize(20, context), fontStyle: FontStyle.normal),
                 ),
               ),
             ),
@@ -54,37 +55,37 @@ class _OrderPrescriptionSummaryState extends State<OrderPrescriptionSummary> {
               padding: EdgeInsets.all(14),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(width: 0.7, color: Colors.black26)),
+                  border: Border.all(width: getFontSize(0.7, context), color: Colors.black26)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(
-                      width: 61,
-                      height: 61,
+                      width: getFontSize(61, context),
+                      height: getFontSize(61, context),
                       child: CircleAvatar(
                         radius: 50,
                         backgroundImage:
                             AssetImage("assets/images/pharm1.jpeg"),
                       )),
                   SizedBox(
-                    width: 10,
+                    width: getFontSize(10, context),
                   ),
                   Column(
                     children: [
                       Text(
                         "Randy Blue pharmacy",
-                        style: TextStyle(fontSize: 17),
+                        style: TextStyle(fontSize: getFontSize(17, context)),
                       ),
                       SizedBox(
-                        height: 5,
+                        height: getFontSize(5, context),
                       ),
                       Container(
                           padding:
-                              EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                              EdgeInsets.symmetric(vertical: getFontSize(4, context), horizontal: getFontSize(8, context)),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(18),
                               border: Border.all(
-                                  width: 0.5, color: Colors.black26)),
+                                  width: getFontSize(0.5, context), color: Colors.black26)),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -102,33 +103,33 @@ class _OrderPrescriptionSummaryState extends State<OrderPrescriptionSummary> {
               ),
             ),
             SizedBox(
-              height: 15,
+              height: getFontSize(15, context),
             ),
             Row(
               children: [
-                Text("Drug name:    ", style: TextStyle(fontSize: 14)),
+                Text("Drug name:    ", style: TextStyle(fontSize: getFontSize(14, context))),
                 Text(
                   "Ibuprofen 500mg x 24",
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: getFontSize(16, context),
                       color: Colors.blue,
                       fontWeight: FontWeight.w500),
                 )
               ],
             ),
             SizedBox(
-              height: 25,
+              height: getFontSize(25, context),
             ),
             Row(
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Amount per pack", style: TextStyle(fontSize: 14)),
+                    Text("Amount per pack", style: TextStyle(fontSize: getFontSize(14, context))),
                     Text(
                       "N1,500",
                       style: TextStyle(
-                          fontSize: 16,
+                          fontSize: getFontSize(16, context),
                           color: Colors.blue,
                           fontWeight: FontWeight.w500),
                     )
@@ -138,11 +139,11 @@ class _OrderPrescriptionSummaryState extends State<OrderPrescriptionSummary> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text("No of units:", style: TextStyle(fontSize: 14)),
+                    Text("No of units:", style: TextStyle(fontSize: getFontSize(14, context))),
                     Text(
                       "12 per pack",
                       style: TextStyle(
-                          fontSize: 16,
+                          fontSize: getFontSize(16, context),
                           color: Colors.blue,
                           fontWeight: FontWeight.w500),
                     )
@@ -171,7 +172,7 @@ class _OrderPrescriptionSummaryState extends State<OrderPrescriptionSummary> {
                   ),
                   padding: EdgeInsets.all(12),
                   child: Text(
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
                       "Continue"),
                 ))
           ],

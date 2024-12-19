@@ -6,7 +6,7 @@ import 'package:hospital_appp/Specialist/device_sales3.dart';
 import '../MainScreen/Dashboard.dart';
 
 class DeviceSales2 extends StatefulWidget {
-  const DeviceSales2({super.key});
+  DeviceSales2({super.key});
 
   @override
   State<DeviceSales2> createState() => _DeviceSales2State();
@@ -52,7 +52,7 @@ class _DeviceSales2State extends State<DeviceSales2> {
         body: Padding(padding: EdgeInsets.all(12),
     child: Column(
     children: [
-      SizedBox(height: 25,),
+      SizedBox(height: getFontSize(25, context),),
       SizedBox(
         child: Text("Have an overall view of the total amount of devices ordered and sold, and other statistics of the device sales.", textAlign: TextAlign.center,),
       ),
@@ -60,7 +60,7 @@ class _DeviceSales2State extends State<DeviceSales2> {
       SvgPicture.asset("assets/images/mansales.svg"),
       Spacer(),
       SvgPicture.asset("assets/images/twodot.svg"),
-      SizedBox(height: 12,),
+      SizedBox(height: getFontSize(12, context),),
       ElevatedButton(
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(builder:
@@ -74,14 +74,14 @@ class _DeviceSales2State extends State<DeviceSales2> {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+          padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
           child: Text(
             'Continue',
-            style: TextStyle(color: Colors.white, fontSize: 18),
+            style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
           ),
         ),
       ),
-      SizedBox(height: 16,),
+      SizedBox(height: getFontSize(16, context),),
       ]
     )
     )

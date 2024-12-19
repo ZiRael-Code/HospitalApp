@@ -1,10 +1,11 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/invite_through_link.dart';
 import 'package:hospital_appp/add%20patients/upload_file.dart';
 
 class AddAPatient extends StatefulWidget {
-  const AddAPatient({super.key});
+  AddAPatient({super.key});
 
   @override
   State<AddAPatient> createState() => _AddAPatientState();
@@ -34,38 +35,38 @@ class _AddAPatientState extends State<AddAPatient>
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(15, context)),
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 40),
+                padding: EdgeInsets.only(top: getFontSize(40, context)),
                 child: Row(
                   children: [
                     GestureDetector(
                       onTap: () => Navigator.pop(context),
                       child: Container(
-                        width: 35,
-                        height: 35,
-                        padding: const EdgeInsets.all(10),
+                        width: getFontSize(35, context),
+                        height: getFontSize(35, context),
+                        padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-                          color: const Color(0xFFE5E5E5),
+                          color: Color(0xFFE5E5E5),
                         ),
                         child: SvgPicture.asset(
                           'assets/images/back.svg',
-                          width: 8.0,
-                          height: 15,
+                          width: getFontSize(8.0, context),
+                          height: getFontSize(15, context),
                         ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 70),
-                      child: const Center(
+                      padding: EdgeInsets.only(top: getFontSize(70, context)),
+                      child: Center(
                         child: Text(
                           "Add a patient",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                            fontSize: getFontSize(20, context),
                           ),
                         ),
                       ),
@@ -74,15 +75,15 @@ class _AddAPatientState extends State<AddAPatient>
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 10),
+                padding: EdgeInsets.only(top: getFontSize(10, context)),
                 child: Expanded(
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 36),
+                        padding: EdgeInsets.only(top: getFontSize(36, context)),
                         child: Container(
-                          height: 50,
-                          padding: const EdgeInsets.all(4),
+                          height: getFontSize(50, context),
+                          padding: EdgeInsets.all(4),
                           width: double.infinity,
                           decoration: BoxDecoration(
                             color: Colors.grey[200],
@@ -97,8 +98,8 @@ class _AddAPatientState extends State<AddAPatient>
                               borderRadius: BorderRadius.circular(30),
                             ),
                             labelColor: Colors.black,
-                            unselectedLabelColor: const Color(0xff4F4F4F),
-                            tabs: const [
+                            unselectedLabelColor: Color(0xff4F4F4F),
+                            tabs: [
                               Tab(text: "Upload file"),
                               Tab(text: "Send invite link"),
                             ],
@@ -106,13 +107,13 @@ class _AddAPatientState extends State<AddAPatient>
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: EdgeInsets.only(top: getFontSize(10, context)),
                         child: Expanded(
                           child: TabBarView(
                             controller: _tabController,
                             children: [
                               Center(child: UploadFile()),
-                              const Center(child: InviteThroughLink()),
+                              Center(child: InviteThroughLink()),
                             ],
                           ),
                         ),

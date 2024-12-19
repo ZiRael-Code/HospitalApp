@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -69,17 +70,17 @@ class _AddNewSpecialistState extends State<AddNewSpecialist>
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: Column(
             children: [
-              SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
               Row(
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      width: 35,
-                      height: 35,
+                      width: getFontSize(35, context),
+                      height: getFontSize(35, context),
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
@@ -87,30 +88,30 @@ class _AddNewSpecialistState extends State<AddNewSpecialist>
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
-                        width: 8.0,
-                        height: 15,
+                        width: getFontSize(8.0, context),
+                        height: getFontSize(15, context),
                       ),
                     ),
                   ),
-                  SizedBox(width: 70),
+                  SizedBox(width: getFontSize(70, context)),
                   Center(
                     child: Text(
                       "Add a specialist",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: getFontSize(20, context),
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               Expanded(
                 child: Column(
                   children: [
-                    SizedBox(height: 35),
+                    SizedBox(height: getFontSize(35, context)),
                     Container(
-                      height: 50,
+                      height: getFontSize(50, context),
                       padding: EdgeInsets.all(4),
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -133,11 +134,11 @@ class _AddNewSpecialistState extends State<AddNewSpecialist>
                         ],
                       ),
                     ),
-                    SizedBox(height: 40),
+                    SizedBox(height: getFontSize(40, context)),
                     // Only show the search bar for the first tab
                     if (_tabController.index == 0)
                       Container(
-                        height: 50,
+                        height: getFontSize(50, context),
                         padding: EdgeInsets.all(4),
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -149,7 +150,7 @@ class _AddNewSpecialistState extends State<AddNewSpecialist>
                           decoration: InputDecoration(
                             hintText: "Patient name or Phone number",
                             hintStyle: TextStyle(
-                                fontSize: 14, color: Colors.grey[400]),
+                                fontSize: getFontSize(14, context), color: Colors.grey[400]),
                             prefixIcon: Icon(Icons.search),
                             prefixIconColor: Colors.grey[400],
                             enabledBorder: InputBorder.none,
@@ -157,7 +158,7 @@ class _AddNewSpecialistState extends State<AddNewSpecialist>
                           ),
                         ),
                       ),
-                    SizedBox(height: 10),
+                    SizedBox(height: getFontSize(10, context)),
                     Expanded(
                       child: TabBarView(
                         controller: _tabController,

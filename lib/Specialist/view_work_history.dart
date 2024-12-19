@@ -1,7 +1,8 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 
 class ViewWorkHistorys extends StatefulWidget {
-  const ViewWorkHistorys({super.key});
+  ViewWorkHistorys({super.key});
 
   @override
   State<ViewWorkHistorys> createState() => _ViewWorkHistorysState();
@@ -10,6 +11,6 @@ class ViewWorkHistorys extends StatefulWidget {
 class _ViewWorkHistorysState extends State<ViewWorkHistorys> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Placeholder();
   }
 }

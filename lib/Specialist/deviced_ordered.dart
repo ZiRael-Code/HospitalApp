@@ -1,10 +1,11 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hospital_appp/Account/Referral/my_blue_button.dart';
 import 'package:hospital_appp/Specialist/success_delivery.dart';
 
 class DevicedOrdered extends StatelessWidget {
-  const DevicedOrdered({super.key});
+  DevicedOrdered({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,33 +13,33 @@ class DevicedOrdered extends StatelessWidget {
       child: Scaffold(
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: getFontSize(20, context)),
             child: Column(
               children: [
                 SizedBox(
-                  height: 80,
+                  height: getFontSize(80, context),
                 ),
                 Text(
                   "Device ordered",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 28,
+                    fontSize: getFontSize(28, context),
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: getFontSize(10, context),
                 ),
                 Container(
-                  width: 258,
-                  height: 60,
+                  width: getFontSize(258, context),
+                  height: getFontSize(60, context),
                   child: Text(
                     textAlign: TextAlign.center,
                     "Your device has been ordered and will soon get to you. You will be notified once it is available.",
-                    style: TextStyle(fontSize: 14),
+                    style: TextStyle(fontSize: getFontSize(14, context)),
                   ),
                 ),
                 SizedBox(
-                  height: 140,
+                  height: getFontSize(140, context),
                 ),
                 SvgPicture.asset("assets/images/Character.svg"),
                 Spacer(),
@@ -49,7 +50,7 @@ class DevicedOrdered extends StatelessWidget {
                             builder: (context) => SuccessDelivery())),
                     child: MyBlueButton(text: "Continue to login")),
                 SizedBox(
-                  height: 40,
+                  height: getFontSize(40, context),
                 )
               ],
             ),

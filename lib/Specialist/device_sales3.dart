@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import '../MainScreen/Dashboard.dart';
 
 class DeviceSales3 extends StatefulWidget {
-  const DeviceSales3({super.key});
+  DeviceSales3({super.key});
 
   @override
   State<DeviceSales3> createState() => _DeviceSales3State();
@@ -106,21 +106,21 @@ class _DeviceSales3State extends State<DeviceSales3> with SingleTickerProviderSt
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        SizedBox(height: 14,),
+        SizedBox(height: getFontSize(14, context),),
         Row(
           children: [
             month_date_design(
                 "August 2022"
             ),
             Spacer(),
-            Text("To", style: TextStyle(fontSize: 16),),
+            Text("To", style: TextStyle(fontSize: getFontSize(16, context)),),
             Spacer(),
             month_date_design(
                 "August 2022"
             ),
           ],
         ),
-        SizedBox(height: 24,),
+        SizedBox(height: getFontSize(24, context),),
         Row(
         children: [
           Text("Total devices ordered:"),
@@ -128,7 +128,7 @@ class _DeviceSales3State extends State<DeviceSales3> with SingleTickerProviderSt
           Text("17")
           ]
         ),
-        SizedBox(height: 14,),
+        SizedBox(height: getFontSize(14, context),),
         Row(
         children: [
           Text("Total ordered (all-time):"),
@@ -136,9 +136,9 @@ class _DeviceSales3State extends State<DeviceSales3> with SingleTickerProviderSt
           Text("178")
           ]
         ),
-        SizedBox(height: 16,),
+        SizedBox(height: getFontSize(16, context),),
         Divider(color: Colors.black12,),
-        SizedBox(height: 36,),
+        SizedBox(height: getFontSize(36, context),),
         Image.asset("assets/images/table.png")
       ],
     )
@@ -151,21 +151,21 @@ class _DeviceSales3State extends State<DeviceSales3> with SingleTickerProviderSt
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 14,),
+            SizedBox(height: getFontSize(14, context),),
             Row(
               children: [
                 month_date_design(
                     "August 2022"
                 ),
                 Spacer(),
-                Text("To", style: TextStyle(fontSize: 16),),
+                Text("To", style: TextStyle(fontSize: getFontSize(16, context)),),
                 Spacer(),
                 month_date_design(
                     "August 2022"
                 ),
               ],
             ),
-            SizedBox(height: 24,),
+            SizedBox(height: getFontSize(24, context),),
             Row(
                 children: [
                   Text("Total devices ordered:"),
@@ -173,7 +173,7 @@ class _DeviceSales3State extends State<DeviceSales3> with SingleTickerProviderSt
                   Text("17")
                 ]
             ),
-            SizedBox(height: 14,),
+            SizedBox(height: getFontSize(14, context),),
             Row(
                 children: [
                   Text("Total ordered (all-time):"),
@@ -181,9 +181,9 @@ class _DeviceSales3State extends State<DeviceSales3> with SingleTickerProviderSt
                   Text("178")
                 ]
             ),
-            SizedBox(height: 16,),
+            SizedBox(height: getFontSize(16, context),),
             Divider(color: Colors.black12,),
-            SizedBox(height: 36,),
+            SizedBox(height: getFontSize(36, context),),
             Image.asset("assets/images/table1.png")
           ],
         )
@@ -192,14 +192,14 @@ class _DeviceSales3State extends State<DeviceSales3> with SingleTickerProviderSt
 
   month_date_design(String s) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 17, vertical: 12),
+      padding: EdgeInsets.symmetric(horizontal: getFontSize(17, context), vertical: getFontSize(12, context)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(18),
         color: Color(0xffE2EDFF)
       ),
       child: Row(
         children: [
-          Text(s, style: TextStyle(fontSize: 16, color: Colors.blue),),
+          Text(s, style: TextStyle(fontSize: getFontSize(16, context), color: Colors.blue),),
           Icon(Icons.keyboard_arrow_down_sharp, color: Colors.blue,),
         ],
       ),

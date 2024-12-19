@@ -8,7 +8,7 @@ import 'package:hospital_appp/Pharmacy/view_inventory.dart';
 import '../MainScreen/Dashboard.dart';
 
 class ViewPharmacy extends StatefulWidget {
-  const ViewPharmacy({super.key});
+  ViewPharmacy({super.key});
 
   @override
   State<ViewPharmacy> createState() => _ViewPharmacyState();
@@ -25,18 +25,23 @@ class _ViewPharmacyState extends State<ViewPharmacy> {
               InkWell(
                 onTap: () => Navigator.pop(context),
                 child:
-                Container(
-                  width: getFontSize(35, context),
-                  height: getFontSize(35, context),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Color(0xFFE5E5E5),
-                  ),
-                  child: SvgPicture.asset('assets/images/back.svg',
-                    width: getFontSize(8.0, context),
-                    height: getFontSize(15, context),),
+                InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              Container(
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Color(0xFFE5E5E5),
                 ),
+                child: SvgPicture.asset('assets/images/back.svg',
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
+              ),
+              ),
+
               ),
 
               Spacer(),
@@ -85,9 +90,9 @@ class _ViewPharmacyState extends State<ViewPharmacy> {
               ]
             ),
 
-            SizedBox(height: 16,),
-            Text("Recent orders", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
-            SizedBox(height: 10,),
+            SizedBox(height: getFontSize(16, context),),
+            Text("Recent orders", style: TextStyle(fontSize: getFontSize(18, context), fontWeight: FontWeight.w500),),
+            SizedBox(height: getFontSize(10, context),),
             SingleChildScrollView(scrollDirection: Axis.horizontal,
               child:
             Row(
@@ -119,9 +124,9 @@ class _ViewPharmacyState extends State<ViewPharmacy> {
               ],
             ),
     ),
-            SizedBox(height: 25,),
-            Text("Activities", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
-            SizedBox(height: 25,),
+            SizedBox(height: getFontSize(25, context),),
+            Text("Activities", style: TextStyle(fontSize: getFontSize(18, context), fontWeight: FontWeight.w500),),
+            SizedBox(height: getFontSize(25, context),),
             Expanded(
                 child:
                 SingleChildScrollView(
@@ -164,14 +169,14 @@ class _ViewPharmacyState extends State<ViewPharmacy> {
   }){
     return  Stack(
       children: [ Container(
-          margin: EdgeInsets.symmetric(vertical: 6),
+          margin: EdgeInsets.symmetric(vertical: getFontSize(6, context)),
           width: double.infinity,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(width: 1, color: Colors.black12)
+              border: Border.all(width: getFontSize(1, context), color: Colors.black12)
           ),
           child: Container(
-              padding: EdgeInsets.symmetric(vertical: 24, horizontal: 14),
+              padding: EdgeInsets.symmetric(vertical: getFontSize(24, context), horizontal: getFontSize(14, context)),
               child: Column(children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -185,10 +190,10 @@ class _ViewPharmacyState extends State<ViewPharmacy> {
                       ),
                       child: icon_path is String ? SvgPicture.asset(icon_path, color: Colors.green,) : Icon(icon_path, color: Colors.green,) ,
                     ),
-                    const SizedBox(width: 12,),
+                    SizedBox(width: getFontSize(12, context),),
                     Container(
-                      width: 190,
-                      child: Text(des, style: const TextStyle(fontSize: 15),),
+                      width: getFontSize(190, context),
+                      child: Text(des, style: TextStyle(fontSize: getFontSize(15, context)),),
                     )
                   ],
                 ),
@@ -199,15 +204,15 @@ class _ViewPharmacyState extends State<ViewPharmacy> {
 
       ),
         Positioned(
-            right: 7,
-            top: 12,
+            right: getFontSize(7, context),
+            top: getFontSize(12, context),
             child: Container(
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(color: Color(0xffE2EDFF),
                     borderRadius: BorderRadius.circular(18)
                 ),
                 child:
-                Text("12 0ct 2022", style: TextStyle(fontSize: 10, color: Colors.blue),)
+                Text("12 0ct 2022", style: TextStyle(fontSize: getFontSize(10, context), color: Colors.blue),)
             )
         )
       ],
@@ -221,12 +226,12 @@ class _ViewPharmacyState extends State<ViewPharmacy> {
       String price, String by)
   {
     return Container(
-      margin: EdgeInsets.only(right: 10),
+      margin: EdgeInsets.only(right: getFontSize(10, context)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: Colors.grey.shade400,
-          width: 1,
+          width: getFontSize(1, context),
         ),
       ),
       child: Column(
@@ -239,22 +244,22 @@ class _ViewPharmacyState extends State<ViewPharmacy> {
           Row(
             children: [
               SvgPicture.asset(iconPath,),
-              SizedBox(width: 7,),
-              Text("${date}-${type}", style: TextStyle(fontSize: 14, color: Colors.black45),)
+              SizedBox(width: getFontSize(7, context),),
+              Text("${date}-${type}", style: TextStyle(fontSize: getFontSize(14, context), color: Colors.black45),)
             ],
           ),
           ),
-          SizedBox(height: 7,),
+          SizedBox(height: getFontSize(7, context),),
           SvgPicture.asset("assets/images/line.svg", width: getFontSize(230, context),),
           Container(
               padding: EdgeInsets.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(price, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
-              SizedBox(height: 15,),
+              Text(price, style: TextStyle(fontWeight: FontWeight.bold, fontSize: getFontSize(22, context))),
+              SizedBox(height: getFontSize(15, context),),
               Container(
-                padding: EdgeInsets.symmetric(vertical: 7, horizontal: 12),
+                padding: EdgeInsets.symmetric(vertical: getFontSize(7, context), horizontal: getFontSize(12, context)),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                   color: Colors.grey.shade300
@@ -282,7 +287,7 @@ class _ViewPharmacyState extends State<ViewPharmacy> {
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: Colors.grey.shade400,
-          width: 1,
+          width: getFontSize(1, context),
         ),
       ),
       child: Column(
@@ -312,9 +317,9 @@ actions(
             ),
             child: icon is String ? SvgPicture.asset(icon) : Icon(icon, size: getFontSize(36, context), color: Colors.blue,),
           ),
-          SizedBox(height: 12,),
+          SizedBox(height: getFontSize(12, context),),
           SizedBox(
-            width: 72,
+            width: getFontSize(72, context),
             child:  Text(text, textAlign: TextAlign.center, style: TextStyle(fontSize: getFontSize(13, context),  fontWeight: FontWeight.w400),),
           )
         ],

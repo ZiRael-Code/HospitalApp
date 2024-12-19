@@ -140,7 +140,7 @@ class _CheckoutScreen extends State<Checkout> {
                         ),
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                              vertical: 12.0, horizontal: 24.0),
+                              vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                           child: Text(
                             'Continue',
                             style: TextStyle(
@@ -282,7 +282,7 @@ class _CheckoutScreen extends State<Checkout> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
             child: Text(
               'Select delivery location',
               style: TextStyle(
@@ -307,7 +307,7 @@ class _CheckoutScreen extends State<Checkout> {
               ),
               textStyle: TextStyle(color: Colors.blue)),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
             child: Text(
               'Select pickup location',
               style: TextStyle(

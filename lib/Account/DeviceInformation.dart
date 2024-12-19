@@ -1,5 +1,7 @@
 import '../MainScreen/Dashboard.dart';
 
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,7 +21,7 @@ class DeviceInformation extends StatefulWidget {
 
 class _DeviceInformationScreen extends  State<DeviceInformation> {
   String? _selectedValue;
-
+int number = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +29,15 @@ class _DeviceInformationScreen extends  State<DeviceInformation> {
           automaticallyImplyLeading: false,
           title: Row(
             children: [
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               InkWell(
           onTap: () => Navigator.pop(context),
           child: 
@@ -42,6 +53,12 @@ class _DeviceInformationScreen extends  State<DeviceInformation> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
+              ),
+
+              ),
+
               ),
 
               Spacer(),
@@ -136,6 +153,8 @@ class _DeviceInformationScreen extends  State<DeviceInformation> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Decrease button
+                GestureDetector(
+                  child:
                 Container(
                   width: getFontSize(35, context),
                   height: getFontSize(35, context),
@@ -143,24 +162,30 @@ class _DeviceInformationScreen extends  State<DeviceInformation> {
                     color: Color(0xffE2EDFF),
                     shape: BoxShape.circle,
                   ),
-                  child: IconButton(
-                    icon: Icon(Icons.remove, size: getFontSize(16, context),color: Colors.blue),
-                    onPressed: () {
-                      // Logic to decrease the number
-                    },
-                  ),
+                  child: Icon(Icons.remove, size: getFontSize(16, context),color: Colors.blue),
+                ),
+                  onTap: () {
+                    setState(() {
+                      if (number > 0) {
+                        number--;
+                      }
+                    });
+                    // Logic to decrease the number
+                  },
                 ),
 
                 SizedBox(width: getFontSize(25, context)),
 
                 // Display quantity
                 Text(
-                  '1',
+                  number.toString(),
                   style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold, color: Colors.black),
                 ),
 
                 SizedBox(width: getFontSize(25, context)),
                 // Increase button
+    GestureDetector(
+                  child:
                 Container(
                   width: getFontSize(35, context),
                   height: getFontSize(35, context),
@@ -168,12 +193,14 @@ class _DeviceInformationScreen extends  State<DeviceInformation> {
                     color: Color(0xffE2EDFF),
                     shape: BoxShape.circle,
                   ),
-                  child: IconButton(
-                    icon: Icon(Icons.add, size: getFontSize(16, context), color: Colors.blue),
-                    onPressed: () {
-                      // Logic to increase the number
-                    },
+                  child: Icon(Icons.add, size: getFontSize(16, context), color: Colors.blue),
+
                   ),
+                    onTap: () {
+                    setState(() {
+                      number++;
+                    });
+    },
                 ),
               ],
             ),

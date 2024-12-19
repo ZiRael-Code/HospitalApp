@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/MainScreen/MainNavigator.dart';
@@ -5,7 +6,7 @@ import 'package:hospital_appp/components/my_blue_button.dart';
 import 'package:hospital_appp/decive%20distribution/destributor_id.dart';
 
 class DestributionOnboarding1 extends StatelessWidget {
-  const DestributionOnboarding1({super.key});
+  DestributionOnboarding1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,71 +14,67 @@ class DestributionOnboarding1 extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(15, context), vertical: getFontSize(10, context)),
           child: Column(
             children: [
-              const SizedBox(
-                height: 40,
-              ),
+              Spacer(),
               Align(
                 alignment: Alignment.centerLeft,
                 child: GestureDetector(
                   onTap: () => Navigator.pop(context),
                   child: Container(
-                    width: 45,
-                    height: 45,
-                    padding: const EdgeInsets.all(10),
+                    width: getFontSize(45, context),
+                    height: getFontSize(45, context),
+                    padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: const Color(0xFFE5E5E5),
+                      color: Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset(
                       'assets/images/back.svg',
-                      width: 8.0,
-                      height: 15,
+                      width: getFontSize(8.0, context),
+                      height: getFontSize(15, context),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               ),
               Center(
                 child: Container(
-                  width: 273,
-                  height: 70,
-                  child: const Text(
+                  width: getFontSize(273, context),
+                  height: getFontSize(70, context),
+                  child: Text(
                     textAlign: TextAlign.center,
                     "Do you want to be a distributor?",
-                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.w500),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: getFontSize(30, context),
               ),
               Container(
-                width: 302,
-                height: 75,
-                child: const Text(
+                width: getFontSize(302, context),
+                height: getFontSize(75, context),
+                child: Text(
                   textAlign: TextAlign.center,
                   "Become a distributor and sell devices to pharmacies, doctors and patients. Distributors are given discounts on device prices.",
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                  style: TextStyle(fontSize: getFontSize(14, context), color: Colors.grey),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(10, context),
               ),
               Image.asset("assets/images/distri.jpg"),
-              SizedBox(
-                height: 40,
-              ),
+              Spacer(),
               GestureDetector(
                   onTap: () => Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (context) => DestributorId())),
-                  child: const MyBlueButton(text: "Yes, become a distributor")),
-              const SizedBox(
-                height: 20,
+                  child: MyBlueButton(text: "Yes, become a distributor")),
+              SizedBox(
+                height: getFontSize(10, context),
               ),
               GestureDetector(
                 onTap: () => Navigator.push(
@@ -85,8 +82,8 @@ class DestributionOnboarding1 extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => MainNavigator(index: 0))),
                 child: Container(
-                  width: 380,
-                  height: 54,
+                  width: getFontSize(380, context),
+                  height: getFontSize(54, context),
                   decoration: BoxDecoration(
                       border: Border.all(color: Colors.blue),
                       borderRadius: BorderRadius.circular(12)),
@@ -94,12 +91,12 @@ class DestributionOnboarding1 extends StatelessWidget {
                       child: Text(
                     "Not now",
                     style: TextStyle(
-                        fontSize: 16,
+                        fontSize: getFontSize(16, context),
                         color: Colors.blue,
                         fontWeight: FontWeight.w500),
                   )),
                 ),
-              )
+              ),
             ],
           ),
         ),

@@ -1,4 +1,6 @@
 import '../MainScreen/Dashboard.dart';
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -28,6 +30,15 @@ class _AddCardSuccessScreen extends  State<AddCardSuccess> {
                   InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -40,6 +51,12 @@ class _AddCardSuccessScreen extends  State<AddCardSuccess> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
+              ),
+
+              ),
+
               ),
 
                   Spacer(),
@@ -92,7 +109,7 @@ class _AddCardSuccessScreen extends  State<AddCardSuccess> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.symmetric(vertical: 12.0),
+                          padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context)),
                           child: Text(
                             'Add account',
                             style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),

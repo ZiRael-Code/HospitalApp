@@ -6,9 +6,14 @@ import 'package:hospital_appp/responsive_method.dart';
 import '../Patient/PrescribeDrugsViewAll.dart';
 
 
-class SpecialistInformation extends StatelessWidget {
+class SpecialistInformation extends StatefulWidget{
   SpecialistInformation({super.key});
 
+  @override
+  _SpecialistInformationState createState() => _SpecialistInformationState();
+}
+
+class _SpecialistInformationState extends State<SpecialistInformation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +22,16 @@ class SpecialistInformation extends StatelessWidget {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -35,7 +40,7 @@ class SpecialistInformation extends StatelessWidget {
                 Text(
                   'Prescribe drugs',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal,
                       fontWeight: FontWeight.bold
                   ),
@@ -48,7 +53,7 @@ class SpecialistInformation extends StatelessWidget {
         ),
         body: SingleChildScrollView(
             child: Padding(
-            padding: EdgeInsets.only(top: 12, left: 12, right: 12),
+            padding: EdgeInsets.only(top: getFontSize(12, context), left: getFontSize(12, context), right: getFontSize(12, context)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -122,7 +127,7 @@ class SpecialistInformation extends StatelessWidget {
                   maxLength: 3,
                   leftIcon: false,
                 ),
-                SizedBox(height: 2,),
+                SizedBox(height: getFontSize(2, context),),
 
                 ElevatedButton(
                   onPressed: () {
@@ -136,14 +141,14 @@ class SpecialistInformation extends StatelessWidget {
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                    padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                     child: Text(
                       'Continue',
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                     ),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(height: getFontSize(10, context),),
               ],
             )
         )
@@ -164,8 +169,8 @@ class SpecialistInformation extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: TextStyle(fontSize: 16),),
-        SizedBox(height: 10,),
+        Text(label, style: TextStyle(fontSize: getFontSize(16, context)),),
+        SizedBox(height: getFontSize(10, context),),
         SizedBox(
           width: width,
         child:
@@ -180,21 +185,21 @@ class SpecialistInformation extends StatelessWidget {
               borderRadius: BorderRadius.circular(12), // Circular border radius
               borderSide: BorderSide(
                 color: Colors.grey.shade300, // Light gray border
-                width: 1, // Border thickness
+                width: getFontSize(1, context), // Border thickness
               ),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(
                 color: Colors.grey.shade300,
-                width: 1,
+                width: getFontSize(1, context),
               ),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(
                 color: Colors.grey.shade400,
-                width: 1.5,
+                width: getFontSize(1.5, context),
               ),
             ),
             suffixIcon: leftIcon
@@ -211,11 +216,10 @@ class SpecialistInformation extends StatelessWidget {
         ),
         ),
 
-        SizedBox(height: 15,), // Additional vertical space between fields
+        SizedBox(height: getFontSize(15, context),), // Additional vertical space between fields
       ],
     );
   }
-}
 
 inputField2({
   required String label,
@@ -228,9 +232,9 @@ inputField2({
     children: [
       Text(
         label,
-        style: TextStyle(fontSize: 16),
+        style: TextStyle(fontSize: getFontSize(16, context)),
       ),
-      SizedBox(height: 10),
+      SizedBox(height: getFontSize(10, context)),
       Container(
         width: width, // Set the fixed width
         decoration: BoxDecoration(
@@ -238,7 +242,7 @@ inputField2({
           borderRadius: BorderRadius.circular(12), // Circular border radius
           border: Border.all(
             color: Colors.grey.shade300, // Light gray border
-            width: 1, // Border thickness
+            width: getFontSize(1, context), // Border thickness
           ),
         ),
         child: Row(
@@ -251,7 +255,7 @@ inputField2({
                   hintStyle: TextStyle(color: Colors.black26),
                   border: InputBorder.none, // Remove default TextField border
                   contentPadding: EdgeInsets.symmetric(
-                    vertical: 14,
+                    vertical: getFontSize(14, context),
                     horizontal: leftIcon ? 8 : 14,
                   ), // Add padding inside the container
                 ),
@@ -259,7 +263,7 @@ inputField2({
             ),
             if (leftIcon) // Optionally display the suffix icon
               Padding(
-                padding: EdgeInsets.only(right: 8.0),
+                padding: EdgeInsets.only(right: getFontSize(8.0, context)),
                 child: Icon(
                   Icons.keyboard_arrow_down_sharp,
                   color: Colors.black45,
@@ -268,7 +272,8 @@ inputField2({
           ],
         ),
       ),
-      SizedBox(height: 15), // Additional vertical space between fields
+      SizedBox(height: getFontSize(15, context)), // Additional vertical space between fields
     ],
   );
+}
 }

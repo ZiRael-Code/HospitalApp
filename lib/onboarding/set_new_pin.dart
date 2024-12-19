@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/Account/Referral/my_blue_button.dart';
@@ -28,7 +29,7 @@ class _AppointmentPaymentScreen extends State<SetNewPin> {
         children: [
           Center(
               child: Padding(
-            padding: const EdgeInsets.only(top: 50),
+            padding: EdgeInsets.only(top: getFontSize(50, context)),
             child: SvgPicture.asset("assets/images/frame1308.svg"),
           )),
           Container(
@@ -54,8 +55,8 @@ class _AppointmentPaymentScreen extends State<SetNewPin> {
                     SizedBox(height: getFontSize(35, context)),
                     Container(
                       alignment: Alignment.center,
-                      width: 256,
-                      height: 47,
+                      width: getFontSize(256, context),
+                      height: getFontSize(47, context),
                       child: Text(
                         "Set a new PIN for making transactions on the application.",
                         textAlign: TextAlign.center,
@@ -166,7 +167,7 @@ class _AppointmentPaymentScreen extends State<SetNewPin> {
                       ]),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 25),
+                      padding: EdgeInsets.only(top: getFontSize(25, context)),
                       child: GestureDetector(
                           onTap: () => Navigator.pushReplacement(
                               context,

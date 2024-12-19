@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hospital_appp/Account/Referral/my_blue_button.dart';
@@ -6,7 +7,7 @@ import 'package:hospital_appp/Specialist/deviced_ordered.dart';
 import 'package:hospital_appp/decive%20distribution/DeviceOrder.dart';
 
 class Payments extends StatefulWidget {
-  const Payments({super.key});
+  Payments({super.key});
 
   @override
   State<Payments> createState() => _PaymentsState();
@@ -25,38 +26,38 @@ class _PaymentsState extends State<Payments> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(20, context)),
           child: Column(
             children: [
-              SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
               Row(
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      width: 45,
-                      height: 45,
-                      padding: const EdgeInsets.all(10),
+                      width: getFontSize(45, context),
+                      height: getFontSize(45, context),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
-                        width: 12.0,
-                        height: 12.0,
+                        width: getFontSize(12.0, context),
+                        height: getFontSize(12.0, context),
                         fit: BoxFit.contain,
                       ),
                     ),
                   ),
-                  SizedBox(width: 90),
+                  SizedBox(width: getFontSize(90, context)),
                   Text(
                     "Payments",
-                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.w500),
                   ),
                 ],
               ),
-              SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
 
               // Cash on Delivery Tile
               buildPaymentOption(
@@ -71,7 +72,7 @@ class _PaymentsState extends State<Payments> {
                 expandedContent: Column(
                   children: [
                     SizedBox(
-                        width: 280,
+                        width: getFontSize(280, context),
                         child: Divider(
                           color: Colors.grey.shade200,
                         )),
@@ -90,7 +91,7 @@ class _PaymentsState extends State<Payments> {
                         },
                         title: Text(
                           "Select this payment method",
-                          style: TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: getFontSize(14, context)),
                         ),
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Colors.blue,
@@ -99,14 +100,14 @@ class _PaymentsState extends State<Payments> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
 
               // Credit/Debit Card Tile
               GestureDetector(
                 onTap: () => Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const CardDetails())),
+                        builder: (context) => CardDetails())),
                 child: buildPaymentOption(
                   title: "Credit / Debit card",
                   iconPath: "assets/images/creditcardicon.svg",
@@ -116,7 +117,7 @@ class _PaymentsState extends State<Payments> {
                   showArrowIcon: true, // Add down arrow icon only
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
 
               // Bank Transfer Tile
               buildPaymentOption(
@@ -131,43 +132,43 @@ class _PaymentsState extends State<Payments> {
                 expandedContent: Column(
                   children: [
                     SizedBox(
-                        width: 280,
+                        width: getFontSize(280, context),
                         child: Divider(
                           color: Colors.grey.shade200,
                         )),
                     SizedBox(
-                      height: 10,
+                      height: getFontSize(10, context),
                     ),
-                    const Text(
+                    Text(
                       "First Bank Of Nigeria PLC",
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: getFontSize(14, context),
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: getFontSize(10, context),
                     ),
                     Container(
-                      width: 252,
-                      height: 50,
+                      width: getFontSize(252, context),
+                      height: getFontSize(50, context),
                       child: Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(
-                              bottom: 8,
-                              right: 8,
+                            padding: EdgeInsets.only(
+                              bottom: getFontSize(8, context),
+                              right: getFontSize(8, context),
                             ),
                             child: Text(
                               "0123456789",
                               style: TextStyle(
                                   color: Colors.blue,
-                                  fontSize: 28,
+                                  fontSize: getFontSize(28, context),
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
                           Container(
-                            width: 80,
-                            height: 32,
+                            width: getFontSize(80, context),
+                            height: getFontSize(32, context),
                             decoration: BoxDecoration(
                                 color: Colors.blue.shade50,
                                 borderRadius: BorderRadius.circular(10)),
@@ -176,11 +177,11 @@ class _PaymentsState extends State<Payments> {
                               children: [
                                 SvgPicture.asset("assets/images/copyicon.svg"),
                                 SizedBox(
-                                  width: 6,
+                                  width: getFontSize(6, context),
                                 ),
-                                const Text(
+                                Text(
                                   "Copy",
-                                  style: TextStyle(fontSize: 12),
+                                  style: TextStyle(fontSize: getFontSize(12, context)),
                                 )
                               ],
                             ),
@@ -189,14 +190,14 @@ class _PaymentsState extends State<Payments> {
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: getFontSize(10, context),
                     ),
                     Text(
                       "APPLINIC BANK ACCOUNT",
-                      style: TextStyle(color: Colors.grey, fontSize: 12),
+                      style: TextStyle(color: Colors.grey, fontSize: getFontSize(12, context)),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: getFontSize(10, context),
                     )
                   ],
                 ),
@@ -210,7 +211,7 @@ class _PaymentsState extends State<Payments> {
                           MaterialPageRoute(
                               builder: (context) => DevicedOrdered())),
                       child: MyBlueButton(text: "Continue"))),
-              const SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
             ],
           ),
         ),
@@ -234,7 +235,7 @@ class _PaymentsState extends State<Payments> {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            padding: EdgeInsets.symmetric(vertical: getFontSize(10, context), horizontal: getFontSize(10, context)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -242,26 +243,26 @@ class _PaymentsState extends State<Payments> {
                 Row(
                   children: [
                     Container(
-                      width: 42,
-                      height: 42,
+                      width: getFontSize(42, context),
+                      height: getFontSize(42, context),
                       decoration: BoxDecoration(
                         color: Colors.blue[100],
                         shape: BoxShape.circle,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: SvgPicture.asset(
                           iconPath,
-                          width: 10.0,
-                          height: 10.0,
+                          width: getFontSize(10.0, context),
+                          height: getFontSize(10.0, context),
                           fit: BoxFit.contain,
                         ),
                       ),
                     ),
-                    SizedBox(width: 20),
+                    SizedBox(width: getFontSize(20, context)),
                     Text(
                       title,
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: getFontSize(14, context)),
                     ),
                   ],
                 ),
@@ -282,7 +283,7 @@ class _PaymentsState extends State<Payments> {
           // Expanded content
           if (isExpanded)
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              padding: EdgeInsets.symmetric(horizontal: getFontSize(10, context), vertical: getFontSize(5, context)),
               child: expandedContent,
             ),
         ],

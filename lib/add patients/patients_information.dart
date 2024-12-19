@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/patients_list_screen.dart';
@@ -6,7 +7,7 @@ import 'package:hospital_appp/components/patients_textfield.dart';
 
 class PatientsInformation extends StatefulWidget {
   final Patient? patient;
-  const PatientsInformation({super.key, this.patient});
+  PatientsInformation({super.key, this.patient});
 
   @override
   State<PatientsInformation> createState() => _PatientsInformationState();
@@ -58,37 +59,37 @@ class _PatientsInformationState extends State<PatientsInformation> {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 40),
+                padding: EdgeInsets.only(top: getFontSize(40, context)),
                 child: Row(
                   children: [
                     GestureDetector(
                       onTap: () => Navigator.pop(context),
                       child: Container(
-                        width: 35,
-                        height: 35,
-                        padding: const EdgeInsets.all(10),
+                        width: getFontSize(35, context),
+                        height: getFontSize(35, context),
+                        padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-                          color: const Color(0xFFE5E5E5),
+                          color: Color(0xFFE5E5E5),
                         ),
                         child: SvgPicture.asset(
                           'assets/images/back.svg',
-                          width: 8.0,
-                          height: 15,
+                          width: getFontSize(8.0, context),
+                          height: getFontSize(15, context),
                         ),
                       ),
                     ),
-                    const SizedBox(width: 60),
-                    const Text(
+                    SizedBox(width: getFontSize(60, context)),
+                    Text(
                       "Patients information",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: getFontSize(20, context),
                       ),
                     ),
                   ],
@@ -97,18 +98,18 @@ class _PatientsInformationState extends State<PatientsInformation> {
 
               // Patient full name
               Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: const Text(
+                padding: EdgeInsets.only(top: getFontSize(40, context)),
+                child: Text(
                   "Patient full name",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
 
               Padding(
-                padding: const EdgeInsets.only(top: 10),
+                padding: EdgeInsets.only(top: getFontSize(10, context)),
                 child: PatientsTextfield(
-                  height: 50,
-                  width: 335,
+                  height: getFontSize(50, context),
+                  width: getFontSize(335, context),
                   hinttext: "e.g Janet Okoli",
                   controller: _nameController,
                 ),
@@ -116,18 +117,18 @@ class _PatientsInformationState extends State<PatientsInformation> {
 
               // Patient phone number
               Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: const Text(
+                padding: EdgeInsets.only(top: getFontSize(20, context)),
+                child: Text(
                   "Patient phone number",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
 
               Padding(
-                padding: const EdgeInsets.only(top: 10),
+                padding: EdgeInsets.only(top: getFontSize(10, context)),
                 child: PatientsTextfield(
-                  height: 50,
-                  width: 335,
+                  height: getFontSize(50, context),
+                  width: getFontSize(335, context),
                   hinttext: "e.g 08011112233",
                   controller: _phoneNumberController,
                 ),
@@ -135,8 +136,8 @@ class _PatientsInformationState extends State<PatientsInformation> {
 
               // Gender and Age
               Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: const Row(
+                padding: EdgeInsets.only(top: getFontSize(20, context)),
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
@@ -146,16 +147,16 @@ class _PatientsInformationState extends State<PatientsInformation> {
                           "Gender",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: getFontSize(10, context)),
                         PatientsTextfield(
-                          height: 50,
-                          width: 157,
+                          height: getFontSize(50, context),
+                          width: getFontSize(157, context),
                           hinttext: "e.g Female",
                         ),
                       ],
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 30),
+                      padding: EdgeInsets.only(top: getFontSize(30, context)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -163,10 +164,10 @@ class _PatientsInformationState extends State<PatientsInformation> {
                             "Age",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: getFontSize(10, context)),
                           PatientsTextfield(
-                            height: 50,
-                            width: 157,
+                            height: getFontSize(50, context),
+                            width: getFontSize(157, context),
                             hinttext: "e.g 34",
                           ),
                         ],
@@ -178,8 +179,8 @@ class _PatientsInformationState extends State<PatientsInformation> {
 
               // Blood group and Genotype
               Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: const Row(
+                padding: EdgeInsets.only(top: getFontSize(20, context)),
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
@@ -189,16 +190,16 @@ class _PatientsInformationState extends State<PatientsInformation> {
                           "Blood group",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: getFontSize(10, context)),
                         PatientsTextfield(
-                          height: 50,
-                          width: 157,
+                          height: getFontSize(50, context),
+                          width: getFontSize(157, context),
                           hinttext: "O+",
                         ),
                       ],
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 30),
+                      padding: EdgeInsets.only(top: getFontSize(30, context)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -206,10 +207,10 @@ class _PatientsInformationState extends State<PatientsInformation> {
                             "Genotype",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: getFontSize(10, context)),
                           PatientsTextfield(
-                            height: 50,
-                            width: 157,
+                            height: getFontSize(50, context),
+                            width: getFontSize(157, context),
                             hinttext: "AS",
                           ),
                         ],
@@ -221,33 +222,33 @@ class _PatientsInformationState extends State<PatientsInformation> {
 
               // Location
               Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: const Text(
+                padding: EdgeInsets.only(top: getFontSize(20, context)),
+                child: Text(
                   "Location",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               PatientsTextfield(
-                height: 50,
-                width: 335,
+                height: getFontSize(50, context),
+                width: getFontSize(335, context),
                 hinttext: "e.g Lagos",
                 controller: _locationController,
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Medical history
-              const Text(
+              Text(
                 "Medical history",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 10),
-              const PatientsTextfield(
-                height: 160,
-                width: 335,
+              SizedBox(height: getFontSize(10, context)),
+              PatientsTextfield(
+                height: getFontSize(160, context),
+                width: getFontSize(335, context),
                 hinttext: "No medical history available yet",
               ),
-              const SizedBox(height: 60),
+              SizedBox(height: getFontSize(60, context)),
 
               // Add Patient Button
               GestureDetector(
@@ -273,14 +274,14 @@ class _PatientsInformationState extends State<PatientsInformation> {
                     );
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
+                      SnackBar(
                         content: Text("Please fill in all fields"),
                       ),
                     );
                   }
                 },
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 30),
+                  padding: EdgeInsets.only(bottom: getFontSize(30, context)),
                   child: MyBlueButton(
                       text: widget.patient == null ? "Add Patient" : "Save"),
                 ),

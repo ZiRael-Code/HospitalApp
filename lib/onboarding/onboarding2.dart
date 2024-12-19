@@ -1,35 +1,35 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_appp/onboarding/onboarding3.dart';
 
 import '../components/my_blue_button.dart';
 
 class Onboarding2 extends StatelessWidget {
-  const Onboarding2({super.key});
+  Onboarding2({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
+        body: Padding(padding: EdgeInsets.only(top: getFontSize(18, context), bottom: getFontSize(18, context)),
+        child:
+        Column(
           children: [
-            const SizedBox(
-              height: 40,
-            ),
-            const Align(
+            Align(
               alignment: Alignment.centerRight,
               child: Padding(
-                padding: EdgeInsets.only(right: 25),
+                padding: EdgeInsets.only(right: getFontSize(25, context)),
                 child: Text(
                   "SKIP",
                   style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 14,
+                    fontSize: getFontSize(14, context),
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 60,
+            SizedBox(
+              height: getFontSize(60, context),
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
@@ -38,8 +38,8 @@ class Onboarding2 extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(
-              height: 50,
+            SizedBox(
+              height: getFontSize(50, context),
             ),
             Center(
               child: Image.asset(
@@ -47,41 +47,39 @@ class Onboarding2 extends StatelessWidget {
                 scale: 4,
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: getFontSize(20, context),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
-                  width: 301,
-                  height: 71,
+                  width: getFontSize(301, context),
+                  height: getFontSize(71, context),
                   child: Text(
                     "Easily schedule appointments with your patients, either through a video/voice call or a physical appointment, right from the app.",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
               ),
             ),
-            const Spacer(),
+            Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
               child: GestureDetector(
                   onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Onboarding3(),
+                          builder: (context) => Onboarding3(),
                         ),
                       ),
-                  child: const MyBlueButton(text: "Continue")),
+                  child: MyBlueButton(text: "Continue")),
             ),
-            const SizedBox(
-              height: 50,
-            )
           ],
+        ),
         ),
       ),
     );

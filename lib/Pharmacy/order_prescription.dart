@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/Patient/PrescribeDrugs.dart';
@@ -53,16 +54,16 @@ class _OrderPrescriptionState extends State<OrderPrescription> {
         title: Row(
           children: [
             Container(
-              width: 35,
-              height: 35,
+              width: getFontSize(35, context),
+              height: getFontSize(35, context),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 color: Color(0xFFE5E5E5),
               ),
               child: SvgPicture.asset('assets/images/back.svg',
-                width: 8.0,
-                height: 15,),
+                width: getFontSize(8.0, context),
+                height: getFontSize(15, context),),
             ),
             Spacer(),
             Container(
@@ -71,7 +72,7 @@ class _OrderPrescriptionState extends State<OrderPrescription> {
               Center(child: Text(
                 'Search patient',
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: getFontSize(20, context),
                     fontStyle: FontStyle.normal
                 ),
               ),
@@ -85,7 +86,7 @@ class _OrderPrescriptionState extends State<OrderPrescription> {
           child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.only(right: 10),
+                  padding: EdgeInsets.only(right: getFontSize(10, context)),
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
@@ -119,12 +120,12 @@ class _OrderPrescriptionState extends State<OrderPrescription> {
                       )
                           : null,
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.symmetric(vertical: 15),
+                      contentPadding: EdgeInsets.symmetric(vertical: getFontSize(15, context)),
                     ),
                   ),
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: getFontSize(16, context)),
                 Visibility(
                   visible: controller.text.isNotEmpty,
                   child:
@@ -135,8 +136,8 @@ class _OrderPrescriptionState extends State<OrderPrescription> {
                         Map<String, dynamic> user = filteredNames[index];
                         return ListTile(
                           leading: SizedBox(
-                            width: 44,
-                            height: 44,
+                            width: getFontSize(44, context),
+                            height: getFontSize(44, context),
                             child: CircleAvatar(radius: 50, backgroundImage: AssetImage(user["profile"])),
                           ),
                           title: Column(
@@ -144,11 +145,11 @@ class _OrderPrescriptionState extends State<OrderPrescription> {
                             children: [
                               Text(
                                 user['name'],
-                                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                                style: TextStyle(fontWeight: FontWeight.w500, fontSize: getFontSize(18, context)),
                               ),
                               Text(
                                 "${user['phone_number']} . ${user['location']}",
-                                style: TextStyle(fontSize: 15),
+                                style: TextStyle(fontSize: getFontSize(15, context)),
                               ),
                             ],
                           ),
@@ -169,10 +170,10 @@ class _OrderPrescriptionState extends State<OrderPrescription> {
 
 
                 controller.text.isEmpty ? Column(children: [
-                  SizedBox(height: 60,),
+                  SizedBox(height: getFontSize(60, context),),
                   SvgPicture.asset('assets/images/searchname.svg'),
                   SizedBox(
-                    width: 260,
+                    width: getFontSize(260, context),
                     child: Text(textAlign: TextAlign.center, "Click on the search bar and type in the patients you want to send prescriptions to."),
                   ),
                 ]
@@ -186,8 +187,8 @@ class _OrderPrescriptionState extends State<OrderPrescription> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("No users were found.", style: TextStyle(fontSize: 14),),
-                    SizedBox(height: 12,),
+                    Text("No users were found.", style: TextStyle(fontSize: getFontSize(14, context)),),
+                    SizedBox(height: getFontSize(12, context),),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> AddAPatient()));
@@ -199,19 +200,19 @@ class _OrderPrescriptionState extends State<OrderPrescription> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 7.0),
+                        padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(7.0, context)),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Icon(
                               Icons.add,
                               color: Colors.white,
-                              size: 16,
+                              size: getFontSize(16, context),
                             ),
-                            SizedBox(width: 8),
+                            SizedBox(width: getFontSize(8, context)),
                             Text(
                               'Add a new patient',
-                              style: TextStyle(color: Colors.white, fontSize: 12),
+                              style: TextStyle(color: Colors.white, fontSize: getFontSize(12, context)),
                             ),
                           ],
                         ),

@@ -8,7 +8,7 @@ import '../MainScreen/Dashboard.dart';
 import 'all_specialist.dart';
 
 class AdminPanelEditInfo extends StatefulWidget {
-  const AdminPanelEditInfo({super.key});
+  AdminPanelEditInfo({super.key});
 
   @override
   State<AdminPanelEditInfo> createState() => _AdminPanelEditInfoState();
@@ -23,25 +23,25 @@ class _AdminPanelEditInfoState extends State<AdminPanelEditInfo> {
         title: Row(
           children: [
             Container(
-              width: 35,
-              height: 35,
+              width: getFontSize(35, context),
+              height: getFontSize(35, context),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 color: Color(0xFFE5E5E5),
               ),
               child: SvgPicture.asset('assets/images/back.svg',
-                width: 8.0,
-                height: 15,),
+                width: getFontSize(8.0, context),
+                height: getFontSize(15, context),),
             ),
             Spacer(),
             Container(
               alignment: Alignment.center,
               child:
-              const Text(
+              Text(
                 'Admin panel',
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: getFontSize(20, context),
                     fontStyle: FontStyle.normal,
                     fontWeight: FontWeight.bold
                 ),
@@ -60,12 +60,12 @@ class _AdminPanelEditInfoState extends State<AdminPanelEditInfo> {
           width: double.infinity,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(width: 0.7, color: Colors.black38)
+              border: Border.all(width: getFontSize(0.7, context), color: Colors.black38)
           ),
           child: Stack(
             children: [
               Positioned(
-                right: 0
+                right: getFontSize(0, context)
                 ,child:
               SvgPicture.asset("assets/images/bigkey.svg"),
               ),
@@ -80,13 +80,13 @@ class _AdminPanelEditInfoState extends State<AdminPanelEditInfo> {
               crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text("Custom login", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)
-                  ,SizedBox(height: 10,),
+                  Text("Custom login", style: TextStyle(fontSize: getFontSize(18, context), fontWeight: FontWeight.w600),)
+                  ,SizedBox(height: getFontSize(10, context),),
                   SizedBox(
-                    width: 204,
+                    width: getFontSize(204, context),
                     child:  Text( style: TextStyle(color: Colors.black38),"Manage specialists details, their login details and see their work histories on myvitalz."),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: getFontSize(10, context),),
                   ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
@@ -97,7 +97,7 @@ class _AdminPanelEditInfoState extends State<AdminPanelEditInfo> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 12.0),
+                        padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context)),
                         child:Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -105,8 +105,8 @@ class _AdminPanelEditInfoState extends State<AdminPanelEditInfo> {
                                 "Edit login info",
                                 style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
                               ),
-                              SizedBox(width: 10,),
-                              Icon(Icons.arrow_forward_ios_rounded, color: Colors.white, size: 24,),
+                              SizedBox(width: getFontSize(10, context),),
+                              Icon(Icons.arrow_forward_ios_rounded, color: Colors.white, size: getFontSize(24, context),),
 
                             ]
                         ),
@@ -120,7 +120,7 @@ class _AdminPanelEditInfoState extends State<AdminPanelEditInfo> {
             ],
           ),
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         Row(
           children: [
             AutoSizeText(
@@ -144,7 +144,7 @@ class _AdminPanelEditInfoState extends State<AdminPanelEditInfo> {
                     )))
           ],
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         Expanded (
             child:
             SingleChildScrollView(child:
@@ -190,7 +190,7 @@ class _AdminPanelEditInfoState extends State<AdminPanelEditInfo> {
     return Container(
       child: Column(
         children: [
-          SizedBox(height: 5),
+          SizedBox(height: getFontSize(5, context)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -202,7 +202,7 @@ class _AdminPanelEditInfoState extends State<AdminPanelEditInfo> {
                     backgroundImage: AssetImage(profile_path),
                   )
               ),
-              SizedBox(width: 10,),
+              SizedBox(width: getFontSize(10, context),),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -216,8 +216,8 @@ class _AdminPanelEditInfoState extends State<AdminPanelEditInfo> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 5,),
-                  SizedBox(height: 2),
+                  SizedBox(height: getFontSize(5, context),),
+                  SizedBox(height: getFontSize(2, context)),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -234,9 +234,9 @@ class _AdminPanelEditInfoState extends State<AdminPanelEditInfo> {
               Icon(Icons.more_vert_outlined)
             ],
           ),
-          SizedBox(height: 5),
+          SizedBox(height: getFontSize(5, context)),
           SizedBox(
-            width: 350,
+            width: getFontSize(350, context),
             child: Divider(
               color: Colors.grey[300],
             ),

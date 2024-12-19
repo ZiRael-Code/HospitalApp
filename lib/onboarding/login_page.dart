@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_appp/components/my_blue_button.dart';
 import 'package:hospital_appp/components/my_textfield.dart';
@@ -5,7 +6,7 @@ import 'package:hospital_appp/main_navigator.dart';
 import 'package:hospital_appp/onboarding/register_page.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -18,12 +19,12 @@ class _LoginPageState extends State<LoginPage> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 60),
+                  padding: EdgeInsets.only(top: getFontSize(60, context)),
                   child: Center(
                     child: Image.asset(
                       "assets/images/illustration.png",
@@ -32,52 +33,52 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 25),
+                  padding: EdgeInsets.only(top: getFontSize(25, context)),
                   child: Column(
                     children: [
-                      const Align(
+                      Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           "Welcome",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 28,
+                            fontSize: getFontSize(28, context),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: const Align(
+                        padding: EdgeInsets.only(top: getFontSize(20, context)),
+                        child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             "Username",
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: getFontSize(14, context),
                             ),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: const MyTextfield(
+                        padding: EdgeInsets.only(top: getFontSize(20, context)),
+                        child: MyTextfield(
                           hinttext: "Username",
                           obscuretext: false,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 15),
-                        child: const Align(
+                        padding: EdgeInsets.only(top: getFontSize(15, context)),
+                        child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             "Password",
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: getFontSize(14, context),
                             ),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 15),
+                        padding: EdgeInsets.only(top: getFontSize(15, context)),
                         child: MyTextfield(
                           hinttext: "Password",
                           obscuretext: _obscureText,
@@ -94,20 +95,20 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 15),
-                        child: const Align(
+                        padding: EdgeInsets.only(top: getFontSize(15, context)),
+                        child: Align(
                           alignment: Alignment.centerRight,
                           child: Text(
                             "Forgot passowrd",
                             style: TextStyle(
                                 color: Colors.blue,
-                                fontSize: 14,
+                                fontSize: getFontSize(14, context),
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 30),
+                        padding: EdgeInsets.only(top: getFontSize(30, context)),
                         child: GestureDetector(
                             onTap: () => Navigator.push(
                                 context,
@@ -115,14 +116,14 @@ class _LoginPageState extends State<LoginPage> {
                                     builder: (context) => MainNavigator(
                                           index: 0,
                                         ))),
-                            child: const MyBlueButton(text: "Login")),
+                            child: MyBlueButton(text: "Login")),
                       ),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: getFontSize(20, context),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 20),
-                        child: const Center(
+                        padding: EdgeInsets.only(bottom: getFontSize(20, context)),
+                        child: Center(
                           child: Text("Or login with"),
                         ),
                       ),
@@ -139,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                           "assets/images/facebook.png",
                           scale: 4,
                         ),
-                        const SizedBox(width: 10),
+                        SizedBox(width: getFontSize(10, context)),
                         Image.asset(
                           "assets/images/google.png",
                           scale: 4,
@@ -149,20 +150,20 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 30),
+                  padding: EdgeInsets.only(top: getFontSize(30, context)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text("Don't have an account yet?"),
-                      const SizedBox(
-                        width: 4,
+                      Text("Don't have an account yet?"),
+                      SizedBox(
+                        width: getFontSize(4, context),
                       ),
                       GestureDetector(
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const RegisterPage())),
-                        child: const Text(
+                                builder: (context) => RegisterPage())),
+                        child: Text(
                           "Register here",
                           style: TextStyle(color: Colors.blue),
                         ),

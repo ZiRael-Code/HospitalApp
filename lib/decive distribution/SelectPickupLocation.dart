@@ -24,6 +24,9 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
               InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -36,6 +39,8 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
               ),
 
               Spacer(),
@@ -115,7 +120,7 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
             )
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
             child: Text(
               'Change Location',
               style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
@@ -151,7 +156,7 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
                     ),
                 ),
                 child: Align(alignment: Alignment.center, child:  Padding(
-                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                   child: Row(
                     children: [
                       Spacer(),
@@ -185,7 +190,7 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
 
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
             child: Text(
               'Checkout',
               style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),

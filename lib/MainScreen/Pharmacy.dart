@@ -12,7 +12,7 @@ import 'package:hospital_appp/add%20pharmacy/add_pharmacy.dart';
 import 'Dashboard.dart';
 
 class Pharmacy extends StatefulWidget {
-  const Pharmacy({super.key});
+  Pharmacy({super.key});
 
   @override
   State<Pharmacy> createState() => _PharmacyState();
@@ -38,7 +38,7 @@ class _PharmacyState extends State<Pharmacy> {
           children: [
             section_list[Random.secure().nextInt(2)],
             SizedBox(
-              height: 34,
+              height: getFontSize(34, context),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -66,7 +66,7 @@ class _PharmacyState extends State<Pharmacy> {
               ],
             ),
             SizedBox(
-              height: 30,
+              height: getFontSize(30, context),
             ),
             Align(
               alignment: Alignment.centerLeft,
@@ -78,7 +78,7 @@ class _PharmacyState extends State<Pharmacy> {
               ),
             ),
             SizedBox(
-              height: 14,
+              height: getFontSize(14, context),
             ),
             Expanded(
                 child: SingleChildScrollView(
@@ -129,7 +129,7 @@ class _PharmacyState extends State<Pharmacy> {
     return Container(
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
-        border: Border.all(width: 0.7, color: Colors.blue),
+        border: Border.all(width: getFontSize(0.7, context), color: Colors.blue),
         borderRadius: BorderRadius.circular(14),
       ),
       child: Row(
@@ -139,19 +139,19 @@ class _PharmacyState extends State<Pharmacy> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: 167,
+                width: getFontSize(167, context),
                 child: Text("New life hospital internal pharmacy",
                     style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
+                        TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.w400)),
               ),
-              SizedBox(height: 12),
+              SizedBox(height: getFontSize(12, context)),
               SizedBox(
-                width: 206,
+                width: getFontSize(206, context),
                 child: Text(
-                    style: TextStyle(fontSize: 11),
+                    style: TextStyle(fontSize: getFontSize(11, context)),
                     "Manage your hospital’s pharmacy from the app, take records and attend to patients needs"),
               ),
-              SizedBox(height: 12),
+              SizedBox(height: getFontSize(12, context)),
               ElevatedButton(
                 onPressed: () {
                   // TODO: Navigate to Pharmacy dashboard
@@ -167,7 +167,7 @@ class _PharmacyState extends State<Pharmacy> {
                 ),
                 child: Padding(
                     padding:
-                        EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
+                        EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(4.0, context)),
                     child: Row(
                       children: [
                         Text(
@@ -177,12 +177,12 @@ class _PharmacyState extends State<Pharmacy> {
                               fontSize: getFontSize(16, context)),
                         ),
                         SizedBox(
-                          width: 10,
+                          width: getFontSize(10, context),
                         ),
                         Icon(
                           Icons.arrow_forward_ios,
                           color: Colors.white,
-                          size: 14,
+                          size: getFontSize(14, context),
                         )
                       ],
                     )),
@@ -191,7 +191,7 @@ class _PharmacyState extends State<Pharmacy> {
           ),
           Spacer(),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            padding: EdgeInsets.symmetric(horizontal: getFontSize(14, context), vertical: getFontSize(8, context)),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
                 color: Color(0xff2E2E4226).withOpacity(0.40)),
@@ -199,7 +199,7 @@ class _PharmacyState extends State<Pharmacy> {
               children: [
                 Text(
                   "12 ",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: getFontSize(15, context)),
                 ),
                 Text("data")
               ],
@@ -216,23 +216,23 @@ class _PharmacyState extends State<Pharmacy> {
       children: [
         SvgPicture.asset("assets/images/med_bottle.svg"),
         SizedBox(
-          height: 15,
+          height: getFontSize(15, context),
         ),
         Text("Pharmacy setup",
             style: TextStyle(
                 fontSize: getFontSize(20, context),
                 fontWeight: FontWeight.w500)),
         SizedBox(
-          height: 10,
+          height: getFontSize(10, context),
         ),
         Container(
-          width: 264,
+          width: getFontSize(264, context),
           child: Text(
               textAlign: TextAlign.center,
               "Setup the internal pharmacy of your hospital right here on myvitalz, so you can keep track of records, drugs, devices, etc."),
         ),
         SizedBox(
-          height: 10,
+          height: getFontSize(10, context),
         ),
         ElevatedButton(
           onPressed: () {},
@@ -244,7 +244,7 @@ class _PharmacyState extends State<Pharmacy> {
             ),
           ),
           child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
+              padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(4.0, context)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
@@ -256,12 +256,12 @@ class _PharmacyState extends State<Pharmacy> {
                         fontSize: getFontSize(16, context)),
                   ),
                   SizedBox(
-                    width: 10,
+                    width: getFontSize(10, context),
                   ),
                   Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.white,
-                    size: 14,
+                    size: getFontSize(14, context),
                   )
                 ],
               )),
@@ -277,7 +277,7 @@ class _PharmacyState extends State<Pharmacy> {
     return Container(
       child: Column(
         children: [
-          SizedBox(height: 5),
+          SizedBox(height: getFontSize(5, context)),
           Row(
             children: [
               SizedBox(
@@ -288,7 +288,7 @@ class _PharmacyState extends State<Pharmacy> {
                     backgroundImage: AssetImage(profile_path),
                   )),
               SizedBox(
-                width: 14,
+                width: getFontSize(14, context),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -304,9 +304,9 @@ class _PharmacyState extends State<Pharmacy> {
                     ),
                   ),
                   SizedBox(
-                    height: 5,
+                    height: getFontSize(5, context),
                   ),
-                  SizedBox(height: 2),
+                  SizedBox(height: getFontSize(2, context)),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -318,12 +318,12 @@ class _PharmacyState extends State<Pharmacy> {
                   ),
                 ],
               ),
-              SizedBox(width: 10),
+              SizedBox(width: getFontSize(10, context)),
             ],
           ),
-          SizedBox(height: 5),
+          SizedBox(height: getFontSize(5, context)),
           SizedBox(
-            width: 350,
+            width: getFontSize(350, context),
             child: Divider(
               color: Colors.grey[300],
             ),
@@ -356,10 +356,10 @@ actions(BuildContext context, icon, String text, MaterialPageRoute action) {
                   ),
           ),
           SizedBox(
-            height: 12,
+            height: getFontSize(12, context),
           ),
           SizedBox(
-            width: 72,
+            width: getFontSize(72, context),
             child: Text(
               text,
               textAlign: TextAlign.center,

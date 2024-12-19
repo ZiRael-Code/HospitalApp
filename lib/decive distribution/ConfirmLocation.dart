@@ -78,7 +78,7 @@ class _ConfirmLocationState extends State<ConfirmLocation> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
             child: Text(
               'Continue',
               style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),

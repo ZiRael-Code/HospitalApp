@@ -1,10 +1,12 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/invite_through_link.dart';
 import 'package:hospital_appp/add%20patients/upload_file.dart';
 
+
 class AddPatients extends StatefulWidget {
-  const AddPatients({super.key});
+  AddPatients({super.key});
 
   @override
   State<AddPatients> createState() => _AddPatientsState();
@@ -34,10 +36,10 @@ class _AddPatientsState extends State<AddPatients>
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(15, context)),
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
               Row(
                 children: [
                   Row(
@@ -45,42 +47,42 @@ class _AddPatientsState extends State<AddPatients>
                       GestureDetector(
                         onTap: () => Navigator.pop(context),
                         child: Container(
-                          width: 45,
-                          height: 45,
-                          padding: const EdgeInsets.all(10),
+                          width: getFontSize(45, context),
+                          height: getFontSize(45, context),
+                          padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: const Color(0xFFE5E5E5),
+                            color: Color(0xFFE5E5E5),
                           ),
                           child: SvgPicture.asset(
                             'assets/images/back.svg',
-                            width: 8.0,
-                            height: 15,
+                            width: getFontSize(8.0, context),
+                            height: getFontSize(15, context),
                           ),
                         ),
                       ),
-                      const SizedBox(width: 110),
+                      SizedBox(width: getFontSize(110, context)),
                       SvgPicture.asset("assets/images/first.svg")
                     ],
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               ),
               Center(
                 child: Text(
                   "Add patients",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.w500),
                 ),
               ),
               Expanded(
                 child: Column(
                   children: [
-                    const SizedBox(height: 25),
+                    SizedBox(height: getFontSize(25, context)),
                     Container(
-                      height: 50,
-                      padding: const EdgeInsets.all(4),
+                      height: getFontSize(50, context),
+                      padding: EdgeInsets.all(4),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: Colors.grey[200],
@@ -95,20 +97,20 @@ class _AddPatientsState extends State<AddPatients>
                           borderRadius: BorderRadius.circular(30),
                         ),
                         labelColor: Colors.black,
-                        unselectedLabelColor: const Color(0xff4F4F4F),
-                        tabs: const [
+                        unselectedLabelColor: Color(0xff4F4F4F),
+                        tabs: [
                           Tab(text: "Upload link"),
                           Tab(text: "Send invite links"),
                         ],
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: getFontSize(10, context)),
                     Expanded(
                       child: TabBarView(
                         controller: _tabController,
                         children: [
                           Center(child: UploadFile()),
-                          const Center(child: InviteThroughLink()),
+                          Center(child: InviteThroughLink()),
                         ],
                       ),
                     ),

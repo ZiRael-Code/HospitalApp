@@ -27,6 +27,9 @@ class _TransactionDetailsScreen extends  State<TransactionDetails> {
               InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -39,6 +42,8 @@ class _TransactionDetailsScreen extends  State<TransactionDetails> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
               ),
 
               Spacer(),

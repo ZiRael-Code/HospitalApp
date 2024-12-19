@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_appp/components/my_blue_button.dart';
 import 'package:hospital_appp/onboarding/set_password.dart';
@@ -5,7 +6,7 @@ import 'package:hospital_appp/onboarding/set_password.dart';
 import '../components/my_textfield.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+  RegisterPage({super.key});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -18,132 +19,132 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
+            padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 40),
-                  child: const Align(
+                  padding: EdgeInsets.only(top: getFontSize(40, context)),
+                  child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Register",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 28,
+                        fontSize: getFontSize(28, context),
                       ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 30),
-                  child: const Align(
+                  padding: EdgeInsets.only(top: getFontSize(30, context)),
+                  child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "First Name",
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: getFontSize(14, context),
                       ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: const MyTextfield(
+                  padding: EdgeInsets.only(top: getFontSize(10, context)),
+                  child: MyTextfield(
                     hinttext: "First Name",
                     obscuretext: false,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: const Align(
+                  padding: EdgeInsets.only(top: getFontSize(20, context)),
+                  child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Last Name",
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: getFontSize(14, context),
                       ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: const MyTextfield(
+                  padding: EdgeInsets.only(top: getFontSize(10, context)),
+                  child: MyTextfield(
                     hinttext: "Last Name",
                     obscuretext: false,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: const Align(
+                  padding: EdgeInsets.only(top: getFontSize(20, context)),
+                  child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Phone Number",
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: getFontSize(14, context),
                       ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: const MyTextfield(
+                  padding: EdgeInsets.only(top: getFontSize(10, context)),
+                  child: MyTextfield(
                     hinttext: "Phone Number",
                     obscuretext: false,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: const Align(
+                  padding: EdgeInsets.only(top: getFontSize(20, context)),
+                  child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Email",
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: getFontSize(14, context),
                       ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: const MyTextfield(
+                  padding: EdgeInsets.only(top: getFontSize(10, context)),
+                  child: MyTextfield(
                     hinttext: "Email Address",
                     obscuretext: false,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: EdgeInsets.only(top: getFontSize(20, context)),
                   child: GestureDetector(
                     onTap: () => Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => SetPassword())),
-                    child: const MyBlueButton(
+                    child: MyBlueButton(
                       text: "Register",
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: getFontSize(30, context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 120,
+                      width: getFontSize(120, context),
                       child: Divider(
                         color: Colors.grey.shade300,
                         thickness: 1,
                       ),
                     ),
-                    const SizedBox(
-                      width: 8,
+                    SizedBox(
+                      width: getFontSize(8, context),
                     ),
-                    const Text(
+                    Text(
                       "Or register with",
                     ),
-                    const SizedBox(
-                      width: 8,
+                    SizedBox(
+                      width: getFontSize(8, context),
                     ),
                     SizedBox(
-                      width: 120,
+                      width: getFontSize(89, context),
                       child: Divider(
                         color: Colors.grey.shade300,
                         thickness: 1,
@@ -151,8 +152,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: getFontSize(20, context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -161,29 +162,29 @@ class _RegisterPageState extends State<RegisterPage> {
                       "assets/images/facebook.png",
                       scale: 4,
                     ),
-                    const SizedBox(width: 10),
+                    SizedBox(width: getFontSize(10, context)),
                     Image.asset(
                       "assets/images/google.png",
                       scale: 4,
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: getFontSize(30, context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Already have an account?"),
-                    const SizedBox(
-                      width: 4,
+                    Text("Already have an account?"),
+                    SizedBox(
+                      width: getFontSize(4, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterPage())),
-                      child: const Text(
+                              builder: (context) => RegisterPage())),
+                      child: Text(
                         "Login here",
                         style: TextStyle(color: Colors.blue),
                       ),

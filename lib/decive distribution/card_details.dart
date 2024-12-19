@@ -1,10 +1,11 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/components/my_blue_button.dart';
 import 'package:hospital_appp/components/my_textfield.dart';
 
 class CardDetails extends StatefulWidget {
-  const CardDetails({super.key});
+  CardDetails({super.key});
 
   @override
   State<CardDetails> createState() => _CardDetailsState();
@@ -17,70 +18,70 @@ class _CardDetailsState extends State<CardDetails> {
     return SafeArea(
         child: Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: getFontSize(20, context)),
         child: Column(
           children: [
-            const SizedBox(height: 40),
+            SizedBox(height: getFontSize(40, context)),
             Row(
               children: [
                 GestureDetector(
                   onTap: () => Navigator.pop(context),
                   child: Container(
-                    width: 45,
-                    height: 45,
-                    padding: const EdgeInsets.all(10),
+                    width: getFontSize(45, context),
+                    height: getFontSize(45, context),
+                    padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: const Color(0xFFE5E5E5),
+                      color: Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset(
                       'assets/images/back.svg',
-                      width: 12.0,
-                      height: 12.0,
+                      width: getFontSize(12.0, context),
+                      height: getFontSize(12.0, context),
                       fit: BoxFit.contain,
                     ),
                   ),
                 ),
-                const SizedBox(width: 90),
-                const Text(
+                SizedBox(width: getFontSize(90, context)),
+                Text(
                   "Payments",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.w500),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: getFontSize(40, context),
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 "Cardholder full name",
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: getFontSize(14, context), fontWeight: FontWeight.w500),
               ),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: getFontSize(10, context),
             ),
-            const MyTextfield(
+            MyTextfield(
                 hinttext: "Input name on card", obscuretext: false),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: getFontSize(20, context),
             ),
-            const Align(
+            Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Card number",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: getFontSize(14, context), fontWeight: FontWeight.w500),
                 )),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: getFontSize(10, context),
             ),
-            const MyTextfield(
+            MyTextfield(
                 hinttext: "xxxx xxxx xxxx xxxx", obscuretext: false),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: getFontSize(20, context),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
@@ -91,17 +92,17 @@ class _CardDetailsState extends State<CardDetails> {
                         child: Text(
                           "Expiry date",
                           style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w500),
+                              fontSize: getFontSize(14, context), fontWeight: FontWeight.w500),
                         )),
                     SizedBox(
-                      height: 10,
+                      height: getFontSize(10, context),
                     ),
                     SizedBox(
-                        width: 150,
+                        width: getFontSize(150, context),
                         child:
                             MyTextfield(hinttext: "00/00", obscuretext: false)),
                     SizedBox(
-                      height: 20,
+                      height: getFontSize(20, context),
                     ),
                   ],
                 ),
@@ -113,18 +114,18 @@ class _CardDetailsState extends State<CardDetails> {
                       child: Text(
                         "CVV",
                         style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w500),
+                            fontSize: getFontSize(14, context), fontWeight: FontWeight.w500),
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: getFontSize(10, context),
                     ),
                     SizedBox(
-                        width: 150,
+                        width: getFontSize(150, context),
                         child:
                             MyTextfield(hinttext: "0000", obscuretext: false)),
                     SizedBox(
-                      height: 20,
+                      height: getFontSize(20, context),
                     ),
                   ],
                 )
@@ -135,7 +136,7 @@ class _CardDetailsState extends State<CardDetails> {
               children: [
                 Text(
                   "Save this card for future payments",
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(fontSize: getFontSize(14, context)),
                 ),
                 Switch(
                   value: isToggled,
@@ -153,8 +154,8 @@ class _CardDetailsState extends State<CardDetails> {
             ),
             Spacer(),
             MyBlueButton(text: "Proceed"),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: getFontSize(40, context),
             )
           ],
         ),

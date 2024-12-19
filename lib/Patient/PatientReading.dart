@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_appp/Patient/search_for_patient.dart';
 
@@ -49,43 +50,43 @@ class _PatientReadingState extends State<PatientReading>
       ),
       body: Stack(children: [
         Padding(
-          padding: EdgeInsets.only(left: 12, right: 12, top: 25),
+          padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(25, context)),
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(bottom: 18),
+                margin: EdgeInsets.only(bottom: getFontSize(18, context)),
                 padding: EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12.0),
-                  border: Border.all(width: 0.7, color: Colors.black12),
+                  border: Border.all(width: getFontSize(0.7, context), color: Colors.black12),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 12.0),
+                    SizedBox(height: getFontSize(12.0, context)),
                     Row(
                       children: [
                         CircleAvatar(
                           backgroundImage: AssetImage('assets/images/guy.png'),
                           radius: 24.0,
                         ),
-                        SizedBox(width: 12.0),
+                        SizedBox(width: getFontSize(12.0, context)),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               'Salami Adebayo',
                               style: TextStyle(
-                                fontSize: 16.0,
+                                fontSize: getFontSize(16.0, context),
                               ),
                             ),
-                            SizedBox(height: 4.0),
+                            SizedBox(height: getFontSize(4.0, context)),
                             Text(
                               '4:17pm · 12th Sept 2022',
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 12.0,
+                                fontSize: getFontSize(12.0, context),
                               ),
                             ),
                           ],
@@ -97,7 +98,7 @@ class _PatientReadingState extends State<PatientReading>
               ),
               Column(children: [
                 Container(
-                  height: 50,
+                  height: getFontSize(50, context),
                   padding: EdgeInsets.all(4),
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -121,10 +122,10 @@ class _PatientReadingState extends State<PatientReading>
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: getFontSize(20, context),
                 ),
               ]),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               Flexible(
                 child: TabBarView(
                   controller: _tabController,
@@ -159,16 +160,16 @@ class _PatientReadingState extends State<PatientReading>
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 10),
+                    SizedBox(height: getFontSize(10, context)),
                     Container(
-                      width: 50,
-                      height: 5,
+                      width: getFontSize(50, context),
+                      height: getFontSize(5, context),
                       decoration: BoxDecoration(
                         color: Colors.grey[300],
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: getFontSize(10, context)),
                     Expanded(
                       child: ListView(
                         controller: scrollController,
@@ -232,13 +233,13 @@ class _PatientReadingState extends State<PatientReading>
           child: Icon(
             icon,
             color: color,
-            size: 30,
+            size: getFontSize(30, context),
           ),
         ),
-        SizedBox(height: 8),
+        SizedBox(height: getFontSize(8, context)),
         Text(
           label,
-          style: TextStyle(fontSize: 12),
+          style: TextStyle(fontSize: getFontSize(12, context)),
         ),
       ],
     );

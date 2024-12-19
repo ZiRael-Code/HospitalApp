@@ -6,7 +6,7 @@ import 'package:hospital_appp/Specialist/specialist_information.dart';
 import '../MainScreen/Dashboard.dart';
 
 class AllSpecialist extends StatefulWidget {
-  const AllSpecialist({super.key});
+  AllSpecialist({super.key});
 
   @override
   State<AllSpecialist> createState() => _AllSpecialistState();
@@ -26,18 +26,23 @@ class _AllSpecialistState extends State<AllSpecialist> {
               InkWell(
                 onTap: () => Navigator.pop(context),
                 child:
-                Container(
-                  width: getFontSize(35, context),
-                  height: getFontSize(35, context),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Color(0xFFE5E5E5),
-                  ),
-                  child: SvgPicture.asset('assets/images/back.svg',
-                    width: getFontSize(8.0, context),
-                    height: getFontSize(15, context),),
+                InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              Container(
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Color(0xFFE5E5E5),
                 ),
+                child: SvgPicture.asset('assets/images/back.svg',
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
+              ),
+              ),
+
               ),
 
               Spacer(),
@@ -79,7 +84,7 @@ class _AllSpecialistState extends State<AllSpecialist> {
                     hintStyle: TextStyle(color: Colors.grey),
                     prefixIcon: Icon(Icons.search, color: Colors.grey),
                     border: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(vertical: 15),
+                    contentPadding: EdgeInsets.symmetric(vertical: getFontSize(15, context)),
                   ),
                 ),
               ),
@@ -208,7 +213,7 @@ request_tile({
       child: Container(
     child: Column(
       children: [
-        SizedBox(height: 5),
+        SizedBox(height: getFontSize(5, context)),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -220,7 +225,7 @@ request_tile({
                   backgroundImage: AssetImage(profile_path),
                 )
             ),
-            SizedBox(width: 10,),
+            SizedBox(width: getFontSize(10, context),),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -234,8 +239,8 @@ request_tile({
                     ),
                   ),
                 ),
-                SizedBox(height: 5,),
-                SizedBox(height: 2),
+                SizedBox(height: getFontSize(5, context),),
+                SizedBox(height: getFontSize(2, context)),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -252,9 +257,9 @@ request_tile({
             Icon(Icons.more_vert_outlined)
           ],
         ),
-        SizedBox(height: 5),
+        SizedBox(height: getFontSize(5, context)),
         SizedBox(
-          width: 350,
+          width: getFontSize(350, context),
           child: Divider(
             color: Colors.grey[300],
           ),

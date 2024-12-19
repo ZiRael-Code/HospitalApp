@@ -1,13 +1,15 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hospital_appp/Specialist/SelectPickupLocation.dart';
 import 'package:hospital_appp/components/item_tile.dart';
 import 'package:hospital_appp/components/my_blue_button.dart';
 import 'package:hospital_appp/components/my_white_button.dart';
+import 'package:hospital_appp/decive%20distribution/checkout.dart';
 import 'package:hospital_appp/home%20delivery/set_your_location.dart';
 
 class RequestDevices extends StatefulWidget {
-  const RequestDevices({super.key});
+  RequestDevices({super.key});
 
   @override
   State<RequestDevices> createState() => _RequestDevicesState();
@@ -17,12 +19,12 @@ class _RequestDevicesState extends State<RequestDevices> {
   void _showQuickActionSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       builder: (BuildContext context) {
         return Container(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -31,28 +33,28 @@ class _RequestDevicesState extends State<RequestDevices> {
               Text(
                 "Select delivery method ",
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: getFontSize(18, context),
                   fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
               GestureDetector(
                   onTap: () => Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => SelectYourLocation())),
-                  child: const MyBlueButton(text: "Set delivery location")),
-              const SizedBox(
-                height: 20,
+                  child: MyBlueButton(text: "Set delivery location")),
+              SizedBox(
+                height: getFontSize(20, context),
               ),
               GestureDetector(
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => Selectpickuplocation())),
-                  child: const MyWhiteButton(text: "Select pickup location")),
-              const SizedBox(height: 20),
+                  child: MyWhiteButton(text: "Select pickup location")),
+              SizedBox(height: getFontSize(20, context)),
             ],
           ),
         );
@@ -67,72 +69,72 @@ class _RequestDevicesState extends State<RequestDevices> {
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: getFontSize(15, context)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: 40),
+                SizedBox(height: getFontSize(40, context)),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      width: 45,
-                      height: 45,
-                      padding: const EdgeInsets.all(10),
+                      width: getFontSize(45, context),
+                      height: getFontSize(45, context),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
-                        width: 8.0,
-                        height: 15,
+                        width: getFontSize(8.0, context),
+                        height: getFontSize(15, context),
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: getFontSize(20, context)),
                 Center(
                   child: Container(
-                    width: 273,
-                    height: 70,
-                    child: const Text(
+                    width: getFontSize(273, context),
+                    height: getFontSize(70, context),
+                    child: Text(
                       textAlign: TextAlign.center,
                       "Do you want to be a distributor?",
                       style: TextStyle(
-                        fontSize: 28,
+                        fontSize: getFontSize(28, context),
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 30),
+                SizedBox(height: getFontSize(30, context)),
                 Container(
-                  width: 302,
-                  height: 75,
-                  child: const Text(
+                  width: getFontSize(302, context),
+                  height: getFontSize(75, context),
+                  child: Text(
                     textAlign: TextAlign.center,
                     "Select which device(s) you want to order",
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                    style: TextStyle(fontSize: getFontSize(14, context), color: Colors.grey),
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: getFontSize(20, context)),
                 SizedBox(
-                  height: 325,
+                  height: getFontSize(325, context),
                   child: ListView(
                     scrollDirection: Axis.horizontal,
-                    children: const [ItemTile(), ItemTile(), ItemTile()],
+                    children: [ItemTile(), ItemTile(), ItemTile()],
                   ),
                 ),
-                const SizedBox(height: 80),
+                SizedBox(height: getFontSize(80, context)),
                 GestureDetector(
-                  onTap: () => _showQuickActionSheet(context),
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Checkout())),
                   child: MyBlueButton(
                     text: "Continue",
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: getFontSize(20, context)),
               ],
             ),
           ),

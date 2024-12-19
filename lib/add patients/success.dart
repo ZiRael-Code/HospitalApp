@@ -1,61 +1,62 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/set_network.dart';
 
 class Success extends StatelessWidget {
-  const Success({super.key});
+  Success({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: getFontSize(15, context)),
         child: Column(
           children: [
             SizedBox(
-              height: 40,
+              height: getFontSize(40, context),
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: GestureDetector(
                 onTap: () => Navigator.pop(context),
                 child: Container(
-                  width: 45,
-                  height: 45,
-                  padding: const EdgeInsets.all(10),
+                  width: getFontSize(45, context),
+                  height: getFontSize(45, context),
+                  padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: const Color(0xFFE5E5E5),
+                    color: Color(0xFFE5E5E5),
                   ),
                   child: SvgPicture.asset(
                     'assets/images/back.svg',
-                    width: 8.0,
-                    height: 15,
+                    width: getFontSize(8.0, context),
+                    height: getFontSize(15, context),
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: getFontSize(20, context),
             ),
             Center(
               child: Text(
                 "Success!",
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.w500),
               ),
             ),
             SizedBox(
-              height: 20,
+              height: getFontSize(20, context),
             ),
             Center(
               child: Container(
-                width: 256,
-                height: 47,
+                width: getFontSize(256, context),
+                height: getFontSize(47, context),
                 child: Text(
                   textAlign: TextAlign.center,
                   "You have successfully added patients to you hospital network.",
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                  style: TextStyle(fontSize: getFontSize(14, context), color: Colors.grey),
                 ),
               ),
             ),
@@ -64,8 +65,8 @@ class Success extends StatelessWidget {
               onTap: () => Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => SetupNetwork())),
               child: Container(
-                width: 335,
-                height: 54,
+                width: getFontSize(335, context),
+                height: getFontSize(54, context),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.blue,
@@ -80,7 +81,7 @@ class Success extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: getFontSize(40, context),
             ),
           ],
         ),

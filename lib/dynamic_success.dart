@@ -9,7 +9,7 @@ class DynamicSuccess extends StatefulWidget {
   final dynamic dart_name;
   final String text;
   final String buttonText;
-  const DynamicSuccess({super.key, this.dart_name, required this.text, required this.buttonText});
+  DynamicSuccess({super.key, this.dart_name, required this.text, required this.buttonText});
 
   @override
   State<DynamicSuccess> createState() => _DynamicSuccessState();
@@ -84,7 +84,7 @@ class _DynamicSuccessState extends State<DynamicSuccess> {
               ),
               padding: EdgeInsets.all(12),
               child: Text(
-                style: TextStyle(color: Colors.white, fontSize: 16),
+                style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
                 widget.buttonText
               ),
             )

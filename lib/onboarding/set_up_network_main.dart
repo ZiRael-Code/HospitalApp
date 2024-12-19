@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/add_patients.dart';
@@ -5,51 +6,51 @@ import 'package:hospital_appp/add%20patients/add_patients_main.dart';
 import 'package:hospital_appp/add%20pharmacy/add_pharmacy.dart';
 import 'package:hospital_appp/add_specialists/add_specialists.dart';
 import 'package:hospital_appp/main_navigator.dart';
+import 'package:hospital_appp/onboarding/login_page.dart';
 
 class SetupNetworkMain extends StatelessWidget {
-  const SetupNetworkMain({super.key});
+  SetupNetworkMain({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: getFontSize(14, context), vertical: getFontSize(22, context)),
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(top: 120),
-              child: Center(
+            Spacer(),
+            Center(
                 child: Text(
                   "Setup Network",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.w500),
                 ),
               ),
-            ),
+
             Padding(
-              padding: const EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(top: getFontSize(20, context)),
               child: Container(
-                width: 257,
-                height: 47,
+                width: getFontSize(257, context),
+                height: getFontSize(47, context),
                 child: Text(
                   textAlign: TextAlign.center,
                   "Setup your network and add patients, specialists and hospitals.",
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                  style: TextStyle(fontSize: getFontSize(14, context), color: Colors.grey),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 40),
+              padding: EdgeInsets.only(top: getFontSize(40, context)),
               child: SvgPicture.asset("assets/images/network.svg"),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 5, right: 5, top: 80),
+              padding: EdgeInsets.only(left: getFontSize(5, context), right: getFontSize(5, context), top: getFontSize(80, context)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    width: 90,
-                    height: 118,
+                    width: getFontSize(90, context),
+                    height: getFontSize(118, context),
                     child: Column(
                       children: [
                         GestureDetector(
@@ -58,8 +59,8 @@ class SetupNetworkMain extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (context) => AddPatients())),
                           child: Container(
-                            width: 78,
-                            height: 78,
+                            width: getFontSize(78, context),
+                            height: getFontSize(78, context),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle, color: Colors.blue[50]),
                             child: Center(
@@ -68,10 +69,10 @@ class SetupNetworkMain extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: const Text(
+                          padding: EdgeInsets.only(top: getFontSize(20, context)),
+                          child: Text(
                             "Add patients",
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: getFontSize(12, context)),
                           ),
                         )
                       ],
@@ -85,25 +86,25 @@ class SetupNetworkMain extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => AddSpecialists())),
                     child: Container(
-                      width: 90,
-                      height: 118,
+                      width: getFontSize(90, context),
+                      height: getFontSize(118, context),
                       child: Column(
                         children: [
                           Container(
-                            width: 78,
-                            height: 78,
+                            width: getFontSize(78, context),
+                            height: getFontSize(78, context),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle, color: Colors.blue[50]),
                             child: Center(
                                 child: SvgPicture.asset(
                                     "assets/images/doctor.svg")),
                           ),
-                          const SizedBox(
-                            height: 20,
+                          SizedBox(
+                            height: getFontSize(20, context),
                           ),
-                          const Text(
+                          Text(
                             "Add specialists",
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: getFontSize(12, context)),
                           )
                         ],
                       ),
@@ -115,13 +116,13 @@ class SetupNetworkMain extends StatelessWidget {
                     onTap: () => Navigator.push(context,
                         MaterialPageRoute(builder: (context) => AddPharmacy())),
                     child: Container(
-                      width: 90,
-                      height: 118,
+                      width: getFontSize(90, context),
+                      height: getFontSize(118, context),
                       child: Column(
                         children: [
                           Container(
-                            width: 78,
-                            height: 78,
+                            width: getFontSize(78, context),
+                            height: getFontSize(78, context),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle, color: Colors.blue[50]),
                             child: Center(
@@ -129,11 +130,11 @@ class SetupNetworkMain extends StatelessWidget {
                                     SvgPicture.asset("assets/images/rx.svg")),
                           ),
                           SizedBox(
-                            height: 20,
+                            height: getFontSize(20, context),
                           ),
                           Text(
                             "Add pharmacy",
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: getFontSize(12, context)),
                           )
                         ],
                       ),
@@ -142,16 +143,16 @@ class SetupNetworkMain extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 40),
-              child: GestureDetector(
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => MainNavigator(index: 0))),
+            Spacer(),
+
+             GestureDetector(
+                onTap: () =>  Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (builder) => LoginPage()), // Navigate to Login screen
+                      (Route<dynamic> route) => false, // Remove all previous routes
+                ),
                 child: Container(
-                  width: 335,
-                  height: 54,
+                  width: getFontSize(335, context),
+                  height: getFontSize(54, context),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6),
                       color: Colors.white,
@@ -163,7 +164,7 @@ class SetupNetworkMain extends StatelessWidget {
                   )),
                 ),
               ),
-            )
+            // Spacer(),
           ],
         ),
       )),

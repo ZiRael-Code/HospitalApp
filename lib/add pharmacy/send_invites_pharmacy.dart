@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/send_invites_successful_page.dart';
@@ -6,7 +7,7 @@ import 'package:hospital_appp/components/my_blue_button.dart';
 
 class SendInvitesPharmacy extends StatefulWidget {
   final List<String> selectedContacts;
-  const SendInvitesPharmacy({super.key, required this.selectedContacts});
+  SendInvitesPharmacy({super.key, required this.selectedContacts});
 
   @override
   State<SendInvitesPharmacy> createState() => _SendInvitesPharmacyState();
@@ -18,57 +19,57 @@ class _SendInvitesPharmacyState extends State<SendInvitesPharmacy> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: Column(
             children: [
-              const SizedBox(height: 30),
+              SizedBox(height: getFontSize(30, context)),
               Row(
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      width: 35,
-                      height: 35,
-                      padding: const EdgeInsets.all(10),
+                      width: getFontSize(35, context),
+                      height: getFontSize(35, context),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
-                        width: 8.0,
-                        height: 15,
+                        width: getFontSize(8.0, context),
+                        height: getFontSize(15, context),
                       ),
                     ),
                   ),
-                  const SizedBox(width: 50),
-                  const Center(
+                  SizedBox(width: getFontSize(50, context)),
+                  Center(
                     child: Text(
                       "Select from contact list",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: getFontSize(20, context),
                       ),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 40),
-              const SizedBox(
-                width: 310,
-                height: 190,
+              SizedBox(height: getFontSize(40, context)),
+              SizedBox(
+                width: getFontSize(310, context),
+                height: getFontSize(190, context),
                 child: Column(
                   children: [
                     Text(
                       "Send an invite link to a patient, so when the person registers on the app using your link, you will be able to access their details.",
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: getFontSize(14, context)),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: getFontSize(20, context)),
                     Text(
                       "To download the MyVitalz app, click on this link to download from playstore or app store.",
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: getFontSize(14, context)),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: getFontSize(20, context)),
                     Row(
                       children: [
                         Text(
@@ -77,53 +78,53 @@ class _SendInvitesPharmacyState extends State<SendInvitesPharmacy> {
                         ),
                         Text(
                           "7f4j6n8qN6EDCP-9wd/8ag7...",
-                          style: TextStyle(color: Colors.blue, fontSize: 14),
+                          style: TextStyle(color: Colors.blue, fontSize: getFontSize(14, context)),
                         ),
                       ],
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
-              const SizedBox(height: 5),
+              SizedBox(height: getFontSize(30, context)),
+              SizedBox(height: getFontSize(5, context)),
               SizedBox(
-                width: 350,
+                width: getFontSize(350, context),
                 child: Divider(
                   color: Colors.grey[300],
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
               // Display the count of selected contacts
               Center(
                 child: Text(
                   "${widget.selectedContacts.length} Contacts selected ",
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 16,
+                    fontSize: getFontSize(16, context),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
               // Display selected contacts in a horizontal scroll view
               SizedBox(
-                height: 100,
+                height: getFontSize(100, context),
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: widget.selectedContacts.length,
                   itemBuilder: (context, index) {
                     final contact = widget.selectedContacts[index];
                     return Padding(
-                      padding: const EdgeInsets.only(right: 10),
+                      padding: EdgeInsets.only(right: getFontSize(10, context)),
                       child: Column(
                         children: [
                           Stack(
                             children: [
                               // Circle with initials
                               Container(
-                                width: 60,
-                                height: 60,
-                                decoration: const BoxDecoration(
+                                width: getFontSize(60, context),
+                                height: getFontSize(60, context),
+                                decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Colors.black,
                                 ),
@@ -131,9 +132,9 @@ class _SendInvitesPharmacyState extends State<SendInvitesPharmacy> {
                                   child: Text(
                                     contact[
                                         0], // First letter of contact's name
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 20,
+                                      fontSize: getFontSize(20, context),
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -141,8 +142,8 @@ class _SendInvitesPharmacyState extends State<SendInvitesPharmacy> {
                               ),
                               // Close icon for removing contact
                               Positioned(
-                                top: 0,
-                                right: 0,
+                                top: getFontSize(0, context),
+                                right: getFontSize(0, context),
                                 child: GestureDetector(
                                   onTap: () {
                                     setState(() {
@@ -150,30 +151,30 @@ class _SendInvitesPharmacyState extends State<SendInvitesPharmacy> {
                                     });
                                   },
                                   child: Container(
-                                    width: 20,
-                                    height: 20,
+                                    width: getFontSize(20, context),
+                                    height: getFontSize(20, context),
                                     decoration: BoxDecoration(
                                       border: Border.all(color: Colors.white),
                                       shape: BoxShape.circle,
                                       color: Colors.red,
                                     ),
-                                    child: const Icon(
+                                    child: Icon(
                                       Icons.close,
                                       color: Colors.white,
-                                      size: 16,
+                                      size: getFontSize(16, context),
                                     ),
                                   ),
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 5),
+                          SizedBox(height: getFontSize(5, context)),
                           // Contact name
                           SizedBox(
-                            width: 70,
+                            width: getFontSize(70, context),
                             child: Text(
                               contact,
-                              style: const TextStyle(fontSize: 12),
+                              style: TextStyle(fontSize: getFontSize(12, context)),
                               overflow: TextOverflow.visible,
                               textAlign: TextAlign.center,
                             ),
@@ -184,25 +185,25 @@ class _SendInvitesPharmacyState extends State<SendInvitesPharmacy> {
                   },
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               ),
               SizedBox(
-                width: 350,
+                width: getFontSize(350, context),
                 child: Divider(
                   color: Colors.grey[300],
                 ),
               ),
-              const SizedBox(
-                height: 5,
+              SizedBox(
+                height: getFontSize(5, context),
               ),
               Center(
                 child: Image.asset(
                   "assets/images/Rectangle.png",
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -210,56 +211,56 @@ class _SendInvitesPharmacyState extends State<SendInvitesPharmacy> {
                   Column(
                     children: [
                       Container(
-                        width: 90,
-                        height: 90,
+                        width: getFontSize(90, context),
+                        height: getFontSize(90, context),
                         decoration: BoxDecoration(
                             shape: BoxShape.circle, color: Colors.blue[100]),
                         child: Container(
-                          padding: const EdgeInsets.all(30),
+                          padding: EdgeInsets.all(30),
                           child: SvgPicture.asset(
                             "assets/images/whatsapps.svg",
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: getFontSize(20, context),
                       ),
-                      const SizedBox(
-                        width: 90,
+                      SizedBox(
+                        width: getFontSize(90, context),
                         child: Text(
                           "Share on whatsapp",
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(fontSize: getFontSize(12, context)),
                           overflow: TextOverflow.visible,
                           textAlign: TextAlign.center,
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    width: 50,
+                  SizedBox(
+                    width: getFontSize(50, context),
                   ),
                   Column(
                     children: [
                       Container(
-                        width: 90,
-                        height: 90,
+                        width: getFontSize(90, context),
+                        height: getFontSize(90, context),
                         decoration: BoxDecoration(
                             shape: BoxShape.circle, color: Colors.blue[100]),
                         child: Container(
-                          padding: const EdgeInsets.all(30),
+                          padding: EdgeInsets.all(30),
                           child: SvgPicture.asset(
                             "assets/images/messangers.svg",
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: getFontSize(20, context),
                       ),
-                      const SizedBox(
-                        width: 90,
+                      SizedBox(
+                        width: getFontSize(90, context),
                         child: Text(
                           "Share as text message",
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(fontSize: getFontSize(12, context)),
                           overflow: TextOverflow.visible,
                           textAlign: TextAlign.center,
                         ),
@@ -268,16 +269,16 @@ class _SendInvitesPharmacyState extends State<SendInvitesPharmacy> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               ),
               GestureDetector(
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              const SendInvitesSuccessfulPagePharmacy())),
-                  child: const MyBlueButton(text: "Send invites"))
+                              SendInvitesSuccessfulPagePharmacy())),
+                  child: MyBlueButton(text: "Send invites"))
             ],
           ),
         ),

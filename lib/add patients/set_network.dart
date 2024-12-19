@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/MainScreen/MainNavigator.dart';
@@ -5,46 +6,44 @@ import 'package:hospital_appp/add%20pharmacy/add_pharmacy.dart';
 import 'package:hospital_appp/add_specialists/add_specialists.dart';
 
 class SetupNetwork extends StatelessWidget {
-  const SetupNetwork({super.key});
+  SetupNetwork({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: getFontSize(15, context), vertical: getFontSize(22, context)),
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(top: 120),
-              child: Center(
+            Spacer(),
+             Center(
                 child: Text(
-                  "Setup Network1",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                  "Setup Network",
+                  style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.w500),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: getFontSize(20, context),
             ),
             Container(
-              width: 257,
-              height: 47,
+              width: getFontSize(257, context),
+              height: getFontSize(47, context),
               child: Text(
                 textAlign: TextAlign.center,
                 "Setup your network and add patients, specialists and hospitals.",
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+                style: TextStyle(fontSize: getFontSize(14, context), color: Colors.grey),
               ),
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: getFontSize(40, context),
             ),
             SvgPicture.asset("assets/images/network.svg"),
-            const SizedBox(
-              height: 80,
+            SizedBox(
+              height: getFontSize(80, context),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
+              padding: EdgeInsets.symmetric(horizontal: getFontSize(5, context)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -52,13 +51,13 @@ class SetupNetwork extends StatelessWidget {
                     alignment: Alignment.topRight,
                     children: [
                       Container(
-                        width: 90,
-                        height: 118,
+                        width: getFontSize(90, context),
+                        height: getFontSize(118, context),
                         child: Column(
                           children: [
                             Container(
-                              width: 78,
-                              height: 78,
+                              width: getFontSize(78, context),
+                              height: getFontSize(78, context),
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Colors.grey[100]),
@@ -66,19 +65,19 @@ class SetupNetwork extends StatelessWidget {
                                   child: SvgPicture.asset(
                                       "assets/images/person.svg")),
                             ),
-                            const SizedBox(
-                              height: 20,
+                            SizedBox(
+                              height: getFontSize(20, context),
                             ),
-                            const Text(
+                            Text(
                               "Add patients",
-                              style: TextStyle(fontSize: 12),
+                              style: TextStyle(fontSize: getFontSize(12, context)),
                             )
                           ],
                         ),
                       ),
                       Container(
-                        width: 26,
-                        height: 26,
+                        width: getFontSize(26, context),
+                        height: getFontSize(26, context),
                         decoration: BoxDecoration(
                             color: Colors.grey, shape: BoxShape.circle),
                         child: Icon(Icons.check),
@@ -93,25 +92,25 @@ class SetupNetwork extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => AddSpecialists())),
                     child: Container(
-                      width: 90,
-                      height: 118,
+                      width: getFontSize(90, context),
+                      height: getFontSize(118, context),
                       child: Column(
                         children: [
                           Container(
-                            width: 78,
-                            height: 78,
+                            width: getFontSize(78, context),
+                            height: getFontSize(78, context),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle, color: Colors.blue[50]),
                             child: Center(
                                 child: SvgPicture.asset(
                                     "assets/images/doctor.svg")),
                           ),
-                          const SizedBox(
-                            height: 20,
+                          SizedBox(
+                            height: getFontSize(20, context),
                           ),
-                          const Text(
+                          Text(
                             "Add specialists",
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: getFontSize(12, context)),
                           )
                         ],
                       ),
@@ -123,13 +122,13 @@ class SetupNetwork extends StatelessWidget {
                     onTap: () => Navigator.push(context,
                         MaterialPageRoute(builder: (context) => AddPharmacy())),
                     child: Container(
-                      width: 90,
-                      height: 118,
+                      width: getFontSize(90, context),
+                      height: getFontSize(118, context),
                       child: Column(
                         children: [
                           Container(
-                            width: 78,
-                            height: 78,
+                            width: getFontSize(78, context),
+                            height: getFontSize(78, context),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle, color: Colors.blue[50]),
                             child: Center(
@@ -137,11 +136,11 @@ class SetupNetwork extends StatelessWidget {
                                     SvgPicture.asset("assets/images/rx.svg")),
                           ),
                           SizedBox(
-                            height: 20,
+                            height: getFontSize(20, context),
                           ),
                           Text(
                             "Add pharmacy",
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: getFontSize(12, context)),
                           )
                         ],
                       ),
@@ -150,17 +149,15 @@ class SetupNetwork extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
-              height: 40,
-            ),
+            Spacer(),
             GestureDetector(
               onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => MainNavigator(index: 0))),
               child: Container(
-                width: 335,
-                height: 54,
+                width: getFontSize(335, context),
+                height: getFontSize(54, context),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6),
                     color: Colors.white,
@@ -171,7 +168,9 @@ class SetupNetwork extends StatelessWidget {
                   style: TextStyle(color: Colors.blue),
                 )),
               ),
-            )
+            ),
+            // Spacer(),
+
           ],
         ),
       )),

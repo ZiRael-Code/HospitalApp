@@ -14,7 +14,7 @@ dark_blue_button(BuildContext context, String text){
       ),
     ),
     child: Padding(
-      padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0),
+      padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(12.0, context)),
       child: Text(
         text,
         style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
@@ -39,7 +39,7 @@ light_blue_button(BuildContext context, String text){
       ),
     ),
     child: Padding(
-      padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0),
+      padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(12.0, context)),
       child: Text(
         text,
         style: TextStyle(color: Colors.blue, fontSize: getFontSize(16, context)),

@@ -9,7 +9,7 @@ import '../MainScreen/Dashboard.dart';
 import 'admin_panel_editInfo.dart';
 
 class SetupLogin extends StatefulWidget {
-  const SetupLogin({super.key});
+  SetupLogin({super.key});
 
   @override
   State<SetupLogin> createState() => _SetupLoginState();
@@ -55,11 +55,11 @@ class _SetupLoginState extends State<SetupLogin> {
         body: Padding(padding:  EdgeInsets.all(14),
         child: Column(
           children: [
-            SizedBox(height: 15,),
-            Text(textAlign: TextAlign.center, style: TextStyle(fontSize: 16,),
+            SizedBox(height: getFontSize(15, context),),
+            Text(textAlign: TextAlign.center, style: TextStyle(fontSize: getFontSize(16, context),),
                 "You can create unique logins using custom emails you normally use at your hospital so your specialists can login using the same email and password."),
 
-           SizedBox(height: 45,),
+           SizedBox(height: getFontSize(45, context),),
            textField(
              label: "Enter email extension",
              hint: "e.g usermail@hospitalmail.com"
@@ -96,7 +96,7 @@ class _SetupLoginState extends State<SetupLogin> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0),
+                        padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(12.0, context)),
                         child: Text(
                           "Continue",
                           style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),

@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'patients_information.dart';
@@ -17,7 +18,7 @@ class Patient {
 class PatientListScreen extends StatefulWidget {
   final List<Patient> initialPatients;
 
-  const PatientListScreen({
+  PatientListScreen({
     Key? key,
     required this.initialPatients,
   }) : super(key: key);
@@ -58,37 +59,37 @@ class _PatientListScreenState extends State<PatientListScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(15, context)),
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 40),
+                padding: EdgeInsets.only(top: getFontSize(40, context)),
                 child: Row(
                   children: [
                     GestureDetector(
                       onTap: () => Navigator.pop(context),
                       child: Container(
-                        width: 45,
-                        height: 45,
-                        padding: const EdgeInsets.all(10),
+                        width: getFontSize(45, context),
+                        height: getFontSize(45, context),
+                        padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-                          color: const Color(0xFFE5E5E5),
+                          color: Color(0xFFE5E5E5),
                         ),
                         child: SvgPicture.asset(
                           'assets/images/back.svg',
-                          width: 8.0,
-                          height: 15,
+                          width: getFontSize(8.0, context),
+                          height: getFontSize(15, context),
                         ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 70),
-                      child: const Text(
+                      padding: EdgeInsets.only(top: getFontSize(70, context)),
+                      child: Text(
                         "Patient List",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: getFontSize(20, context),
                         ),
                       ),
                     ),
@@ -98,10 +99,10 @@ class _PatientListScreenState extends State<PatientListScreen> {
 
               // ListView.builder to show patients
               Padding(
-                padding: const EdgeInsets.only(top: 40),
+                padding: EdgeInsets.only(top: getFontSize(40, context)),
                 child: Expanded(
                   child: _patients.isEmpty
-                      ? const Center(
+                      ? Center(
                           child: Text(
                             "No patients added yet. Add patients to see them here.",
                           ),
@@ -114,12 +115,12 @@ class _PatientListScreenState extends State<PatientListScreen> {
                               children: [
                                 Row(
                                   children: [
-                                    const CircleAvatar(
+                                    CircleAvatar(
                                       radius: 25,
                                       backgroundImage: AssetImage(
                                           'assets/images/girl.png'), // Add a default profile image here
                                     ),
-                                    const SizedBox(width: 15),
+                                    SizedBox(width: getFontSize(15, context)),
                                     Expanded(
                                       child: Column(
                                         crossAxisAlignment:
@@ -127,14 +128,14 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                         children: [
                                           Text(
                                             patient.name,
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 16,
+                                              fontSize: getFontSize(16, context),
                                             ),
                                           ),
                                           Text(
                                             "${patient.phoneNumber} . ${patient.location}",
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                               color: Colors.grey,
                                             ),
                                           ),
@@ -145,14 +146,14 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                       children: [
                                         // Edit Icon Button
                                         Container(
-                                          width: 33.79,
-                                          height: 33.79,
+                                          width: getFontSize(33.79, context),
+                                          height: getFontSize(33.79, context),
                                           decoration: BoxDecoration(
                                               color: Colors.blue[200],
                                               shape: BoxShape.circle),
                                           child: Center(
                                             child: IconButton(
-                                              icon: const Icon(Icons.edit,
+                                              icon: Icon(Icons.edit,
                                                   color: Colors.blue),
                                               onPressed: () async {
                                                 final updatedPatient =
@@ -175,19 +176,19 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                             ),
                                           ),
                                         ),
-                                        const SizedBox(
-                                          width: 10,
+                                        SizedBox(
+                                          width: getFontSize(10, context),
                                         ),
                                         // Delete Icon Button
                                         Container(
-                                          width: 33.79,
-                                          height: 33.79,
+                                          width: getFontSize(33.79, context),
+                                          height: getFontSize(33.79, context),
                                           decoration: BoxDecoration(
                                               color: Colors.red[200],
                                               shape: BoxShape.circle),
                                           child: Center(
                                             child: IconButton(
-                                              icon: const Icon(Icons.delete,
+                                              icon: Icon(Icons.delete,
                                                   color: Colors.red),
                                               onPressed: () {
                                                 _deletePatient(index);
@@ -200,11 +201,11 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                   ],
                                 ),
                                 SizedBox(
-                                  width: 350,
+                                  width: getFontSize(350, context),
                                   child: Divider(
                                     color: Colors.grey[200],
                                     thickness: 1,
-                                    height: 20,
+                                    height: getFontSize(20, context),
                                   ),
                                 ),
                               ],
@@ -220,7 +221,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                   final newPatient = await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const PatientsInformation(),
+                      builder: (context) => PatientsInformation(),
                     ),
                   );
 
@@ -229,29 +230,29 @@ class _PatientListScreenState extends State<PatientListScreen> {
                   }
                 },
                 child: Container(
-                  width: 192,
-                  height: 52,
+                  width: getFontSize(192, context),
+                  height: getFontSize(52, context),
                   decoration: BoxDecoration(
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.add_circle_outline, color: Colors.white),
-                      SizedBox(width: 10),
+                      SizedBox(width: getFontSize(10, context)),
                       Text(
                         "Add patient(s)",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
+                          fontSize: getFontSize(16, context),
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: getFontSize(30, context)),
             ],
           ),
         ),

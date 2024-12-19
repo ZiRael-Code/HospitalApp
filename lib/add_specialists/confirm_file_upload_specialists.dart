@@ -1,9 +1,10 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add_specialists/success_page_specialists.dart';
 
 class ConfirmFileUploadSpecialists extends StatefulWidget {
-  const ConfirmFileUploadSpecialists({super.key});
+  ConfirmFileUploadSpecialists({super.key});
 
   @override
   State<ConfirmFileUploadSpecialists> createState() =>
@@ -17,10 +18,10 @@ class _ConfirmFileUploadSpecialistsState
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(15, context)),
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
               Row(
                 children: [
                   Row(
@@ -28,51 +29,51 @@ class _ConfirmFileUploadSpecialistsState
                       GestureDetector(
                         onTap: () => Navigator.pop(context),
                         child: Container(
-                          width: 45,
-                          height: 45,
-                          padding: const EdgeInsets.all(10),
+                          width: getFontSize(45, context),
+                          height: getFontSize(45, context),
+                          padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: const Color(0xFFE5E5E5),
+                            color: Color(0xFFE5E5E5),
                           ),
                           child: SvgPicture.asset(
                             'assets/images/back.svg',
-                            width: 8.0,
-                            height: 15,
+                            width: getFontSize(8.0, context),
+                            height: getFontSize(15, context),
                           ),
                         ),
                       ),
-                      const SizedBox(width: 110),
+                      SizedBox(width: getFontSize(110, context)),
                       SvgPicture.asset("assets/images/second.svg")
                     ],
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               ),
               Center(
                 child: Text(
                   "Confirm file upload",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.w500),
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: getFontSize(20, context),
               ),
               Center(
                 child: Container(
-                  width: 256,
-                  height: 47,
+                  width: getFontSize(256, context),
+                  height: getFontSize(47, context),
                   child: Text(
                     textAlign: TextAlign.center,
                     "Confirm that everything you have uploaded is correct.",
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                    style: TextStyle(fontSize: getFontSize(14, context), color: Colors.grey),
                   ),
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: getFontSize(20, context),
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal, // Horizontal scrolling
@@ -87,10 +88,10 @@ class _ConfirmFileUploadSpecialistsState
                         Colors.grey.shade200), // Header color
                     dividerThickness: 1, // Divider between rows
                     columnSpacing: 16.0, // Space between columns
-                    columns: const [
+                    columns: [
                       DataColumn(
                         label: SizedBox(
-                          width: 200, // Wider Name column
+                          width: getFontSize(200, context), // Wider Name column
                           child: Text(
                             'Name',
                             style: TextStyle(fontWeight: FontWeight.bold),
@@ -99,7 +100,7 @@ class _ConfirmFileUploadSpecialistsState
                       ),
                       DataColumn(
                         label: SizedBox(
-                          width: 120, // Phone number column
+                          width: getFontSize(120, context), // Phone number column
                           child: Text(
                             'Phone number',
                             style: TextStyle(fontWeight: FontWeight.bold),
@@ -108,7 +109,7 @@ class _ConfirmFileUploadSpecialistsState
                       ),
                       DataColumn(
                         label: SizedBox(
-                          width: 120, // Location column
+                          width: getFontSize(120, context), // Location column
                           child: Text(
                             'Location',
                             style: TextStyle(fontWeight: FontWeight.bold),
@@ -153,8 +154,8 @@ class _ConfirmFileUploadSpecialistsState
                     MaterialPageRoute(
                         builder: (context) => SuccessPageSpecialists())),
                 child: Container(
-                  width: 335,
-                  height: 54,
+                  width: getFontSize(335, context),
+                  height: getFontSize(54, context),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.blue,
@@ -169,7 +170,7 @@ class _ConfirmFileUploadSpecialistsState
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: getFontSize(40, context),
               ),
             ],
           ),

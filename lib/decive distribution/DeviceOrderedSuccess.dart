@@ -29,6 +29,9 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
               InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -41,6 +44,8 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
               ),
 
               Spacer(),
@@ -91,7 +96,7 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
             color: Color(0xFFE2EDFF),
             borderRadius: BorderRadius.circular(9),
           ),
-          padding: EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(16.0, context)),
           child: DropdownButton<String>(
             value: _selectedValue,
             hint: Text(
@@ -132,7 +137,7 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
             child: Text(
               'Done',
               style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),

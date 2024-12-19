@@ -11,7 +11,7 @@ import 'package:hospital_appp/Specialist/view_work_history.dart';
 import 'Dashboard.dart';
 
 class Specialist extends StatefulWidget {
-  const Specialist({super.key});
+  Specialist({super.key});
 
   @override
   State<Specialist> createState() => _SpecialistState();
@@ -87,12 +87,12 @@ class _SpecialistState extends State<Specialist> {
                 ),
               ],
             ),
-            SizedBox(height: 30,),
+            SizedBox(height: getFontSize(30, context),),
             Align(
               alignment: Alignment.centerLeft,
               child:
               Text("Activities", style: TextStyle(fontWeight: FontWeight.w600 ,fontSize: getFontSize(20, context)),),),
-            SizedBox(height: 14,),
+            SizedBox(height: getFontSize(14, context),),
             Expanded(
                 child:
                 SingleChildScrollView(
@@ -137,14 +137,14 @@ class _SpecialistState extends State<Specialist> {
   }){
     return  Stack(
         children: [ Container(
-          margin: EdgeInsets.symmetric(vertical: 6),
+          margin: EdgeInsets.symmetric(vertical: getFontSize(6, context)),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(width: 1, color: Colors.black12)
+        border: Border.all(width: getFontSize(1, context), color: Colors.black12)
       ),
       child: Container(
-          padding: EdgeInsets.symmetric(vertical: 24, horizontal: 14),
+          padding: EdgeInsets.symmetric(vertical: getFontSize(24, context), horizontal: getFontSize(14, context)),
           child: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -152,16 +152,16 @@ class _SpecialistState extends State<Specialist> {
           children: [
             Container(
               padding: EdgeInsets.all(8),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: (Color(0xffE5DEF7))
               ),
               child: icon_path is String ? SvgPicture.asset(icon_path, ) : Icon(icon_path, color: Color(0xff7C5CD6),) ,
             ),
-            const SizedBox(width: 12,),
+            SizedBox(width: getFontSize(12, context),),
             Container(
-              width: 190,
-              child: Text(des, style: const TextStyle(fontSize: 15),),
+              width: getFontSize(190, context),
+              child: Text(des, style: TextStyle(fontSize: getFontSize(15, context)),),
             )
           ],
         ),
@@ -172,15 +172,15 @@ class _SpecialistState extends State<Specialist> {
 
     ),
           Positioned(
-            right: 7,
-            top: 12,
+            right: getFontSize(7, context),
+            top: getFontSize(12, context),
             child: Container(
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(color: Color(0xffE2EDFF),
                     borderRadius: BorderRadius.circular(18)
                 ),
                 child:
-                Text("12 0ct 2022", style: TextStyle(fontSize: 10, color: Colors.blue),)
+                Text("12 0ct 2022", style: TextStyle(fontSize: getFontSize(10, context), color: Colors.blue),)
             )
         )
         ],
@@ -194,7 +194,7 @@ actions(
     String text
     ) {
   return  Container(
-      height: 120,
+      height: getFontSize(120, context),
       child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Centers the items
       children: [
@@ -210,9 +210,9 @@ actions(
             color: Colors.blue,
           ),
         ),
-        SizedBox(height: 12),
+        SizedBox(height: getFontSize(12, context)),
         SizedBox(
-          width: 62,
+          width: getFontSize(62, context),
           child: Text(
             text,
             textAlign: TextAlign.center,
@@ -223,7 +223,7 @@ actions(
           ),
         ),
         // Add consistent spacing below the text
-        SizedBox(height: 16),
+        SizedBox(height: getFontSize(16, context)),
       ],
     ),
   );

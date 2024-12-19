@@ -1,3 +1,4 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/patients_list_screen.dart';
@@ -6,7 +7,7 @@ import 'package:hospital_appp/components/patients_textfield.dart';
 
 class PatientsInformation extends StatefulWidget {
   final Patient? patient;
-  const PatientsInformation({super.key, this.patient});
+  PatientsInformation({super.key, this.patient});
 
   @override
   State<PatientsInformation> createState() => _PatientsInformationState();
@@ -58,72 +59,72 @@ class _PatientsInformationState extends State<PatientsInformation> {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
               Row(
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      width: 35,
-                      height: 35,
-                      padding: const EdgeInsets.all(10),
+                      width: getFontSize(35, context),
+                      height: getFontSize(35, context),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
-                        width: 8.0,
-                        height: 15,
+                        width: getFontSize(8.0, context),
+                        height: getFontSize(15, context),
                       ),
                     ),
                   ),
-                  const SizedBox(width: 60),
-                  const Text(
+                  SizedBox(width: getFontSize(60, context)),
+                  Text(
                     "Patients information",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
 
               // Patient full name
-              const Text(
+              Text(
                 "Patient full name",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               PatientsTextfield(
-                height: 50,
-                width: 335,
+                height: getFontSize(50, context),
+                width: getFontSize(335, context),
                 hinttext: "e.g Janet Okoli",
                 controller: _nameController,
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Patient phone number
-              const Text(
+              Text(
                 "Patient phone number",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               PatientsTextfield(
-                height: 50,
-                width: 335,
+                height: getFontSize(50, context),
+                width: getFontSize(335, context),
                 hinttext: "e.g 08011112233",
                 controller: _phoneNumberController,
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Gender and Age
-              const Row(
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Column(
@@ -133,15 +134,15 @@ class _PatientsInformationState extends State<PatientsInformation> {
                         "Gender",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: getFontSize(10, context)),
                       PatientsTextfield(
-                        height: 50,
-                        width: 157,
+                        height: getFontSize(50, context),
+                        width: getFontSize(157, context),
                         hinttext: "e.g Female",
                       ),
                     ],
                   ),
-                  SizedBox(width: 30),
+                  SizedBox(width: getFontSize(30, context)),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -149,20 +150,20 @@ class _PatientsInformationState extends State<PatientsInformation> {
                         "Age",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: getFontSize(10, context)),
                       PatientsTextfield(
-                        height: 50,
-                        width: 157,
+                        height: getFontSize(50, context),
+                        width: getFontSize(157, context),
                         hinttext: "e.g 34",
                       ),
                     ],
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Blood group and Genotype
-              const Row(
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Column(
@@ -172,15 +173,15 @@ class _PatientsInformationState extends State<PatientsInformation> {
                         "Blood group",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: getFontSize(10, context)),
                       PatientsTextfield(
-                        height: 50,
-                        width: 157,
+                        height: getFontSize(50, context),
+                        width: getFontSize(157, context),
                         hinttext: "O+",
                       ),
                     ],
                   ),
-                  SizedBox(width: 30),
+                  SizedBox(width: getFontSize(30, context)),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -188,44 +189,44 @@ class _PatientsInformationState extends State<PatientsInformation> {
                         "Genotype",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: getFontSize(10, context)),
                       PatientsTextfield(
-                        height: 50,
-                        width: 157,
+                        height: getFontSize(50, context),
+                        width: getFontSize(157, context),
                         hinttext: "AS",
                       ),
                     ],
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Location
-              const Text(
+              Text(
                 "Location",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               PatientsTextfield(
-                height: 50,
-                width: 335,
+                height: getFontSize(50, context),
+                width: getFontSize(335, context),
                 hinttext: "e.g Lagos",
                 controller: _locationController,
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Medical history
-              const Text(
+              Text(
                 "Medical history",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 10),
-              const PatientsTextfield(
-                height: 160,
-                width: 335,
+              SizedBox(height: getFontSize(10, context)),
+              PatientsTextfield(
+                height: getFontSize(160, context),
+                width: getFontSize(335, context),
                 hinttext: "No medical history available yet",
               ),
-              const SizedBox(height: 60),
+              SizedBox(height: getFontSize(60, context)),
 
               // Add Patient Button
               GestureDetector(
@@ -251,7 +252,7 @@ class _PatientsInformationState extends State<PatientsInformation> {
                     );
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
+                      SnackBar(
                         content: Text("Please fill in all fields"),
                       ),
                     );
@@ -261,7 +262,7 @@ class _PatientsInformationState extends State<PatientsInformation> {
                     text: widget.patient == null ? "Add Patient" : "Save"),
               ),
 
-              const SizedBox(height: 30),
+              SizedBox(height: getFontSize(30, context)),
             ],
           ),
         ),

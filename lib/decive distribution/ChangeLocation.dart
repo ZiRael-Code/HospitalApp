@@ -66,7 +66,7 @@ class _ChangeLocationState extends State<ChangeLocation> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-                width: 335,
+                width: getFontSize(335, context),
                 child: inputField(label: "State", hint: "e.g lagos")),
             inputField(label: "Region", hint: "e.g surulere"),
             ElevatedButton(
@@ -83,7 +83,7 @@ class _ChangeLocationState extends State<ChangeLocation> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                 child: Text(
                   'Confirm new location',
                   style: TextStyle(
@@ -115,7 +115,7 @@ class _ChangeLocationState extends State<ChangeLocation> {
         TextField(
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: const TextStyle(color: Colors.black26),
+            hintStyle: TextStyle(color: Colors.black26),
             filled: true,
             fillColor: Colors.grey[200], // Light gray background
             border: OutlineInputBorder(
@@ -139,11 +139,11 @@ class _ChangeLocationState extends State<ChangeLocation> {
                 width: getFontSize(1.5, context),
               ),
             ),
-            suffixIcon: const Icon(
+            suffixIcon: Icon(
               Icons.keyboard_arrow_down_sharp,
               color: Colors.black45,
             ), // Optional suffix icon
-            constraints: const BoxConstraints(
+            constraints: BoxConstraints(
               maxWidth: 331, // Set the fixed width for the TextField
             ),
           ),

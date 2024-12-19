@@ -67,13 +67,13 @@ class _DashboardState extends State<Dashboard> {
             ),
             Spacer(),
             SizedBox(
-              width: 10,
+              width: getFontSize(10),
             ),
             SvgPicture.asset(
               'assets/images/web.svg',
               fit: BoxFit.contain,
             ),
-            SizedBox(width: 10,),
+            SizedBox(width: getFontSize(10),),
             Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
@@ -106,16 +106,16 @@ class _DashboardState extends State<Dashboard> {
                         alignment: Alignment.centerLeft,
                         child:
                       Container(
-                        padding: EdgeInsets.symmetric(vertical: 10, horizontal:15),
+                        padding: EdgeInsets.symmetric(vertical: getFontSize(10), horizontal: getFontSize(15)),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(18),
-                          border: Border.all(width: 1, color: Colors.blue)
+                          border: Border.all(width: getFontSize(1), color: Colors.blue)
                         ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text("Main network", style: TextStyle(color: Colors.blue),),
-                            SizedBox(width: 8),
+                            SizedBox(width: getFontSize(8)),
                             Container(
                               decoration: BoxDecoration(
                                 color: Color(0xffE2EDFF),
@@ -128,7 +128,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       ),
                       ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: getFontSize(10),),
 
 
                   Column(
@@ -162,7 +162,7 @@ class _DashboardState extends State<Dashboard> {
                     ],
                   ),
                   SizedBox(
-                    height: 20,
+                    height: getFontSize(20),
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -198,7 +198,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                   SizedBox(
-                    height: 14,
+                    height: getFontSize(14),
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -213,15 +213,15 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ])),
             Padding(
-                padding: EdgeInsets.only(left: 5, right: 5),
+                padding: EdgeInsets.only(left: getFontSize(5), right: getFontSize(5)),
                 child: Container(
-                  padding: EdgeInsets.only(left: 1.5, right: 1.5),
+                  padding: EdgeInsets.only(left: getFontSize(1.5), right: getFontSize(1.5, )),
                   width: double.infinity,
                   decoration: BoxDecoration(color: Colors.grey[300]),
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 3,
+                        height: getFontSize(3),
                       ),
                       network_update(
                           network_name: "My Network",
@@ -337,7 +337,7 @@ class _DashboardState extends State<Dashboard> {
         });
       },
         child: SizedBox(
-      // height: 150,
+      // height: getFontSize(150),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -362,8 +362,8 @@ class _DashboardState extends State<Dashboard> {
               : double.infinity
 
         : double.infinity,
-      margin: EdgeInsets.only(bottom: 10,),
-      padding: EdgeInsets.only(top: 19, bottom: 19, left: 12, right: 12),
+      margin: EdgeInsets.only(bottom: getFontSize(10),),
+      padding: EdgeInsets.only(top: getFontSize(19), bottom: getFontSize(19), left: getFontSize(12), right: getFontSize(12)),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.0),
@@ -381,8 +381,8 @@ class _DashboardState extends State<Dashboard> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            width: 35,
-            height: 35,
+            width: getFontSize(35),
+            height: getFontSize(35),
             decoration:
                 BoxDecoration(shape: BoxShape.circle, color: Color(0xffE2EDFF)),
             child: icon,
@@ -394,7 +394,7 @@ class _DashboardState extends State<Dashboard> {
             alignment: Alignment.centerLeft,
             width: textContSize,
             child: AutoSizeText(text,
-                style: TextStyle(fontSize: 16.0* MediaQuery.of(context).textScaleFactor, color: Colors.black45),
+                style: TextStyle(fontSize: getFontSize(16.0, )* MediaQuery.of(context).textScaleFactor, color: Colors.black45),
                 overflow: TextOverflow.ellipsis),
           ),
           ),
@@ -435,19 +435,19 @@ class _DashboardState extends State<Dashboard> {
       Navigator.push(context, action)
     },
         child: Container(
-      margin: EdgeInsets.only(right: 15),
+      margin: EdgeInsets.only(right: getFontSize(15)),
       width: w * 0.80,
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12.0),
-          border: Border.all(width: 0.7, color: Colors.black12)),
+          border: Border.all(width: getFontSize(0.7, ), color: Colors.black12)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Label
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+            padding: EdgeInsets.symmetric(horizontal: getFontSize(8.0, ), vertical: getFontSize(4.0)),
             decoration: BoxDecoration(
               color: regularityColor.withOpacity(0.15),
               borderRadius: BorderRadius.circular(8.0),
@@ -460,7 +460,7 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
           ),
-          SizedBox(height: 12.0),
+          SizedBox(height: getFontSize(12.0, )),
           // User Information
           Row(
             children: [
@@ -469,7 +469,7 @@ class _DashboardState extends State<Dashboard> {
                     AssetImage(path), // Replace with your image asset
                 radius: 24.0,
               ),
-              SizedBox(width: 12.0),
+              SizedBox(width: getFontSize(12.0, )),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -480,21 +480,21 @@ class _DashboardState extends State<Dashboard> {
                       fontSize: getFontSize(18.0),
                     ),
                   ),
-                  SizedBox(height: 4.0),
+                  SizedBox(height: getFontSize(4.0)),
                   Text(
                     '$time · $date',
                     style: TextStyle(
                       color: Colors.grey,
-                      fontSize: 12.0,
+                      fontSize: getFontSize(12.0, ),
                     ),
                   ),
                 ],
               ),
             ],
           ),
-          SizedBox(height: 16.0),
+          SizedBox(height: getFontSize(16.0, )),
           SvgPicture.asset("assets/images/line.svg"),
-          SizedBox(height: 8.0),
+          SizedBox(height: getFontSize(8.0, )),
           // Health Readings
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -507,9 +507,9 @@ class _DashboardState extends State<Dashboard> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue,
-                        fontSize: 12),
+                        fontSize: getFontSize(12)),
                   ),
-                  Text(bp, style: TextStyle(fontSize: 12),
+                  Text(bp, style: TextStyle(fontSize: getFontSize(12)),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
@@ -522,9 +522,9 @@ class _DashboardState extends State<Dashboard> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue,
-                        fontSize: 12),
+                        fontSize: getFontSize(12)),
                   ),
-                  Text(hba1c, style: TextStyle(fontSize: 12),
+                  Text(hba1c, style: TextStyle(fontSize: getFontSize(12)),
 
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -538,9 +538,9 @@ class _DashboardState extends State<Dashboard> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue,
-                        fontSize: 12),
+                        fontSize: getFontSize(12)),
                   ),
-                  Text(ihra, style: TextStyle(fontSize: 12),
+                  Text(ihra, style: TextStyle(fontSize: getFontSize(12)),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
@@ -590,8 +590,8 @@ class _DashboardState extends State<Dashboard> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text("Switch network", style: TextStyle(fontSize: 18),),
-                        SizedBox(height: 15,),
+                        Text("Switch network", style: TextStyle(fontSize: getFontSize(18)),),
+                        SizedBox(height: getFontSize(15),),
                         network(
                           path: "assets/images/net1.jpeg",
                           name: "Main Network",
@@ -653,8 +653,8 @@ class _DashboardState extends State<Dashboard> {
         Row(
           children: [
             SizedBox(
-              width: 50,
-              height: 50,
+              width: getFontSize(50),
+              height: getFontSize(50),
 
                 child:
             CircleAvatar(
@@ -662,10 +662,10 @@ class _DashboardState extends State<Dashboard> {
               backgroundImage: AssetImage(path),
             )
             ),
-            SizedBox(width: 10,),
+            SizedBox(width: getFontSize(10),),
             Text(
               name,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+              style: TextStyle(fontSize: getFontSize(18), fontWeight: FontWeight.w400),
             ),
             Spacer(),
             Container(
@@ -679,7 +679,7 @@ class _DashboardState extends State<Dashboard> {
           ],
         ),
         Divider(color: Colors.black26,),
-        SizedBox(height: 16.0),
+        SizedBox(height: getFontSize(16.0, )),
       ],
     )
     );
@@ -710,7 +710,7 @@ network_update({
     },
       child: Container(
     alignment: Alignment.center,
-    margin: EdgeInsets.only(bottom: 15),
+    margin: EdgeInsets.only(bottom: getFontSize(15, context)),
     decoration: BoxDecoration(color: Colors.white),
     padding: EdgeInsets.all(12),
     child: Column(
@@ -720,15 +720,15 @@ network_update({
         Row(
           children: [
             SizedBox(
-              width:  42 * w / 375,
-              height: 42 * h / 812,
+              width: getFontSize(42, context) * w / 375,
+              height: getFontSize(42, context) * h / 812,
               child: CircleAvatar(
                 radius: 50,
                 backgroundImage: AssetImage(profile_path),
               ),
             ),
              SizedBox(
-              width: 10,
+              width: getFontSize(10, context),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -756,17 +756,17 @@ network_update({
           ],
         ),
         SizedBox(
-          height: 20,
+          height: getFontSize(20, context),
         ),
         SizedBox(
-          width: 285,
+          width: getFontSize(285, context),
           child: Text(text, style: TextStyle(fontSize: getFontSize(16.8, context))),
         ),
         SizedBox(
-          height: 20,
+          height: getFontSize(20, context),
         ),
         imageList.length == 1
-            ? imageViewer(w: double.infinity, h: 326 * h / 817, path: imageList[0], imageList: imageList, index: 0)
+            ? imageViewer(w: double.infinity, h: 326 * h / 817, path: imageList[0], imageList: imageList, index: 0, context: context)
             : imageList.length > 1
             ? Center(child:  Wrap(
           direction: Axis.horizontal,
@@ -774,13 +774,14 @@ network_update({
             return imageViewer(
                 w: getFontSize(157, context), h: getFontSize(170, context), path: imageList[index],
                 imageList: imageList,
-                index: index
+                index: index,
+                context: context
             );
           }),
         )
         )
-            : SizedBox(height: 15,),
-        SizedBox(height: 8,),
+            : SizedBox(height: getFontSize(15, context),),
+        SizedBox(height: getFontSize(8, context),),
         Align(alignment: Alignment.center,
             child:
             Container(
@@ -789,7 +790,7 @@ network_update({
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
                       color: Colors.grey.withOpacity(0.5),
-                      width: 1,
+                      width: getFontSize(1, context),
                     ),
                     color: Color(0xffE2EDFF)),
                 child: Row(
@@ -797,7 +798,7 @@ network_update({
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text("View details", style: TextStyle(color: Colors.blue, fontSize: 16),),
+                    Text("View details", style: TextStyle(color: Colors.blue, fontSize: getFontSize(16, context)),),
                     Icon(Icons.arrow_forward, color: Colors.blue,)
                   ],
                 )))
@@ -816,10 +817,11 @@ Widget imageViewer({
   required double h,
   required String path,
   required int index,
-  required List<String> imageList
+  required List<String> imageList,
+  required BuildContext context,
 }) {
   return Container(
-      margin: EdgeInsets.only(right: 10, bottom: 10),
+      margin: EdgeInsets.only(right: getFontSize(10, context), bottom: getFontSize(10, context)),
       child: Stack(
         children: [
           SizedBox(
@@ -842,7 +844,7 @@ Widget imageViewer({
                   color: Colors.black.withOpacity(0.50),
                 ),
                 child: Center(child: Text("+${imageList.length - index}",
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 26),),
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: getFontSize(26, context)),),
                 ))
         ],)
   );

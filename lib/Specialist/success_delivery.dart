@@ -1,10 +1,11 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hospital_appp/Account/Referral/my_blue_button.dart';
 import 'package:hospital_appp/onboarding/login_page.dart';
 
 class SuccessDelivery extends StatelessWidget {
-  const SuccessDelivery({super.key});
+  SuccessDelivery({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,42 +13,42 @@ class SuccessDelivery extends StatelessWidget {
       child: Scaffold(
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: getFontSize(20, context)),
             child: Column(
               children: [
                 SizedBox(
-                  height: 80,
+                  height: getFontSize(80, context),
                 ),
                 Text(
                   "Success!",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 28,
+                    fontSize: getFontSize(28, context),
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: getFontSize(10, context),
                 ),
                 Container(
-                  width: 258,
-                  height: 60,
-                  child: const Text(
+                  width: getFontSize(258, context),
+                  height: getFontSize(60, context),
+                  child: Text(
                     textAlign: TextAlign.center,
                     "Your account has been created successfully",
-                    style: TextStyle(fontSize: 14),
+                    style: TextStyle(fontSize: getFontSize(14, context)),
                   ),
                 ),
-                const SizedBox(
-                  height: 140,
+                SizedBox(
+                  height: getFontSize(140, context),
                 ),
                 SvgPicture.asset("assets/images/successimg.svg"),
-                const Spacer(),
+                Spacer(),
                 GestureDetector(
                     onTap: () => Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => LoginPage())),
                     child: MyBlueButton(text: "Continue to login")),
-                const SizedBox(
-                  height: 40,
+                SizedBox(
+                  height: getFontSize(40, context),
                 )
               ],
             ),

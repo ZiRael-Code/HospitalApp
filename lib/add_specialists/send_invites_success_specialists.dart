@@ -1,76 +1,77 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add_specialists/setup_network_specialists.dart';
 import 'package:hospital_appp/components/my_blue_button.dart';
 
 class SendInvitesSuccessSpecialists extends StatelessWidget {
-  const SendInvitesSuccessSpecialists({super.key});
+  SendInvitesSuccessSpecialists({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
               Row(
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      width: 35,
-                      height: 35,
-                      padding: const EdgeInsets.all(10),
+                      width: getFontSize(35, context),
+                      height: getFontSize(35, context),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
-                        width: 8.0,
-                        height: 15,
+                        width: getFontSize(8.0, context),
+                        height: getFontSize(15, context),
                       ),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               ),
-              const Center(
+              Center(
                 child: Text(
                   "Success!",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 28,
+                    fontSize: getFontSize(28, context),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               ),
-              const SizedBox(
-                width: 256,
-                height: 47,
+              SizedBox(
+                width: getFontSize(256, context),
+                height: getFontSize(47, context),
                 child: Text(
                   textAlign: TextAlign.center,
                   "You have successfully added physicans to your hospital network.",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: getFontSize(14, context),
                   ),
                 ),
               ),
-              const Spacer(),
+              Spacer(),
               GestureDetector(
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => SetupNetworkPharmacy())),
-                  child: const MyBlueButton(text: "Done")),
-              const SizedBox(
-                height: 30,
+                  child: MyBlueButton(text: "Done")),
+              SizedBox(
+                height: getFontSize(30, context),
               )
             ],
           ),

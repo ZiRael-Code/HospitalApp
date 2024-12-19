@@ -61,7 +61,7 @@ class Deviceorderedmessage extends StatelessWidget {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                        EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                     child: Text(
                       'Finish',
                       style: TextStyle(

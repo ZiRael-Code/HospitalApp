@@ -39,18 +39,23 @@ class _RequestNewDeviceScreen extends  State<PurchaseDevice> {
               InkWell(
                 onTap: () => Navigator.pop(context),
                 child:
-                Container(
-                  width: getFontSize(35, context),
-                  height: getFontSize(35, context),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Color(0xFFE5E5E5),
-                  ),
-                  child: SvgPicture.asset('assets/images/back.svg',
-                    width: getFontSize(8.0, context),
-                    height: getFontSize(15, context),),
+                InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              Container(
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Color(0xFFE5E5E5),
                 ),
+                child: SvgPicture.asset('assets/images/back.svg',
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
+              ),
+              ),
+
               ),
               Spacer(),
               Text(
@@ -84,7 +89,7 @@ class _RequestNewDeviceScreen extends  State<PurchaseDevice> {
                   Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.only(right: 10),
+                        padding: EdgeInsets.only(right: getFontSize(10, context)),
                         width: MediaQuery.of(context).size.width ,
                         decoration: BoxDecoration(
                           color: Colors.grey[200],
@@ -113,7 +118,7 @@ class _RequestNewDeviceScreen extends  State<PurchaseDevice> {
                             )
                                 : null,
                             border: InputBorder.none,
-                            contentPadding: EdgeInsets.symmetric(vertical: 15),
+                            contentPadding: EdgeInsets.symmetric(vertical: getFontSize(15, context)),
                           ),
                         ),
                       ),
@@ -166,7 +171,7 @@ class _RequestNewDeviceScreen extends  State<PurchaseDevice> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                            padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                             child: Text(
                               'Continue',
                               style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
@@ -254,7 +259,7 @@ class _RequestNewDeviceScreen extends  State<PurchaseDevice> {
                                         shape: BoxShape.circle,
                                         color: Color(0xffE2EDFF)
                                     ),
-                                    child: Center(child: Text('－', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12,color: Colors.blue)),
+                                    child: Center(child: Text('－', style: TextStyle(fontWeight: FontWeight.bold,fontSize: getFontSize(12, context),color: Colors.blue)),
                                     ),
                                   ),
                                   onTap: () {

@@ -7,7 +7,7 @@ import 'package:hospital_appp/Pharmacy/view_inventory.dart';
 import '../MainScreen/Dashboard.dart';
 
 class Store extends StatefulWidget {
-  const Store({super.key});
+  Store({super.key});
 
   @override
   State<Store> createState() => _StoreState();
@@ -77,14 +77,14 @@ class _StoreState extends State<Store> {
                       builder: (builder) => PrescriptionOrders())),
             ]),
             SizedBox(
-              height: 16,
+              height: getFontSize(16, context),
             ),
             Text(
               "Recent orders",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: getFontSize(18, context), fontWeight: FontWeight.w500),
             ),
             SizedBox(
-              height: 10,
+              height: getFontSize(10, context),
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -118,14 +118,14 @@ class _StoreState extends State<Store> {
               ),
             ),
             SizedBox(
-              height: 25,
+              height: getFontSize(25, context),
             ),
             Text(
               "Activities",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: getFontSize(18, context), fontWeight: FontWeight.w500),
             ),
             SizedBox(
-              height: 25,
+              height: getFontSize(25, context),
             ),
             Expanded(
                 child: SingleChildScrollView(
@@ -163,13 +163,13 @@ class _StoreState extends State<Store> {
     return Stack(
       children: [
         Container(
-            margin: EdgeInsets.symmetric(vertical: 6),
+            margin: EdgeInsets.symmetric(vertical: getFontSize(6, context)),
             width: double.infinity,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(width: 1, color: Colors.black12)),
+                border: Border.all(width: getFontSize(1, context), color: Colors.black12)),
             child: Container(
-                padding: EdgeInsets.symmetric(vertical: 24, horizontal: 14),
+                padding: EdgeInsets.symmetric(vertical: getFontSize(24, context), horizontal: getFontSize(14, context)),
                 child: Column(
                   children: [
                     Row(
@@ -191,14 +191,14 @@ class _StoreState extends State<Store> {
                                   color: Colors.green,
                                 ),
                         ),
-                        const SizedBox(
-                          width: 12,
+                        SizedBox(
+                          width: getFontSize(12, context),
                         ),
                         Container(
-                          width: 190,
+                          width: getFontSize(190, context),
                           child: Text(
                             des,
-                            style: const TextStyle(fontSize: 15),
+                            style: TextStyle(fontSize: getFontSize(15, context)),
                           ),
                         )
                       ],
@@ -206,8 +206,8 @@ class _StoreState extends State<Store> {
                   ],
                 ))),
         Positioned(
-            right: 7,
-            top: 12,
+            right: getFontSize(7, context),
+            top: getFontSize(12, context),
             child: Container(
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -215,7 +215,7 @@ class _StoreState extends State<Store> {
                     borderRadius: BorderRadius.circular(18)),
                 child: Text(
                   "12 0ct 2022",
-                  style: TextStyle(fontSize: 10, color: Colors.blue),
+                  style: TextStyle(fontSize: getFontSize(10, context), color: Colors.blue),
                 )))
       ],
     );
@@ -225,12 +225,12 @@ class _StoreState extends State<Store> {
 orders(BuildContext context, String iconPath, String date, String type,
     String price, String by) {
   return Container(
-    margin: EdgeInsets.only(right: 10),
+    margin: EdgeInsets.only(right: getFontSize(10, context)),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(12),
       border: Border.all(
         color: Colors.grey.shade400,
-        width: 1,
+        width: getFontSize(1, context),
       ),
     ),
     child: Column(
@@ -245,17 +245,17 @@ orders(BuildContext context, String iconPath, String date, String type,
                 iconPath,
               ),
               SizedBox(
-                width: 7,
+                width: getFontSize(7, context),
               ),
               Text(
                 "${date}-${type}",
-                style: TextStyle(fontSize: 14, color: Colors.black45),
+                style: TextStyle(fontSize: getFontSize(14, context), color: Colors.black45),
               )
             ],
           ),
         ),
         SizedBox(
-          height: 7,
+          height: getFontSize(7, context),
         ),
         SvgPicture.asset(
           "assets/images/line.svg",
@@ -268,12 +268,12 @@ orders(BuildContext context, String iconPath, String date, String type,
               children: [
                 Text(price,
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: getFontSize(22, context))),
                 SizedBox(
-                  height: 15,
+                  height: getFontSize(15, context),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 7, horizontal: 12),
+                  padding: EdgeInsets.symmetric(vertical: getFontSize(7, context), horizontal: getFontSize(12, context)),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18),
                       color: Colors.grey.shade300),
@@ -301,7 +301,7 @@ activity(BuildContext context, String icon_path, String text, String date) {
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: Colors.grey.shade400,
-          width: 1,
+          width: getFontSize(1, context),
         ),
       ),
       child: Column(
@@ -331,10 +331,10 @@ actions(BuildContext context, icon, String text, MaterialPageRoute action) {
                   ),
           ),
           SizedBox(
-            height: 12,
+            height: getFontSize(12, context),
           ),
           SizedBox(
-            width: 72,
+            width: getFontSize(72, context),
             child: Text(
               text,
               textAlign: TextAlign.center,

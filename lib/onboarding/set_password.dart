@@ -1,10 +1,11 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_appp/onboarding/enable_fingerprint.dart';
 import '../components/my_blue_button.dart';
 import '../components/my_textfield.dart';
 
 class SetPassword extends StatefulWidget {
-  const SetPassword({super.key});
+  SetPassword({super.key});
 
   @override
   State<SetPassword> createState() => _SetPasswordState();
@@ -17,40 +18,40 @@ class _SetPasswordState extends State<SetPassword> {
     return SafeArea(
         child: Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
         child: Column(
           children: [
-            const SizedBox(
-              height: 60,
+            SizedBox(
+              height: getFontSize(60, context),
             ),
             Image.asset(
               "assets/images/setpasswordframe.png",
               scale: 4,
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: getFontSize(40, context),
             ),
-            const Text(
+            Text(
               "Set new password",
               style: TextStyle(
-                fontSize: 28,
+                fontSize: getFontSize(28, context),
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: getFontSize(30, context),
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 "Type in a new assword",
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: getFontSize(14, context),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: getFontSize(10, context),
             ),
             MyTextfield(
               hinttext: "******",
@@ -65,20 +66,20 @@ class _SetPasswordState extends State<SetPassword> {
                     _obscureText ? Icons.visibility : Icons.visibility_off),
               ),
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: getFontSize(30, context),
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 "Confirm password",
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: getFontSize(14, context),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: getFontSize(10, context),
             ),
             MyTextfield(
               hinttext: "******",
@@ -93,15 +94,15 @@ class _SetPasswordState extends State<SetPassword> {
                     _obscureText ? Icons.visibility : Icons.visibility_off),
               ),
             ),
-            const Spacer(),
+            Spacer(),
             GestureDetector(
                 onTap: () => Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => EnableFingerprint())),
-                child: const MyBlueButton(text: "Continue")),
-            const SizedBox(
-              height: 40,
+                child: MyBlueButton(text: "Continue")),
+            SizedBox(
+              height: getFontSize(40, context),
             )
           ],
         ),

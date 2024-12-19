@@ -1,10 +1,11 @@
+import '../MainScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hospital_appp/add%20patients/confirm_file_upload.dart';
 import 'package:hospital_appp/add%20pharmacy/confirm_file_upload_pharmacy.dart';
 
 class UploadFilePharmacy extends StatefulWidget {
-  const UploadFilePharmacy({super.key});
+  UploadFilePharmacy({super.key});
 
   @override
   State<UploadFilePharmacy> createState() => _UploadFilePharmacyState();
@@ -14,60 +15,56 @@ class _UploadFilePharmacyState extends State<UploadFilePharmacy> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Padding(padding: EdgeInsets.all(16),
+    child: Column(
         children: [
-          SizedBox(
-            height: 20,
-          ),
           Center(
             child: Container(
-              width: 284,
-              height: 47,
+              width: getFontSize(284, context),
+              height: getFontSize(47, context),
               child: Text(
                 textAlign: TextAlign.center,
                 "Upload all your patients and their details to sync with myvitalz.",
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+                style: TextStyle(fontSize: getFontSize(14, context), color: Colors.grey),
               ),
             ),
           ),
           SizedBox(
-            height: 60,
+            height: getFontSize(60, context),
           ),
           Container(
-            width: 183,
-            height: 183,
+            width: getFontSize(183, context),
+            height: getFontSize(183, context),
             decoration:
                 BoxDecoration(color: Colors.blue[50], shape: BoxShape.circle),
             child: Container(
-              height: 150,
+              height: getFontSize(150, context),
               child: SvgPicture.asset("assets/images/report.svg"),
             ),
           ),
           SizedBox(
-            height: 30,
+            height: getFontSize(30, context),
           ),
           Center(
             child: Container(
-              width: 284,
-              height: 47,
+              width: getFontSize(284, context),
+              height: getFontSize(47, context),
               child: Text(
                 textAlign: TextAlign.center,
                 "Click to upload a file containing all your patient details.",
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+                style: TextStyle(fontSize: getFontSize(14, context), color: Colors.grey),
               ),
             ),
           ),
-          SizedBox(
-            height: 100,
-          ),
+          Spacer(),
           GestureDetector(
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) => ConfirmFileUploadPharmacy())),
             child: Container(
-              width: 335,
-              height: 54,
+              width: getFontSize(335, context),
+              height: getFontSize(54, context),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
                   color: Colors.blue.shade50,
@@ -82,7 +79,8 @@ class _UploadFilePharmacyState extends State<UploadFilePharmacy> {
             ),
           )
         ],
-      ),
+    )
+    )
     );
   }
 }

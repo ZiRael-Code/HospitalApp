@@ -18,6 +18,9 @@ class DeviceOrderPayment extends StatelessWidget {
               InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -30,6 +33,8 @@ class DeviceOrderPayment extends StatelessWidget {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
               ),
 
               Spacer(),
@@ -80,7 +85,7 @@ class DeviceOrderPayment extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+          padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
           child: Text(
             'Continue',
             style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),

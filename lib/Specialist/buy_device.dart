@@ -35,18 +35,23 @@ class _RequestNewDeviceScreen extends  State<BuyDevice> {
               InkWell(
                 onTap: () => Navigator.pop(context),
                 child:
-                Container(
-                  width: getFontSize(35, context),
-                  height: getFontSize(35, context),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Color(0xFFE5E5E5),
-                  ),
-                  child: SvgPicture.asset('assets/images/back.svg',
-                    width: getFontSize(8.0, context),
-                    height: getFontSize(15, context),),
+                InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              Container(
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Color(0xFFE5E5E5),
                 ),
+                child: SvgPicture.asset('assets/images/back.svg',
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
+              ),
+              ),
+
               ),
 
               Text(
@@ -112,7 +117,7 @@ class _RequestNewDeviceScreen extends  State<BuyDevice> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                          padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                           child: Text(
                             'Continue',
                             style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
@@ -200,7 +205,7 @@ class _RequestNewDeviceScreen extends  State<BuyDevice> {
                                         shape: BoxShape.circle,
                                         color: Color(0xffE2EDFF)
                                     ),
-                                    child: Center(child: Text('－', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12,color: Colors.blue)),
+                                    child: Center(child: Text('－', style: TextStyle(fontWeight: FontWeight.bold,fontSize: getFontSize(12, context),color: Colors.blue)),
                                   ),
                                   ),
                                   onTap: () {

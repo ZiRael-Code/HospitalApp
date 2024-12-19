@@ -7,7 +7,7 @@ import 'package:hospital_appp/Specialist/setup_login.dart';
 import '../MainScreen/Dashboard.dart';
 
 class CustomLogin extends StatefulWidget {
-  const CustomLogin({super.key});
+  CustomLogin({super.key});
 
   @override
   State<CustomLogin> createState() => _CustomLoginState();
@@ -53,25 +53,25 @@ class _CustomLoginState extends State<CustomLogin> {
       body: Padding(padding: EdgeInsets.all(12),
       child: Column(
         children: [
-          SizedBox(height: 20,),
+          SizedBox(height: getFontSize(20, context),),
           SvgPicture.asset('assets/images/masterkey.svg'),
 
-          SizedBox(height: 25),
+          SizedBox(height: getFontSize(25, context)),
 
-          Text("Custom login setup", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
-          SizedBox(height: 15),
+          Text("Custom login setup", style: TextStyle(fontSize: getFontSize(18, context), fontWeight: FontWeight.w500),),
+          SizedBox(height: getFontSize(15, context)),
           Container(
-            width: 264,
-            child: Text(textAlign: TextAlign.center, style: TextStyle(fontSize: 16,),"Create a custom login mail address and password for your affiliated specialists and pharmacies."),
+            width: getFontSize(264, context),
+            child: Text(textAlign: TextAlign.center, style: TextStyle(fontSize: getFontSize(16, context),),"Create a custom login mail address and password for your affiliated specialists and pharmacies."),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: getFontSize(20, context)),
           GestureDetector(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => SetupLogin()));
             },
             child:
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: getFontSize(24, context), vertical: getFontSize(10, context)),
             decoration: BoxDecoration(
               color: Colors.blue,
               borderRadius: BorderRadius.circular(12)
@@ -80,13 +80,13 @@ class _CustomLoginState extends State<CustomLogin> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text("Setup login", style: TextStyle(color: Colors.white),),
-                SizedBox(width: 10,),
+                SizedBox(width: getFontSize(10, context),),
                 Icon(Icons.arrow_forward_ios, color: Colors.white,)
               ],
             ),
           ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: getFontSize(20, context),),
 
           Row(
             children: [
@@ -110,7 +110,7 @@ class _CustomLoginState extends State<CustomLogin> {
                       )))
             ],
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
           Expanded (
             child:
             SingleChildScrollView(child:
@@ -155,7 +155,7 @@ class _CustomLoginState extends State<CustomLogin> {
     return Container(
       child: Column(
         children: [
-          SizedBox(height: 5),
+          SizedBox(height: getFontSize(5, context)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -167,7 +167,7 @@ class _CustomLoginState extends State<CustomLogin> {
                     backgroundImage: AssetImage(profile_path),
                   )
               ),
-              SizedBox(width: 10,),
+              SizedBox(width: getFontSize(10, context),),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -181,8 +181,8 @@ class _CustomLoginState extends State<CustomLogin> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 5,),
-                  SizedBox(height: 2),
+                  SizedBox(height: getFontSize(5, context),),
+                  SizedBox(height: getFontSize(2, context)),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -199,9 +199,9 @@ class _CustomLoginState extends State<CustomLogin> {
               Icon(Icons.more_vert_outlined)
             ],
           ),
-          SizedBox(height: 5),
+          SizedBox(height: getFontSize(5, context)),
           SizedBox(
-            width: 350,
+            width: getFontSize(350, context),
             child: Divider(
               color: Colors.grey[300],
             ),
